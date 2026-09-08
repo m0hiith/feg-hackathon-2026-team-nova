@@ -9,14 +9,14 @@ every card, stake, confidence score and census bar comes from this file.
 After running it, re-embed the JSON into the page:
     the <script id="feg-data"> block in "Image 2.html" holds a copy.
 
-Usage:  /usr/local/bin/python3.13 tools/export_site_data.py   (needs pandas)
+Usage:  python3 tools/export_site_data.py   (needs pandas)
 """
 from __future__ import annotations
 import json, math, sys
 from pathlib import Path
 from collections import Counter
 
-ROOT = Path("/Users/mohith/feg mock ")
+ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "src"))
 
 import pandas as pd
