@@ -1,0 +1,196 @@
+{
+  "_comment": "Demo sessions for the UI. Written by scripts/pick_demo_sessions.py - do not hand-edit. Both sessions are owned by TEST-side players from the player-level holdout in scripts/holdout_eval.py, so neither was used to shape the thresholds in src/trigger.py.",
+  "_display_note": "`player_id` is the pseudonymous SHA-256 key needed to look the session up in data/clean/events.parquet. Render `player_id_masked`, never `player_id`.",
+  "provenance": {
+    "split": "player-level, from scripts/holdout_eval.py",
+    "seed": 42,
+    "train_fraction": 0.7,
+    "n_train_players": 62,
+    "n_test_players": 27,
+    "side": "test",
+    "source": "data/clean/events.parquet",
+    "trigger_constants": {
+      "MIN_ADDS_TO_ARM": 1,
+      "MIN_EVENTS_TO_ARM": 4,
+      "MIN_ELAPSED_S_TO_ARM": 20.0,
+      "STALL_DWELL_S": 90.0,
+      "STALL_SINCE_ADD_S": 120.0,
+      "VELOCITY_COLLAPSE_RATIO": 0.25
+    },
+    "platform_test_side": {
+      "platform": "SB iOS",
+      "slip_building_sessions": 375,
+      "abandoned": 130,
+      "abandoned_fired": 75,
+      "converted": 245,
+      "converted_fired": 94,
+      "median_lead_s_fired_abandoners": 420.7
+    },
+    "all_platforms_test_side": {
+      "slip_building_sessions": 621,
+      "median_lead_s_fired_abandoners": 293.0
+    }
+  },
+  "fixture_names": {
+    "available": false,
+    "note": "The event log has no human-readable fixture name. `fixture_id`/`selection_id` are opaque `ufo:` tokens and `sport_name` is Croatian. Readable fixture names exist only in SB_Player.csv / SB_MOM.csv, which share no key with the event log (DATA_MAP §3). The UI must render the ids and sport names below, or a label supplied from outside this data."
+  },
+  "sessions": {
+    "A": {
+      "role": "fire",
+      "label": "FIRE - slip built, session stalled, never submitted",
+      "player_id": "c29c42be6400a8db2a674ecaac8fc80180b2f1fcf67dbbea150e2ad1a013add4",
+      "player_id_masked": "c29c42be…add4",
+      "sid": 1786874272,
+      "platform": "SB iOS",
+      "n_events": 48,
+      "duration_s": 441.9,
+      "session_start_utc": "2026-08-16 09:57:53.182000",
+      "session_end_utc": "2026-08-16 10:05:15.094000",
+      "selections_added": 8,
+      "slips_submitted": 0,
+      "placed_legs": 0,
+      "converted": false,
+      "fired": true,
+      "fired_at_elapsed_s": 164.3,
+      "lead_s": 277.7,
+      "selections": [
+        {
+          "time_utc": "09:58:04",
+          "sport_name": "Nogomet",
+          "fixture_id": "ufo:mtch:1v7-027",
+          "selection_id": "ufo:opt:1v7-027-01c-01",
+          "added_from": "match_detail_odds"
+        },
+        {
+          "time_utc": "09:58:14",
+          "sport_name": "Nogomet",
+          "fixture_id": "ufo:mtch:1v7-0ax",
+          "selection_id": "ufo:opt:1v7-0ax-001-00",
+          "added_from": "match_detail_odds"
+        },
+        {
+          "time_utc": "09:58:41",
+          "sport_name": "Nogomet",
+          "fixture_id": "ufo:mtch:1v7-00r",
+          "selection_id": "ufo:opt:1v7-00r-00x-01",
+          "added_from": "match_detail_odds"
+        },
+        {
+          "time_utc": "09:58:50",
+          "sport_name": "Nogomet",
+          "fixture_id": "ufo:mtch:1v7-031",
+          "selection_id": "ufo:opt:1v7-031-004-00",
+          "added_from": "match_detail_odds"
+        },
+        {
+          "time_utc": "09:58:59",
+          "sport_name": "Nogomet",
+          "fixture_id": "ufo:mtch:1v7-00o",
+          "selection_id": "ufo:opt:1v7-00o-001-01",
+          "added_from": "match_detail_odds"
+        },
+        {
+          "time_utc": "10:00:49",
+          "sport_name": "Nogomet",
+          "fixture_id": "ufo:mtch:1v7-05t",
+          "selection_id": "ufo:opt:1v7-05t-009-00",
+          "added_from": "match_detail_odds"
+        },
+        {
+          "time_utc": "10:04:48",
+          "sport_name": "Nogomet",
+          "fixture_id": "ufo:mtch:1v7-030",
+          "selection_id": "ufo:opt:1v7-030-00a-01",
+          "added_from": "match_detail_odds"
+        },
+        {
+          "time_utc": "10:05:05",
+          "sport_name": "Nogomet",
+          "fixture_id": "ufo:mtch:1vd-01r",
+          "selection_id": "ufo:opt:1vd-01r-001-01",
+          "added_from": "homepage_prematch_widget"
+        }
+      ],
+      "submitted_slips": []
+    },
+    "B": {
+      "role": "silent",
+      "label": "SILENT - slip built and submitted; the trigger correctly stayed out of the way",
+      "player_id": "9bb14883381d35a6963052b1761eb1e8ec8fcf03b69ede728c5f34ed71b78deb",
+      "player_id_masked": "9bb14883…8deb",
+      "sid": 1787421081,
+      "platform": "SB iOS",
+      "n_events": 59,
+      "duration_s": 1567.4,
+      "session_start_utc": "2026-08-22 17:51:22.165000",
+      "session_end_utc": "2026-08-22 18:17:29.568000",
+      "selections_added": 7,
+      "slips_submitted": 1,
+      "placed_legs": 4,
+      "converted": true,
+      "fired": false,
+      "fired_at_elapsed_s": null,
+      "lead_s": null,
+      "selections": [
+        {
+          "time_utc": "18:12:39",
+          "sport_name": "Nogomet",
+          "fixture_id": "ufo:mtch:1vd-0dt",
+          "selection_id": "ufo:opt:1vd-0dt-00p-00",
+          "added_from": "live_page"
+        },
+        {
+          "time_utc": "18:12:51",
+          "sport_name": "Nogomet",
+          "fixture_id": "ufo:mtch:1vd-04o",
+          "selection_id": "ufo:opt:1vd-04o-008-00",
+          "added_from": "live_page"
+        },
+        {
+          "time_utc": "18:13:12",
+          "sport_name": "Nogomet",
+          "fixture_id": "ufo:mtch:1vd-013",
+          "selection_id": "ufo:opt:1vd-013-026-00",
+          "added_from": "match_detail_odds"
+        },
+        {
+          "time_utc": "18:13:55",
+          "sport_name": "Nogomet",
+          "fixture_id": "ufo:mtch:1ve-01w",
+          "selection_id": "ufo:opt:1ve-01w-00z-00",
+          "added_from": "match_detail_odds"
+        },
+        {
+          "time_utc": "18:14:19",
+          "sport_name": "Nogomet",
+          "fixture_id": "ufo:mtch:1vd-013",
+          "selection_id": "ufo:opt:1vd-013-026-00",
+          "added_from": "match_detail_odds"
+        },
+        {
+          "time_utc": "18:14:43",
+          "sport_name": "Nogomet",
+          "fixture_id": "ufo:mtch:1ve-01w",
+          "selection_id": "ufo:opt:1ve-01w-00z-00",
+          "added_from": "match_detail_odds"
+        },
+        {
+          "time_utc": "18:15:33",
+          "sport_name": "Nogomet",
+          "fixture_id": "ufo:mtch:1vd-0dt",
+          "selection_id": "ufo:opt:1vd-0dt-01s-01",
+          "added_from": "live_page"
+        }
+      ],
+      "submitted_slips": [
+        {
+          "time_utc": "18:17:29",
+          "betslip_number": "HPC0TR0852VAP800",
+          "betslip_type": "AKO",
+          "status": "ACCEPTED"
+        }
+      ]
+    }
+  }
+}

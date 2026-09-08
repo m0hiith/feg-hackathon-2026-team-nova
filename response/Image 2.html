@@ -1,0 +1,1274 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FEG.hr - Sports Betting &amp; Casino</title>
+<!-- Tailwind CSS v3 with forms and container queries -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind configuration -->
+<script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              blue: '#004fe8',
+              darkBlue: '#003eb8',
+              navy: '#0d131d',
+              panel: '#151b26',
+              card: '#1b2231',
+              cardHover: '#232b3d',
+              chip: '#262f40',
+              accentGreen: '#00b140',
+              accentRed: '#e53e3e',
+              border: '#232d3f',
+              textMuted: '#8a98ad'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<style data-purpose="custom-scrollbars">
+    /* Custom sleek dark scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0d131d;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #273346;
+      border-radius: 3px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #394862;
+    }
+  </style>
+<style data-purpose="badge-styling">
+    .badge-bb {
+      background: #2b3950;
+      color: #5bb3ff;
+      font-weight: 700;
+      font-size: 10px;
+      padding: 1px 5px;
+      border-radius: 3px;
+    }
+    .badge-90 {
+      background: #352631;
+      color: #ff6871;
+      font-weight: 700;
+      font-size: 10px;
+      padding: 1px 5px;
+      border-radius: 3px;
+    }
+    .badge-top {
+      background: #0f462a;
+      color: #2fe07f;
+      font-size: 9px;
+      font-weight: 800;
+      padding: 1px 4px;
+      border-radius: 3px;
+    }
+  </style>
+</head>
+<body class="bg-[#0b0f17] text-gray-200 font-sans text-xs antialiased selection:bg-blue-600 selection:text-white flex flex-col min-h-screen overflow-x-hidden">
+<!-- BEGIN: MainHeader -->
+<header class="w-full bg-[#004fe8] text-white shadow-md z-50 sticky top-0">
+<!-- Top Primary Navigation Bar -->
+<div class="px-3 h-12 flex items-center justify-between border-b border-blue-600/40">
+<!-- Logo and Primary Links -->
+<div class="flex items-center space-x-1 sm:space-x-4 h-full">
+<!-- FEG Brand Logo -->
+<a class="flex items-center tracking-tighter italic font-black text-2xl px-2 text-white drop-shadow select-none" href="#">
+          FEG
+        </a>
+<!-- Main Product Links -->
+<nav class="hidden lg:flex items-center space-x-0.5 h-full text-[13px] font-semibold tracking-wide uppercase">
+<a class="px-3 h-full flex items-center bg-blue-700/60 text-white border-b-2 border-white" href="#">SPORT</a>
+<a class="px-3 h-full flex items-center hover:bg-blue-600/60 text-white/90 relative" href="#">
+            LIVE
+            <span class="ml-1 px-1 py-0.2 bg-red-600 text-[9px] font-bold rounded text-white animate-pulse">LIVE</span>
+</a>
+<a class="px-3 h-full flex items-center hover:bg-blue-600/60 text-white/90" href="#">CASINO</a>
+<a class="px-3 h-full flex items-center hover:bg-blue-600/60 text-white/90 relative" href="#">
+            LIVE CASINO
+            <span class="ml-1 text-[8px] bg-red-500 font-extrabold px-1 rounded-sm text-white uppercase">NEW</span>
+</a>
+<a class="px-3 h-full flex items-center hover:bg-blue-600/60 text-white/90" href="#">LOTTO</a>
+<a class="px-3 h-full flex items-center hover:bg-blue-600/60 text-white/90" href="#">VIRTUALS</a>
+<a class="px-3 h-full flex items-center hover:bg-blue-600/60 text-white/90" href="#">FORUM</a>
+<a class="px-3 h-full flex items-center hover:bg-blue-600/60 text-white/90" href="#">FEG ARENA</a>
+<a class="px-3 h-full flex items-center hover:bg-blue-600/60 text-white/90" href="#">PROMO</a>
+<a class="px-3 h-full flex items-center hover:bg-blue-600/60 text-yellow-300 font-bold relative" href="#">
+            SWIPE &amp; BET
+            <span class="ml-1 text-[8px] bg-red-600 text-white font-extrabold px-1 rounded-sm uppercase">NEW</span>
+</a>
+</nav>
+</div>
+<!-- Auth Action Buttons -->
+<div class="flex items-center space-x-2 text-xs font-bold uppercase tracking-wider">
+<!-- logged OUT -->
+<div class="flex items-center space-x-2" id="auth-out">
+<button class="px-4 py-1.5 rounded text-white hover:bg-blue-600/60 border border-blue-400/40 transition" id="btn-register">
+          REGISTER
+        </button>
+<button class="px-4 py-1.5 rounded bg-white text-blue-800 font-black hover:bg-gray-100 shadow transition" id="btn-login">
+          LOGIN
+        </button>
+</div>
+<!-- logged IN -->
+<div class="hidden items-center space-x-3" id="auth-in">
+<div class="hidden sm:flex flex-col items-end leading-tight normal-case tracking-normal">
+<span class="text-[11px] text-blue-100">Balance</span>
+<span class="font-black text-sm text-white" id="hdr-balance">0,00 €</span>
+</div>
+<button class="flex items-center gap-2 pl-1 pr-2 py-1 rounded-full bg-blue-800/60 hover:bg-blue-900/70 border border-blue-400/30 transition normal-case tracking-normal" id="btn-account">
+<span class="w-7 h-7 rounded-full bg-white text-blue-800 font-black text-[11px] flex items-center justify-center" id="hdr-avatar">U0</span>
+<span class="hidden md:flex flex-col items-start leading-tight text-left">
+<span class="text-[11px] font-bold text-white" id="hdr-name">Player</span>
+<span class="text-[9px] text-blue-200 font-normal" id="hdr-persona">persona</span>
+</span>
+<i class="fa-solid fa-chevron-down text-[9px] text-blue-200"></i>
+</button>
+</div>
+</div>
+</div>
+<!-- Secondary Utility Sub-Bar -->
+<div class="px-3 h-8 bg-[#003cb5] flex items-center justify-between text-[11px] text-blue-100">
+<div class="flex items-center space-x-4 overflow-x-auto no-scrollbar">
+<a class="flex items-center gap-1 hover:text-white transition" href="#"><i class="fa-solid fa-house text-xs"></i></a>
+<a class="hover:text-white transition flex items-center gap-1" href="#"><i class="fa-solid fa-mobile-screen"></i> Mobile app</a>
+<a class="hover:text-white transition" href="#">Results</a>
+<a class="hover:text-white transition" href="#">Statistics</a>
+<a class="hover:text-white transition" href="#">News</a>
+<a class="hover:text-white transition" href="#">Show your heart</a>
+<a class="hover:text-white transition" href="#">Champions Club</a>
+<a class="hover:text-white transition" href="#">Help</a>
+<a class="hover:text-white transition" href="#">Shops</a>
+</div>
+<div class="flex items-center space-x-3 text-xs">
+<button class="hover:text-white transition"><i class="fa-solid fa-magnifying-glass"></i></button>
+<button class="hover:text-white transition"><i class="fa-solid fa-expand"></i></button>
+<!-- Dark Mode Toggle Pill -->
+<div class="flex items-center bg-[#002e8a] px-2 py-0.5 rounded-full text-[10px] space-x-1 font-semibold text-blue-200 cursor-pointer">
+<i class="fa-solid fa-moon text-blue-300"></i>
+<span>DARK</span>
+</div>
+</div>
+</div>
+</header>
+<!-- END: MainHeader -->
+<!-- BEGIN: MainContentLayout -->
+<main class="flex-1 flex w-full max-w-[1920px] mx-auto overflow-hidden">
+<!-- ==================== LEFT SIDEBAR ==================== -->
+<!-- BEGIN: LeftSidebar -->
+<aside class="w-64 bg-[#0f141d] border-r border-[#1e2738] flex flex-col flex-shrink-0 select-none overflow-y-auto h-[calc(100vh-5rem)]">
+<!-- Recommended Matches Section -->
+<div class="p-3 border-b border-[#1b2332]">
+<h3 class="text-gray-400 font-bold text-[11px] uppercase tracking-wider mb-2 flex items-center justify-between">
+<span>Recommended</span>
+<span class="hidden text-[9px] font-bold text-blue-400 normal-case tracking-normal" id="rec-tag">from your history</span>
+</h3>
+<ul class="space-y-1" id="rec-list">
+<li>
+<a class="flex items-center py-1.5 px-2 rounded hover:bg-[#182130] text-gray-200 transition text-[12px] group" href="#">
+<span class="w-4 h-4 mr-2.5 flex items-center justify-center text-lime-400 text-xs">🎾</span>
+<span class="truncate">Schoenhaus M. - Dodig M.</span>
+</a>
+</li>
+<li>
+<a class="flex items-center py-1.5 px-2 rounded hover:bg-[#182130] text-gray-200 transition text-[12px]" href="#">
+<span class="w-4 h-4 mr-2.5 flex items-center justify-center text-lime-400 text-xs">🎾</span>
+<span class="truncate">US Open (M)</span>
+</a>
+</li>
+<li>
+<a class="flex items-center py-1.5 px-2 rounded hover:bg-[#182130] text-gray-200 transition text-[12px]" href="#">
+<span class="w-4 h-4 mr-2.5 flex items-center justify-center text-lime-400 text-xs">🎾</span>
+<span class="truncate">US Open (W)</span>
+</a>
+</li>
+<li>
+<a class="flex items-center py-1.5 px-2 rounded hover:bg-[#182130] text-gray-200 transition text-[12px]" href="#">
+<span class="w-4 h-4 mr-2.5 flex items-center justify-center text-gray-400 text-xs">⚽</span>
+<span class="truncate">Varaždin - Istra 1961</span>
+</a>
+</li>
+<li>
+<a class="flex items-center py-1.5 px-2 rounded hover:bg-[#182130] text-gray-200 transition text-[12px]" href="#">
+<span class="w-4 h-4 mr-2.5 flex items-center justify-center text-gray-400 text-xs">⚽</span>
+<span class="truncate">Paris SG - Monaco</span>
+</a>
+</li>
+<li>
+<a class="flex items-center py-1.5 px-2 rounded hover:bg-[#182130] bg-[#182130] text-blue-400 font-medium transition text-[12px]" href="#">
+<span class="w-4 h-4 mr-2.5 flex items-center justify-center text-gray-300 text-xs">⚽</span>
+<span class="truncate">Betis - Real Madrid</span>
+</a>
+</li>
+</ul>
+</div>
+<!-- Sports Categories with Match Counters -->
+<div class="p-3">
+<h3 class="text-gray-400 font-bold text-[11px] uppercase tracking-wider mb-2">Sports</h3>
+<ul class="space-y-0.5 text-[12px]" id="sport-list">
+<li>
+<a class="flex items-center justify-between py-1.5 px-2 rounded hover:bg-[#182130] text-gray-300" href="#">
+<div class="flex items-center">
+<span class="bg-[#1f2a3a] text-yellow-500 font-black text-[9px] px-1 rounded mr-2">BB</span>
+<span>BetBuilder</span>
+</div>
+<span class="text-gray-500 text-[11px] font-mono">176</span>
+</a>
+</li>
+<li>
+<a class="flex items-center justify-between py-1.5 px-2 rounded hover:bg-[#182130] text-gray-300" href="#">
+<div class="flex items-center">
+<span class="text-red-500 font-bold text-xs mr-2"><i class="fa-solid fa-shield-halved"></i></span>
+<span>SafeBet / FEG PLUS</span>
+</div>
+<span class="text-gray-500 text-[11px] font-mono">7</span>
+</a>
+</li>
+<li>
+<a class="flex items-center justify-between py-1.5 px-2 rounded hover:bg-[#182130] text-gray-300" href="#">
+<div class="flex items-center">
+<span class="text-amber-400 text-xs mr-2"><i class="fa-solid fa-play"></i></span>
+<span>FEG TV</span>
+</div>
+<span class="text-gray-500 text-[11px] font-mono">164</span>
+</a>
+</li>
+<li>
+<a class="flex items-center justify-between py-1.5 px-2 rounded hover:bg-[#182130] text-gray-300" href="#">
+<div class="flex items-center">
+<span class="text-gray-400 text-xs mr-2"><i class="fa-solid fa-layer-group"></i></span>
+<span>All offers</span>
+</div>
+<span class="text-gray-500 text-[11px] font-mono">907</span>
+</a>
+</li>
+<li>
+<a class="flex items-center justify-between py-1.5 px-2 rounded hover:bg-[#182130] text-gray-300" href="#">
+<div class="flex items-center">
+<span class="text-pink-500 text-xs mr-2"><i class="fa-solid fa-gift"></i></span>
+<span>Bonus Tip</span>
+</div>
+<span class="text-gray-500 text-[11px] font-mono">10</span>
+</a>
+</li>
+<li>
+<a class="flex items-center justify-between py-1.5 px-2 rounded hover:bg-[#182130] text-gray-300" href="#">
+<div class="flex items-center">
+<span class="text-orange-400 text-xs mr-2"><i class="fa-solid fa-fire"></i></span>
+<span>TOP OFFER</span>
+</div>
+<span class="text-gray-500 text-[11px] font-mono">11</span>
+</a>
+</li>
+<li class="pt-2">
+<a class="flex items-center justify-between py-1.5 px-2 rounded bg-blue-900/30 border-l-2 border-blue-500 text-white font-semibold" href="#">
+<div class="flex items-center">
+<span class="mr-2">⚽</span>
+<span>Football</span>
+</div>
+<span class="text-blue-400 text-[11px] font-mono">322</span>
+</a>
+</li>
+<li>
+<a class="flex items-center justify-between py-1.5 px-2 rounded hover:bg-[#182130] text-gray-300" href="#">
+<div class="flex items-center">
+<span class="mr-2">🎾</span>
+<span>Tennis</span>
+</div>
+<span class="text-gray-500 text-[11px] font-mono">143</span>
+</a>
+</li>
+<li>
+<a class="flex items-center justify-between py-1.5 px-2 rounded hover:bg-[#182130] text-gray-300" href="#">
+<div class="flex items-center">
+<span class="mr-2">🏀</span>
+<span>Basketball</span>
+</div>
+<span class="text-gray-500 text-[11px] font-mono">54</span>
+</a>
+</li>
+</ul>
+</div>
+</aside>
+<!-- END: LeftSidebar -->
+<!-- ==================== CENTER MAIN CONTENT ==================== -->
+<!-- BEGIN: MainCenterArea -->
+<section class="flex-1 min-w-0 bg-[#0c1017] overflow-y-auto px-3.5 py-3 h-[calc(100vh-5rem)]">
+<!-- Time Range Navigation Tabs -->
+<div class="flex items-center bg-[#131924] rounded-lg p-1 mb-3 border border-[#20293a] text-xs font-semibold">
+<button class="flex items-center px-4 py-1.5 rounded text-gray-400 hover:text-white transition">
+<i class="fa-regular fa-clock mr-1.5 text-xs text-red-500"></i> LIVE
+        </button>
+<button class="px-5 py-1.5 rounded bg-[#1c2436] text-white font-bold shadow-sm">
+          TODAY
+        </button>
+<button class="px-4 py-1.5 rounded text-gray-400 hover:text-white transition">1H</button>
+<button class="px-4 py-1.5 rounded text-gray-400 hover:text-white transition">3H</button>
+<button class="px-4 py-1.5 rounded text-gray-400 hover:text-white transition">TOMORROW</button>
+<button class="px-4 py-1.5 rounded text-gray-400 hover:text-white transition">ALL</button>
+</div>
+<!-- ENGINE: personalised hero slot (filled by feg-engine.js) -->
+<div class="mb-3" id="engine-hero"></div>
+<!-- Top Promotional Banner Cards Row -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2.5 mb-3">
+<!-- Promo 1: Loto Free Bet -->
+<div class="bg-gradient-to-br from-[#0c2e68] to-[#121c2d] border border-blue-900/60 rounded-lg p-3 relative overflow-hidden flex flex-col justify-between h-28 shadow">
+<div class="z-10">
+<span class="text-[11px] font-black text-white italic tracking-wider">LOTO</span>
+<h4 class="text-base font-black text-cyan-300 uppercase leading-none mt-0.5">FREE BET</h4>
+</div>
+<div class="absolute right-2 top-2 opacity-90">
+<!-- Lottery 1€ graphic replica -->
+<div class="w-14 h-14 rounded-full border-2 border-yellow-400 flex items-center justify-center bg-gradient-to-tr from-amber-500 to-yellow-300 text-black font-black text-xl shadow-lg">
+              1€
+            </div>
+</div>
+<div class="z-10 flex justify-between items-end">
+<span class="text-[11px] text-gray-300 font-semibold">Play!</span>
+</div>
+</div>
+<!-- Promo 2: Car Giveaway -->
+<div class="bg-gradient-to-br from-[#003780] to-[#0c1626] border border-blue-800/60 rounded-lg p-3 relative overflow-hidden flex flex-col justify-between h-28 shadow">
+<div class="z-10 max-w-[70%]">
+<span class="text-[10px] font-bold text-gray-300 uppercase">WIN A NEW C4</span>
+<h4 class="text-sm font-black text-white uppercase leading-tight">PLUS HYBRID</h4>
+</div>
+<div class="absolute -right-2 bottom-2 w-28 h-16 flex items-center justify-center">
+<i class="fa-solid fa-car-side text-4xl text-blue-300 opacity-90 drop-shadow-md"></i>
+</div>
+<div class="z-10">
+<span class="text-[11px] text-gray-300 font-semibold">Prize draw</span>
+</div>
+</div>
+<!-- Promo 3: Top Offer -->
+<div class="bg-gradient-to-br from-[#092957] to-[#0e1622] border border-blue-900/50 rounded-lg p-3 relative overflow-hidden flex flex-col justify-between h-28 shadow">
+<div class="z-10">
+<h4 class="text-sm font-black text-white uppercase tracking-wide">TOP OFFER</h4>
+<span class="text-[10px] text-blue-300">Special odds</span>
+</div>
+<div class="absolute right-3 top-2 flex items-center justify-center">
+<span class="text-3xl font-black text-cyan-400 italic tracking-tighter drop-shadow">5+1</span>
+</div>
+<div class="z-10">
+<span class="text-[11px] text-gray-300 font-semibold">Boosted odds</span>
+</div>
+</div>
+<!-- Promo 4: Match Master -->
+<div class="bg-gradient-to-br from-[#121c2e] to-[#0f141e] border border-[#232f44] rounded-lg p-3 relative overflow-hidden flex flex-col justify-between h-28 shadow">
+<div class="z-10">
+<h4 class="text-sm font-black text-white uppercase">MATCH MASTER</h4>
+<span class="text-[10px] text-yellow-400 font-semibold">PLAY QUIZ</span>
+</div>
+<div class="absolute right-3 top-3">
+<i class="fa-solid fa-trophy text-3xl text-yellow-500 opacity-80"></i>
+</div>
+<div class="z-10">
+<span class="text-[11px] text-gray-300 font-semibold">Win bonuses</span>
+</div>
+</div>
+</div>
+<!-- Quick Icon Sub-navigation Bar -->
+<div class="flex items-center justify-between bg-[#131924] rounded-lg px-2 py-2 mb-3 border border-[#20293a] overflow-x-auto text-[11px] text-gray-300">
+<a class="flex flex-col items-center px-2 py-1 hover:text-blue-400 min-w-[56px]" href="#">
+<i class="fa-solid fa-percent text-base mb-1 text-blue-400"></i>
+<span>Promo</span>
+</a>
+<a class="flex flex-col items-center px-2 py-1 hover:text-blue-400 min-w-[56px]" href="#">
+<i class="fa-solid fa-plane-departure text-base mb-1 text-red-400"></i>
+<span>Aviator</span>
+</a>
+<a class="flex flex-col items-center px-2 py-1 hover:text-blue-400 min-w-[56px]" href="#">
+<i class="fa-solid fa-chess-queen text-base mb-1 text-yellow-400"></i>
+<span>MM</span>
+</a>
+<a class="flex flex-col items-center px-2 py-1 hover:text-blue-400 min-w-[56px]" href="#">
+<i class="fa-solid fa-list-check text-base mb-1 text-teal-400"></i>
+<span>Missions</span>
+</a>
+<a class="flex flex-col items-center px-2 py-1 hover:text-blue-400 min-w-[56px]" href="#">
+<i class="fa-solid fa-dharmachakra text-base mb-1 text-blue-400"></i>
+<span>Casino</span>
+</a>
+<a class="flex flex-col items-center px-2 py-1 hover:text-blue-400 min-w-[56px]" href="#">
+<i class="fa-solid fa-gamepad text-base mb-1 text-purple-400"></i>
+<span>eFootball</span>
+</a>
+<a class="flex flex-col items-center px-2 py-1 hover:text-blue-400 min-w-[56px]" href="#">
+<i class="fa-solid fa-basketball text-base mb-1 text-orange-400"></i>
+<span>eBasketball</span>
+</a>
+<a class="flex flex-col items-center px-2 py-1 hover:text-blue-400 min-w-[56px]" href="#">
+<i class="fa-solid fa-bowling-ball text-base mb-1 text-cyan-400"></i>
+<span>Lotto</span>
+</a>
+<a class="flex flex-col items-center px-2 py-1 hover:text-blue-400 min-w-[66px]" href="#">
+<i class="fa-solid fa-shield-cat text-base mb-1 text-blue-300"></i>
+<span class="text-[10px]">Champions Club</span>
+</a>
+<a class="flex flex-col items-center px-2 py-1 hover:text-blue-400 min-w-[56px]" href="#">
+<i class="fa-solid fa-tower-broadcast text-base mb-1 text-red-500"></i>
+<span>Live Casino</span>
+</a>
+<a class="flex flex-col items-center px-2 py-1 hover:text-blue-400 min-w-[56px]" href="#">
+<i class="fa-solid fa-vr-cardboard text-base mb-1 text-indigo-400"></i>
+<span>FEG Arena</span>
+</a>
+<a class="flex flex-col items-center px-2 py-1 hover:text-blue-400 min-w-[56px]" href="#">
+<i class="fa-regular fa-comments text-base mb-1 text-gray-400"></i>
+<span>Forum</span>
+</a>
+</div>
+<!-- Boosted Combo & Featured Specials (3 Cards) -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-2.5 mb-3">
+<!-- Card 1 -->
+<div class="bg-[#141b27] border border-[#212c3e] rounded-lg p-3 flex flex-col justify-between hover:border-blue-700/50 transition">
+<div>
+<div class="flex items-center justify-between text-[11px] text-gray-400 mb-1.5">
+<span class="font-semibold uppercase tracking-wider text-[10px]">STARTS IN 4H</span>
+<i class="fa-solid fa-chevron-right text-[9px]"></i>
+</div>
+<div class="font-bold text-white text-[13px] mb-2 flex items-center">
+<span class="mr-1.5 text-xs text-gray-400">⚽</span> IPSWICH - LIVERPOOL
+            </div>
+<div class="text-[11px] text-gray-300 space-y-1 mb-3">
+<div class="flex items-center"><span class="w-1.5 h-1.5 rounded-full bg-blue-500 mr-2"></span>Liverpool to win</div>
+<div class="flex items-center"><span class="w-1.5 h-1.5 rounded-full bg-blue-500 mr-2"></span>Alexander Isak to score anytime</div>
+</div>
+</div>
+<button class="w-full py-2 bg-[#1e2737] hover:bg-[#273449] border border-[#2f3d54] text-gray-200 rounded font-bold text-xs flex items-center justify-center space-x-2 transition">
+<span class="text-gray-400 line-through text-[11px]">2.25</span>
+<span class="text-blue-400">&gt;&gt;</span>
+<span class="text-white font-extrabold text-sm">2.40</span>
+</button>
+</div>
+<!-- Card 2 (Active/Highlighted Bet) -->
+<div class="bg-[#151e2c] border-2 border-blue-600 rounded-lg p-3 flex flex-col justify-between shadow-lg shadow-blue-950/30">
+<div>
+<div class="flex items-center justify-between text-[11px] mb-1.5">
+<div class="flex items-center space-x-1.5">
+<span class="text-gray-400 font-semibold uppercase text-[10px]">STARTS IN 4H</span>
+</div>
+<i class="fa-solid fa-chevron-right text-[9px] text-gray-400"></i>
+</div>
+<div class="font-bold text-white text-[13px] mb-2 flex items-center">
+<span class="mr-1.5 text-xs text-gray-400">⚽</span> BETIS - REAL MADRID
+            </div>
+<div class="text-[11px] text-gray-200 space-y-1 mb-3">
+<div class="flex items-center"><span class="w-1.5 h-1.5 rounded-full bg-blue-500 mr-2"></span>Real Madrid to win</div>
+<div class="flex items-center"><span class="w-1.5 h-1.5 rounded-full bg-blue-500 mr-2"></span>Kylian Mbappe to score anytime</div>
+</div>
+</div>
+<button class="w-full py-2 bg-blue-600 hover:bg-blue-500 text-white rounded font-extrabold text-sm shadow transition flex items-center justify-center space-x-2">
+<span>1.80</span>
+</button>
+</div>
+<!-- Card 3 -->
+<div class="bg-[#141b27] border border-[#212c3e] rounded-lg p-3 flex flex-col justify-between hover:border-blue-700/50 transition">
+<div>
+<div class="flex items-center justify-between text-[11px] text-gray-400 mb-1.5">
+<span class="font-semibold uppercase tracking-wider text-[10px]">STARTS IN 4H</span>
+<i class="fa-solid fa-chevron-right text-[9px]"></i>
+</div>
+<div class="font-bold text-white text-[13px] mb-2 flex items-center">
+<span class="mr-1.5 text-xs text-gray-400">⚽</span> PARIS SG - MONACO
+            </div>
+<div class="text-[11px] text-gray-300 space-y-1 mb-3">
+<div class="flex items-center"><span class="w-1.5 h-1.5 rounded-full bg-blue-500 mr-2"></span>PSG to win</div>
+<div class="flex items-center"><span class="w-1.5 h-1.5 rounded-full bg-blue-500 mr-2"></span>Ferran Torres to score anytime</div>
+</div>
+</div>
+<button class="w-full py-2 bg-[#1e2737] hover:bg-[#273449] border border-[#2f3d54] text-gray-200 rounded font-bold text-xs flex items-center justify-center space-x-2 transition">
+<span class="text-gray-400 line-through text-[11px]">2.40</span>
+<span class="text-blue-400">&gt;&gt;</span>
+<span class="text-white font-extrabold text-sm">2.50</span>
+</button>
+</div>
+</div>
+<!-- Sports Filter Carousel Chips -->
+<div class="flex items-center space-x-2 mb-3 overflow-x-auto pb-1 text-xs">
+<button class="px-3 py-1.5 bg-[#253043] text-white font-bold rounded-full flex items-center space-x-1.5 border border-blue-500">
+<span>⚽</span> <span>Football</span>
+</button>
+<button class="px-3 py-1.5 bg-[#171f2c] text-gray-300 hover:text-white rounded-full flex items-center space-x-1.5 border border-[#222e40]">
+<span>🎾</span> <span>Tennis</span>
+</button>
+<button class="px-3 py-1.5 bg-[#171f2c] text-gray-300 hover:text-white rounded-full flex items-center space-x-1.5 border border-[#222e40]">
+<span>🏀</span> <span>Basketball</span>
+</button>
+<button class="px-3 py-1.5 bg-[#171f2c] text-gray-300 hover:text-white rounded-full flex items-center space-x-1.5 border border-[#222e40]">
+<span>🤾</span> <span>Handball</span>
+</button>
+<button class="px-3 py-1.5 bg-[#171f2c] text-gray-300 hover:text-white rounded-full flex items-center space-x-1.5 border border-[#222e40]">
+<span>🏒</span> <span>Ice Hockey</span>
+</button>
+</div>
+<!-- ==================== MATCH ODDS TABLES ==================== -->
+<!-- League Block 1: 1. England -->
+<div class="bg-[#141b27] border border-[#202b3c] rounded-lg mb-3 overflow-hidden">
+<!-- League Header -->
+<div class="bg-[#192231] px-3 py-2 flex items-center justify-between border-b border-[#222f42]">
+<div class="flex items-center space-x-2 font-bold text-gray-200">
+<i class="fa-regular fa-star text-gray-400 text-xs cursor-pointer hover:text-yellow-400"></i>
+<span>1. England</span>
+</div>
+<div class="flex items-center text-gray-400 text-[11px] space-x-4 pr-12">
+<span>Main offer</span>
+</div>
+</div>
+<!-- Match Row 1 -->
+<div class="p-2.5 border-b border-[#1b2535] flex flex-col md:flex-row md:items-center justify-between hover:bg-[#182130] transition">
+<div class="flex-1">
+<div class="flex items-center space-x-2 mb-1">
+<span class="text-gray-400 text-[11px]">tomorrow 00:30</span>
+<span class="badge-bb">BB</span>
+<span class="badge-90">90+</span>
+</div>
+<div class="space-y-1 font-semibold text-gray-200 text-xs">
+<div class="flex items-center"><span class="w-2 h-2 rounded-full bg-blue-600 mr-2"></span> Ipswich</div>
+<div class="flex items-center"><span class="w-2 h-2 rounded-full bg-red-600 mr-2"></span> Liverpool</div>
+</div>
+</div>
+<!-- 1 X 2 Odds Box -->
+<div class="grid grid-cols-3 gap-1.5 mt-2 md:mt-0 w-full md:w-64">
+<button class="bg-[#20293a] hover:bg-[#2a374d] rounded p-1.5 text-center flex flex-col justify-center transition border border-[#263449]">
+<span class="text-[10px] text-gray-400">1</span>
+<span class="font-extrabold text-white text-xs">6.50</span>
+</button>
+<button class="bg-[#20293a] hover:bg-[#2a374d] rounded p-1.5 text-center flex flex-col justify-center transition border border-[#263449]">
+<span class="text-[10px] text-gray-400">X</span>
+<span class="font-extrabold text-white text-xs">5.50</span>
+</button>
+<button class="bg-[#20293a] hover:bg-[#2a374d] rounded p-1.5 text-center flex flex-col justify-center transition border border-[#263449] relative">
+<span class="badge-top absolute -top-1 -right-1">TOP</span>
+<span class="text-[10px] text-gray-400">2</span>
+<span class="font-extrabold text-white text-xs">1.50</span>
+</button>
+</div>
+</div>
+<!-- Match Row 2 -->
+<div class="p-2.5 flex flex-col md:flex-row md:items-center justify-between hover:bg-[#182130] transition">
+<div class="flex-1">
+<div class="flex items-center space-x-2 mb-1">
+<span class="text-gray-400 text-[11px]">tomorrow 19:30</span>
+<span class="badge-bb">BB</span>
+<span class="badge-90">90+</span>
+</div>
+<div class="space-y-1 font-semibold text-gray-200 text-xs">
+<div class="flex items-center"><span class="w-2 h-2 rounded-full bg-sky-400 mr-2"></span> Man.City</div>
+<div class="flex items-center"><span class="w-2 h-2 rounded-full bg-blue-400 mr-2"></span> Coventry</div>
+</div>
+</div>
+<!-- 1 X 2 Odds Box -->
+<div class="grid grid-cols-3 gap-1.5 mt-2 md:mt-0 w-full md:w-64">
+<button class="bg-[#20293a] hover:bg-[#2a374d] rounded p-1.5 text-center flex flex-col justify-center transition border border-[#263449] relative">
+<span class="badge-top absolute -top-1 -right-1">TOP</span>
+<span class="text-[10px] text-gray-400">1</span>
+<span class="font-extrabold text-white text-xs">1.15</span>
+</button>
+<button class="bg-[#20293a] hover:bg-[#2a374d] rounded p-1.5 text-center flex flex-col justify-center transition border border-[#263449]">
+<span class="text-[10px] text-gray-400">X</span>
+<span class="font-extrabold text-white text-xs">7.70</span>
+</button>
+<button class="bg-[#20293a] hover:bg-[#2a374d] rounded p-1.5 text-center flex flex-col justify-center transition border border-[#263449]">
+<span class="text-[10px] text-gray-400">2</span>
+<span class="font-extrabold text-white text-xs">13.50</span>
+</button>
+</div>
+</div>
+</div>
+<!-- League Block 2: 1. Spain -->
+<div class="bg-[#141b27] border border-[#202b3c] rounded-lg mb-3 overflow-hidden">
+<!-- League Header -->
+<div class="bg-[#192231] px-3 py-2 flex items-center justify-between border-b border-[#222f42]">
+<div class="flex items-center space-x-2 font-bold text-gray-200">
+<i class="fa-regular fa-star text-gray-400 text-xs cursor-pointer hover:text-yellow-400"></i>
+<span>1. Spain</span>
+</div>
+<div class="flex items-center text-gray-400 text-[11px] space-x-4 pr-12">
+<span>Main offer</span>
+</div>
+</div>
+<!-- Match Row -->
+<div class="p-2.5 flex flex-col md:flex-row md:items-center justify-between hover:bg-[#182130] transition">
+<div class="flex-1">
+<div class="flex items-center space-x-2 mb-1">
+<span class="text-gray-400 text-[11px]">tomorrow 00:30</span>
+<span class="badge-bb">BB</span>
+<span class="badge-90">90+</span>
+</div>
+<div class="space-y-1 font-semibold text-gray-200 text-xs">
+<div class="flex items-center"><span class="w-2 h-2 rounded-full bg-emerald-500 mr-2"></span> Betis</div>
+<div class="flex items-center"><span class="w-2 h-2 rounded-full bg-white mr-2"></span> Real Madrid</div>
+</div>
+</div>
+<!-- 1 X 2 Odds Box -->
+<div class="grid grid-cols-3 gap-1.5 mt-2 md:mt-0 w-full md:w-64">
+<button class="bg-[#20293a] hover:bg-[#2a374d] rounded p-1.5 text-center flex flex-col justify-center transition border border-[#263449]">
+<span class="text-[10px] text-gray-400">1</span>
+<span class="font-extrabold text-white text-xs">7.50</span>
+</button>
+<button class="bg-[#20293a] hover:bg-[#2a374d] rounded p-1.5 text-center flex flex-col justify-center transition border border-[#263449]">
+<span class="text-[10px] text-gray-400">X</span>
+<span class="font-extrabold text-white text-xs">5.60</span>
+</button>
+<button class="bg-[#20293a] hover:bg-[#2a374d] rounded p-1.5 text-center flex flex-col justify-center transition border border-[#263449]">
+<span class="text-[10px] text-gray-400">2</span>
+<span class="font-extrabold text-white text-xs">1.45</span>
+</button>
+</div>
+</div>
+</div>
+<!-- League Block 3: 1. France -->
+<div class="bg-[#141b27] border border-[#202b3c] rounded-lg mb-3 overflow-hidden">
+<!-- League Header -->
+<div class="bg-[#192231] px-3 py-2 flex items-center justify-between border-b border-[#222f42]">
+<div class="flex items-center space-x-2 font-bold text-gray-200">
+<i class="fa-regular fa-star text-gray-400 text-xs cursor-pointer hover:text-yellow-400"></i>
+<span>1. France</span>
+</div>
+<div class="flex items-center text-gray-400 text-[11px] space-x-4 pr-12">
+<span>Main offer</span>
+</div>
+</div>
+<!-- Match Row -->
+<div class="p-2.5 flex flex-col md:flex-row md:items-center justify-between hover:bg-[#182130] transition">
+<div class="flex-1">
+<div class="flex items-center space-x-2 mb-1">
+<span class="text-gray-400 text-[11px]">tomorrow 00:35</span>
+<span class="badge-bb">BB</span>
+<span class="badge-90">90+</span>
+<i class="fa-solid fa-tv text-[10px] text-blue-400"></i>
+</div>
+<div class="space-y-1 font-semibold text-gray-200 text-xs">
+<div class="flex items-center"><span class="w-2 h-2 rounded-full bg-blue-900 mr-2"></span> Paris SG</div>
+<div class="flex items-center"><span class="w-2 h-2 rounded-full bg-red-700 mr-2"></span> Monaco</div>
+</div>
+</div>
+<!-- 1 X 2 Odds Box -->
+<div class="grid grid-cols-3 gap-1.5 mt-2 md:mt-0 w-full md:w-64">
+<button class="bg-[#20293a] hover:bg-[#2a374d] rounded p-1.5 text-center flex flex-col justify-center transition border border-[#263449] relative">
+<span class="badge-top absolute -top-1 -right-1">TOP</span>
+<span class="text-[10px] text-gray-400">1</span>
+<span class="font-extrabold text-white text-xs">1.40</span>
+</button>
+<button class="bg-[#20293a] hover:bg-[#2a374d] rounded p-1.5 text-center flex flex-col justify-center transition border border-[#263449]">
+<span class="text-[10px] text-gray-400">X</span>
+<span class="font-extrabold text-white text-xs">6.00</span>
+</button>
+<button class="bg-[#20293a] hover:bg-[#2a374d] rounded p-1.5 text-center flex flex-col justify-center transition border border-[#263449]">
+<span class="text-[10px] text-gray-400">2</span>
+<span class="font-extrabold text-white text-xs">8.50</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- END: MainCenterArea -->
+<!-- ==================== RIGHT BETSLIP SIDEBAR ==================== -->
+<!-- BEGIN: BetslipSidebar -->
+<aside class="w-80 bg-[#141a24] border-l border-[#1e2738] flex flex-col flex-shrink-0 h-[calc(100vh-5rem)]">
+<!-- Betslip Header & Numbered Tabs (1, 2, 3, 4) -->
+<div class="p-2 border-b border-[#1f2838] flex items-center justify-between">
+<div class="flex items-center space-x-1">
+<button class="w-6 h-6 rounded-full bg-blue-600 text-white font-bold text-xs flex items-center justify-center">1</button>
+<button class="w-6 h-6 rounded-full bg-[#1b2332] text-gray-400 hover:text-white font-bold text-xs flex items-center justify-center">2</button>
+<button class="w-6 h-6 rounded-full bg-[#1b2332] text-gray-400 hover:text-white font-bold text-xs flex items-center justify-center">3</button>
+<button class="w-6 h-6 rounded-full bg-[#1b2332] text-gray-400 hover:text-white font-bold text-xs flex items-center justify-center">4</button>
+</div>
+<div class="flex items-center space-x-2 text-gray-400 text-xs">
+<button class="hover:text-white" title="Settings"><i class="fa-solid fa-gear"></i></button>
+<button class="hover:text-white" title="Refresh"><i class="fa-solid fa-rotate"></i></button>
+<button class="hover:text-red-400" title="Clear"><i class="fa-regular fa-trash-can"></i></button>
+</div>
+</div>
+<!-- Ticket Type Dropdown -->
+<div class="px-3 pt-2 pb-1">
+<div class="relative">
+<button class="w-full bg-[#1b2331] border border-[#273247] rounded px-3 py-1.5 text-left flex items-center justify-between text-xs text-white font-semibold">
+<span id="slip-type">Simple</span>
+<i class="fa-solid fa-chevron-down text-[10px] text-gray-400"></i>
+</button>
+</div>
+</div>
+<!-- Betslip Scrollable Bets Container -->
+<div class="flex-1 overflow-y-auto px-3 py-2 space-y-2.5">
+<!-- Active Single Bet Item -->
+<div class="bg-[#1a2332] border border-[#29364d] rounded-lg p-2.5 relative">
+<!-- Close Bet Button -->
+<button class="absolute top-2 right-2 text-gray-400 hover:text-white text-xs">
+<i class="fa-solid fa-xmark"></i>
+</button>
+<div class="flex items-center space-x-1.5 text-[10px] text-gray-400 mb-1">
+<span>today 21:00</span>
+<span class="badge-bb">BB</span>
+</div>
+<div class="font-bold text-white text-xs mb-0.5" id="slip-title">Betis - Real Madrid</div>
+<div class="text-[11px] text-gray-400 mb-2" id="slip-sub">2 events • Football / 1.Spain</div>
+<div class="bg-[#141b26] rounded p-2 text-[11px] space-y-1 mb-2 border border-[#1f293a]" id="slip-legs">
+<div class="flex items-center text-gray-200">
+<span class="w-1.5 h-1.5 rounded-full bg-blue-500 mr-1.5"></span> Real Madrid to win
+            </div>
+<div class="flex items-center text-gray-200">
+<span class="w-1.5 h-1.5 rounded-full bg-blue-500 mr-1.5"></span> Kylian Mbappe to score anytime
+            </div>
+</div>
+<div class="flex items-center justify-between pt-1 border-t border-[#222d3e]">
+<span class="text-[11px] text-gray-400">Odds:</span>
+<span class="text-white font-extrabold text-sm" id="slip-odds">1.80</span>
+</div>
+</div>
+<!-- ENGINE: odds-movement disclosure (both directions, never filtered) -->
+<div id="odds-card"></div>
+<!-- ENGINE: betslip callout -->
+<div class="bg-[#1c2433] border border-dashed border-[#2d3a52] rounded-lg p-2.5 flex items-center justify-between" id="slip-callout">
+<div class="flex items-center space-x-2">
+<i class="fa-solid fa-wand-magic-sparkles text-blue-400 text-sm"></i>
+<span class="text-[11px] text-gray-300 leading-tight" id="slip-callout-text">Bet suggestions based off your choices</span>
+</div>
+<button class="px-2.5 py-1 bg-[#28354b] hover:bg-blue-600 text-white font-bold rounded text-[10px] uppercase transition" id="slip-callout-btn">
+            VIEW
+          </button>
+</div>
+</div>
+<!-- Betslip Bottom Control & Stake Form -->
+<div class="p-3 bg-[#111620] border-t border-[#1d2536] space-y-2.5">
+<!-- Rate changes dropdown toggle -->
+<div class="flex items-center justify-between bg-[#192230] px-2.5 py-1.5 rounded text-[11px] text-gray-300 border border-[#243044] cursor-pointer">
+<span>Accept all rate changes</span>
+<i class="fa-solid fa-chevron-down text-[10px] text-gray-400"></i>
+</div>
+<!-- Stake / Payin Input Box -->
+<div class="space-y-1">
+<div class="flex justify-between text-gray-400 text-[11px]">
+<span>Stake (Payin):</span>
+<span class="hidden text-[10px] text-emerald-400 font-bold" id="stake-src">from your history</span>
+</div>
+<div class="relative">
+<input class="w-full bg-[#18202d] border border-[#2a364d] rounded py-1.5 px-3 text-right text-white font-extrabold text-sm focus:outline-none focus:border-blue-500" id="stake-input" type="text" value="1,00 €"/>
+<span class="hidden absolute left-2 top-1/2 -translate-y-1/2 text-[9px] font-bold text-emerald-400 uppercase" id="stake-badge">pre-filled</span>
+</div>
+</div>
+<!-- Quick Stake Chips -->
+<div class="grid grid-cols-4 gap-1.5 text-xs font-bold">
+<button class="py-1 bg-[#1d2636] hover:bg-[#28354c] text-gray-200 rounded text-center border border-[#273347] transition">3,00</button>
+<button class="py-1 bg-[#1d2636] hover:bg-[#28354c] text-gray-200 rounded text-center border border-[#273347] transition">5,00</button>
+<button class="py-1 bg-[#1d2636] hover:bg-[#28354c] text-gray-200 rounded text-center border border-[#273347] transition">10,00</button>
+</div>
+<!-- Retail Ticket Switch -->
+<div class="flex items-center justify-between pt-1 text-[11px] text-gray-400">
+<span>Switch to retail ticket</span>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox" value=""/>
+<div class="w-7 h-4 bg-gray-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all peer-checked:bg-blue-600"></div>
+</label>
+</div>
+<!-- Final Bet Submission CTA -->
+<button class="w-full py-2.5 bg-[#00b140] hover:bg-[#00c547] text-white font-black rounded text-sm uppercase tracking-wider shadow-lg shadow-green-950/40 transition active:scale-[0.99] flex items-center justify-center space-x-1.5">
+<span id="bet-cta">BET 1,00 €</span>
+</button>
+</div>
+</aside>
+<!-- END: BetslipSidebar -->
+</main>
+<!-- END: MainContentLayout -->
+
+<!-- ══════════════════ SYNTHETIC-DATA NOTICE ══════════════════ -->
+<div class="w-full bg-[#1a1508] border-t border-[#3a2f10] text-[10px] text-amber-300/80 px-3 py-1 flex items-center gap-2 justify-center">
+<i class="fa-solid fa-flask"></i>
+<span>Prototype on synthetic data &mdash; FEG Hackathon 2026, Challenge 1. 44,261 events &middot; 8 players &middot; 5,237 sessions. No real players, no real identities.</span>
+</div>
+
+<!-- ══════════════════ LOGIN MODAL ══════════════════ -->
+<div class="hidden fixed inset-0 z-[100] bg-black/75 backdrop-blur-sm items-center justify-center p-4 overflow-y-auto" id="login-modal">
+<div class="bg-[#111823] border border-[#25324a] rounded-xl w-full max-w-4xl shadow-2xl my-8">
+<div class="px-5 py-4 border-b border-[#1e2a3d] flex items-start justify-between">
+<div>
+<h2 class="text-white font-black text-lg tracking-tight">Sign in</h2>
+<p class="text-gray-400 text-[11px] mt-0.5">Pick a synthetic player. Every card below is generated by the engine from that player's own history.</p>
+</div>
+<button class="text-gray-500 hover:text-white text-lg px-2" id="login-close"><i class="fa-solid fa-xmark"></i></button>
+</div>
+<div class="p-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2.5" id="login-grid"></div>
+<div class="px-5 py-3 border-t border-[#1e2a3d] text-[10px] text-gray-500">
+No passwords, no real identities. Every <span class="font-mono text-gray-400">PlayerID</span> is prefixed <span class="font-mono text-gray-400">SYN_</span> and carries <span class="font-mono text-gray-400">is_synthetic = True</span>.
+</div>
+</div>
+</div>
+
+<!-- ══════════════════ ACCOUNT MENU ══════════════════ -->
+<div class="hidden fixed z-[95] right-3 top-[52px] w-72 bg-[#111823] border border-[#25324a] rounded-lg shadow-2xl overflow-hidden" id="account-menu"></div>
+
+<!-- ══════════════════ ENGINE DRAWER ══════════════════ -->
+<button class="fixed z-[90] bottom-4 left-4 px-3.5 py-2.5 rounded-full bg-[#1b2740] hover:bg-[#243350] border border-[#31456b] text-blue-300 shadow-xl flex items-center gap-2 text-[11px] font-bold uppercase tracking-wide transition" id="engine-btn">
+<i class="fa-solid fa-microchip"></i><span>Engine</span>
+</button>
+<div class="hidden fixed inset-0 z-[96] bg-black/60" id="drawer-scrim"></div>
+<aside class="fixed z-[97] top-0 right-0 h-full w-full max-w-md bg-[#0d131d] border-l border-[#25324a] shadow-2xl translate-x-full transition-transform duration-300 flex flex-col" id="engine-drawer">
+<div class="px-4 py-3 border-b border-[#1e2a3d] flex items-center justify-between flex-shrink-0">
+<div>
+<h2 class="text-white font-black text-sm tracking-tight">Engine &mdash; what it decided, and why</h2>
+<p class="text-gray-500 text-[10px]" id="drawer-sub">no player signed in</p>
+</div>
+<button class="text-gray-500 hover:text-white text-lg px-1" id="drawer-close"><i class="fa-solid fa-xmark"></i></button>
+</div>
+<div class="flex-1 overflow-y-auto p-4 space-y-4 text-[11px]" id="drawer-body"></div>
+</aside>
+
+<script id="feg-data" type="application/json">{"users": {"SYN_U01": {"key": "SYN_U01", "persona": "Football loyalist", "player_id": "SYN_U01_4b05437db520b41729d30dfc6d8122545db7e0f1e2519c5d0e0a26f1", "platform": "SB Android", "vertical": "sports", "demo_note": "Deep single-sport habit. Proves sport-level (not category-level) recommendation.", "first_seen": "2023-09-02T19:40:18.000Z", "last_seen": "2026-08-30T21:29:33.000Z", "sessions": 808, "events": 9348, "profile": {"top_sport": "Nogomet", "top_sport_share": 0.9516, "top_competition": "HNL", "top_competition_share": 0.3605, "slip_type": "AKO", "usual_stake_eur": 18.29, "n_placed_slips": 414, "top_game": null, "top_provider": null, "top_game_share": null, "top_game_lift": null, "usual_casino_stake_eur": null, "n_game_launches": 0, "active_hours": "22:00-01:00", "confidence": 1.0, "band": "high", "reasons": ["settled habit: enough actions and a concentrated preference"], "is_confident": true}, "stats": {"sessions_reaching_betslip": 470, "sessions_completing": 414, "final_step_abandon_pct": 11.9, "census": {"NO_ACTION": 646, "CLARIFY_INFO": 114, "CONTINUE_CARD": 48}, "friction": {"DEEP_PATH": 11, "NAV_LOOP": 14, "BETSLIP_EXIT": 11}, "n_movements": 137, "n_worse": 71, "n_better": 66}, "card": {"action": "CONTINUE_CARD", "rule": "restore_abandoned_slip", "session": 1700019759, "seq": 10, "ts": "2023-10-20T21:48:01+00:00", "reasons": ["left the betslip for liveDetail with 4 selection(s) still un-placed", "betslip screen was reached at event 9", "stake EUR 18.29 taken from this player's own history", "profile confidence 1.000"], "rendered": ["Continue your Nogomet / HNL slip", "4 selections - AKO - EUR 18.29 pre-filled", "Nothing is placed until you confirm."], "payload": {"sport": "Nogomet", "competition": "HNL", "slip_type": "AKO", "n_selections": 4, "stake_eur": 18.29, "fixture_id": 3066929.0, "taps_to_confirm": 2}}, "silent": {"rule": "converted_cleanly", "reasons": ["session reached betslip_placed without qualifying friction"], "session": 1700000528}, "clarify_card": {"action": "CLARIFY_INFO", "rule": "help_them_find_it", "session": 1700002968, "reasons": ["homepage visited 3x in this session (threshold 3)", "no selection made yet, so this is a navigation problem, not a betting one"], "rendered": ["Looking for Nogomet?", "Open HNL fixtures directly.", "This only opens the list. No selection is made."]}, "odds_card": {"session": 1700183612, "before": 4.49, "after": 4.07, "direction": "down", "pct": -9.4, "sport": "Nogomet", "competition": "Liga prvaka", "hours_away": 27.8, "rendered": ["Odds moved from 4.49 to 4.07 since you last looked.", "That is a smaller return on the same stake.", "Nothing is placed until you confirm."]}, "competitions": {"HNL": 1488, "Premier League": 1423, "Liga prvaka": 1386}, "games": {}}, "SYN_U02": {"key": "SYN_U02", "persona": "Tennis live specialist", "player_id": "SYN_U02_44e798a70fa50d4e9cbb2d2084ae1e8f2acdee67de388db4f21f4b8c", "platform": "SB iOS", "vertical": "sports", "demo_note": "Live-heavy, single-selection. Different habit shape from U01.", "first_seen": "2023-09-04T12:17:54.000Z", "last_seen": "2026-08-25T21:03:12.000Z", "sessions": 631, "events": 4848, "profile": {"top_sport": "Tenis", "top_sport_share": 0.9459, "top_competition": "ATP Masters", "top_competition_share": 0.3684, "slip_type": "SOLO", "usual_stake_eur": 40.07, "n_placed_slips": 240, "top_game": null, "top_provider": null, "top_game_share": null, "top_game_lift": null, "usual_casino_stake_eur": null, "n_game_launches": 0, "active_hours": "10:00-13:00", "confidence": 1.0, "band": "high", "reasons": ["settled habit: enough actions and a concentrated preference"], "is_confident": true}, "stats": {"sessions_reaching_betslip": 336, "sessions_completing": 240, "final_step_abandon_pct": 28.6, "census": {"NO_ACTION": 418, "CLARIFY_INFO": 144, "CONTINUE_CARD": 69}, "friction": {"NAV_LOOP": 33, "DEEP_PATH": 28, "BETSLIP_EXIT": 25}, "n_movements": 19, "n_worse": 11, "n_better": 8}, "card": {"action": "CONTINUE_CARD", "rule": "restore_abandoned_slip", "session": 1700387108, "seq": 7, "ts": "2023-09-16T10:25:05+00:00", "reasons": ["left the betslip for liveDetail with 1 selection(s) still un-placed", "betslip screen was reached at event 6", "stake EUR 40.07 taken from this player's own history", "profile confidence 1.000"], "rendered": ["Continue your Tenis / WTA 1000 slip", "1 selection - SOLO - EUR 40.07 pre-filled", "Nothing is placed until you confirm."], "payload": {"sport": "Tenis", "competition": "WTA 1000", "slip_type": "SOLO", "n_selections": 1, "stake_eur": 40.07, "fixture_id": 3687339.0, "taps_to_confirm": 2}}, "silent": {"rule": "no_qualifying_friction", "reasons": ["terminal intent COMPARING; nothing worth interrupting for"], "session": 1700383221}, "clarify_card": {"action": "CLARIFY_INFO", "rule": "help_them_find_it", "session": 1700385990, "reasons": ["homepage visited 3x in this session (threshold 3)", "no selection made yet, so this is a navigation problem, not a betting one"], "rendered": ["Looking for Tenis?", "Open ATP Masters fixtures directly.", "This only opens the list. No selection is made."]}, "odds_card": {"session": 1700585590, "before": 2.5, "after": 2.39, "direction": "down", "pct": -4.4, "sport": "Tenis", "competition": "WTA 1000", "hours_away": 80.7, "rendered": ["Odds moved from 2.50 to 2.39 since you last looked.", "That is a smaller return on the same stake.", "Nothing is placed until you confirm."]}, "competitions": {"ATP Masters": 274, "WTA 1000": 254, "Grand Slam": 242}, "games": {}}, "SYN_U03": {"key": "SYN_U03", "persona": "Basketball high-abandoner", "player_id": "SYN_U03_ce30d610bf6a579f75ed9905dbbf4905f03244dd1df0de981bbe931f", "platform": "SB Android", "vertical": "sports", "demo_note": "THE demo user. Reaches betslip and leaves 41% of the time.", "first_seen": "2023-09-02T23:00:29.000Z", "last_seen": "2026-08-30T21:27:59.000Z", "sessions": 885, "events": 9154, "profile": {"top_sport": "Košarka", "top_sport_share": 0.928, "top_competition": "NBA", "top_competition_share": 0.3676, "slip_type": "LEG_COMBI", "usual_stake_eur": 9.63, "n_placed_slips": 291, "top_game": null, "top_provider": null, "top_game_share": null, "top_game_lift": null, "usual_casino_stake_eur": null, "n_game_launches": 0, "active_hours": "22:00-01:00", "confidence": 1.0, "band": "high", "reasons": ["settled habit: enough actions and a concentrated preference"], "is_confident": true}, "stats": {"sessions_reaching_betslip": 488, "sessions_completing": 291, "final_step_abandon_pct": 40.4, "census": {"NO_ACTION": 435, "CLARIFY_INFO": 318, "CONTINUE_CARD": 132}, "friction": {"NAV_LOOP": 58, "DEEP_PATH": 56, "BETSLIP_EXIT": 30}, "n_movements": 201, "n_worse": 102, "n_better": 99}, "card": {"action": "CONTINUE_CARD", "rule": "restore_abandoned_slip", "session": 1700680371, "seq": 6, "ts": "2023-09-09T19:33:05+00:00", "reasons": ["left the betslip for prematchDetail with 2 selection(s) still un-placed", "betslip screen was reached at event 5", "stake EUR 9.63 taken from this player's own history", "profile confidence 1.000"], "rendered": ["Continue your Košarka / Euroliga slip", "2 selections - LEG_COMBI - EUR 9.63 pre-filled", "Nothing is placed until you confirm."], "payload": {"sport": "Košarka", "competition": "Euroliga", "slip_type": "LEG_COMBI", "n_selections": 2, "stake_eur": 9.63, "fixture_id": 3346710.0, "taps_to_confirm": 2}}, "silent": {"rule": "converted_cleanly", "reasons": ["session reached betslip_placed without qualifying friction"], "session": 1700678214}, "clarify_card": {"action": "CLARIFY_INFO", "rule": "help_them_find_it", "session": 1700677480, "reasons": ["prematchMatchesOverview visited 3x in this session (threshold 3)", "no selection made yet, so this is a navigation problem, not a betting one"], "rendered": ["Looking for Košarka?", "Open NBA fixtures directly.", "This only opens the list. No selection is made."]}, "odds_card": {"session": 1700921545, "before": 1.7, "after": 1.74, "direction": "up", "pct": 2.4, "sport": "Košarka", "competition": "NBA", "hours_away": 49.6, "rendered": ["Odds moved from 1.70 to 1.74 since you last looked.", "That is a greater return on the same stake.", "Nothing is placed until you confirm."]}, "competitions": {"Euroliga": 849, "NBA": 801, "ABA Liga": 795}, "games": {}}, "SYN_U04": {"key": "SYN_U04", "persona": "Slots regular", "player_id": "SYN_U04_dd93218b6aa35c739620d1464406f87fe3f8d2267ec701b9889e66d3", "platform": "GM", "vertical": "casino", "demo_note": "One provider family. Proves casino side of the same engine.", "first_seen": "2023-09-03 22:03:37.000000 UTC", "last_seen": "2026-08-30 23:22:19.000000 UTC", "sessions": 1080, "events": 6445, "profile": {"top_sport": null, "top_sport_share": null, "top_competition": null, "top_competition_share": null, "slip_type": null, "usual_stake_eur": null, "n_placed_slips": 0, "top_game": "Sizzling Hot Deluxe", "top_provider": "Greentube", "top_game_share": 0.3517, "top_game_lift": 2.81, "usual_casino_stake_eur": 2.5, "n_game_launches": 2628, "active_hours": "21:00-00:00", "confidence": 0.963, "band": "high", "reasons": ["settled habit: enough actions and a concentrated preference"], "is_confident": true}, "stats": {"sessions_reaching_betslip": 0, "sessions_completing": 0, "final_step_abandon_pct": null, "census": {"NO_ACTION": 937, "CLARIFY_INFO": 143}, "friction": {"NAV_LOOP": 20}, "n_movements": 0, "n_worse": 0, "n_better": 0}, "card": {"action": "RESUME_GAME", "rule": "resume_usual_game", "session": null, "seq": 5, "ts": null, "constructed": true, "reasons": ["6 lobby pages viewed with no game launched (threshold 6)", "top game Sizzling Hot Deluxe at 2.81x uniform"], "rendered": ["Pick up Sizzling Hot Deluxe", "Greentube", "Opens the game. Nothing is staked until you choose."], "payload": {"game": "Sizzling Hot Deluxe", "provider": "Greentube", "stake_eur": 2.5, "taps_to_confirm": 1}}, "silent": {"rule": "casino_converted", "reasons": ["game launched without qualifying friction"], "session": 1701102754}, "clarify_card": {"action": "CLARIFY_INFO", "rule": "help_them_find_it", "session": 1701103829, "reasons": ["https://casino.feg.hr/ visited 3x in this session (threshold 3)", "no selection made yet, so this is a navigation problem, not a betting one"], "rendered": ["Jump back to where you were", "Open your last fixture list.", "This only opens the list. No selection is made."]}, "odds_card": null, "competitions": {}, "games": {"Sizzling Hot Deluxe": 907, "100 Hot Wild": 891, "100 Power Hot Dice Edition Golden Coins Link": 187, "40 Bulky Fruits Golden Coins Link": 176, "Royal Seven XXL": 123}}, "SYN_U05": {"key": "SYN_U05", "persona": "Hybrid sports + casino", "player_id": "SYN_U05_0507b194f70564b8a96b32b2392c05b05adbdbfd5974ea9a01f47a10", "platform": "SB Android", "vertical": "hybrid", "demo_note": "Uses both products but NEVER in one session. The cross-vertical gap.", "first_seen": "2023-09-01T20:22:03.000Z", "last_seen": "2026-08-27T01:00:25.000Z", "sessions": 985, "events": 9101, "profile": {"top_sport": "Nogomet", "top_sport_share": 0.9022, "top_competition": "HNL", "top_competition_share": 0.5488, "slip_type": "AKO", "usual_stake_eur": 22.09, "n_placed_slips": 249, "top_game": "Sugar Rush 1000", "top_provider": "Pragmatic Play", "top_game_share": 0.7298, "top_game_lift": 2.19, "usual_casino_stake_eur": 22.01, "n_game_launches": 883, "active_hours": "22:00-01:00", "confidence": 1.0, "band": "high", "reasons": ["settled habit: enough actions and a concentrated preference"], "is_confident": true}, "stats": {"sessions_reaching_betslip": 339, "sessions_completing": 249, "final_step_abandon_pct": 26.5, "census": {"NO_ACTION": 733, "CLARIFY_INFO": 180, "CONTINUE_CARD": 72}, "friction": {"NAV_LOOP": 27, "DEEP_PATH": 22, "BETSLIP_EXIT": 15}, "n_movements": 89, "n_worse": 40, "n_better": 49}, "card": {"action": "CONTINUE_CARD", "rule": "restore_abandoned_slip", "session": 1701616345, "seq": 9, "ts": "2023-09-14T17:23:42+00:00", "reasons": ["left the betslip for prematchDetail with 4 selection(s) still un-placed", "betslip screen was reached at event 8", "stake EUR 22.09 taken from this player's own history", "profile confidence 1.000"], "rendered": ["Continue your Nogomet / HNL slip", "4 selections - AKO - EUR 22.09 pre-filled", "Nothing is placed until you confirm."], "payload": {"sport": "Nogomet", "competition": "HNL", "slip_type": "AKO", "n_selections": 4, "stake_eur": 22.09, "fixture_id": 3425642.0, "taps_to_confirm": 2}}, "silent": {"rule": "converted_cleanly", "reasons": ["session reached betslip_placed without qualifying friction"], "session": 1701611016}, "clarify_card": {"action": "CLARIFY_INFO", "rule": "help_them_find_it", "session": 1701611464, "reasons": ["prematchDetail visited 3x in this session (threshold 3)", "no selection made yet, so this is a navigation problem, not a betting one"], "rendered": ["Looking for Nogomet?", "Open HNL fixtures directly.", "This only opens the list. No selection is made."]}, "odds_card": {"session": 1701921126, "before": 2.34, "after": 2.29, "direction": "down", "pct": -2.1, "sport": "Nogomet", "competition": "Liga prvaka", "hours_away": 17.5, "rendered": ["Odds moved from 2.34 to 2.29 since you last looked.", "That is a smaller return on the same stake.", "Nothing is placed until you confirm."]}, "competitions": {"HNL": 1446, "Liga prvaka": 1171}, "games": {"Sugar Rush 1000": 654, "Big Bass Bonanza": 117, "Gates of Olympus Super Scatter": 112}}, "SYN_U06": {"key": "SYN_U06", "persona": "Live table games", "player_id": "SYN_U06_7b645054caa3a88ad780c92ee423a15ab754ebe273c3c03863cdf8c8", "platform": "Casino Android", "vertical": "casino", "demo_note": "Table games, not slots. Tests that casino recs are not one-size-fits-all.", "first_seen": "2023-09-01 23:54:48.000000 UTC", "last_seen": "2026-08-29 22:36:43.000000 UTC", "sessions": 689, "events": 4112, "profile": {"top_sport": null, "top_sport_share": null, "top_competition": null, "top_competition_share": null, "slip_type": null, "usual_stake_eur": null, "n_placed_slips": 0, "top_game": "BlackJack MH", "top_provider": "Evolution", "top_game_share": 0.7637, "top_game_lift": 2.29, "usual_casino_stake_eur": 13.91, "n_game_launches": 1721, "active_hours": "21:00-00:00", "confidence": 0.858, "band": "high", "reasons": ["settled habit: enough actions and a concentrated preference"], "is_confident": true}, "stats": {"sessions_reaching_betslip": 0, "sessions_completing": 0, "final_step_abandon_pct": null, "census": {"NO_ACTION": 633, "CLARIFY_INFO": 56}, "friction": {"NAV_LOOP": 6}, "n_movements": 0, "n_worse": 0, "n_better": 0}, "card": {"action": "RESUME_GAME", "rule": "resume_usual_game", "session": null, "seq": 5, "ts": null, "constructed": true, "reasons": ["6 lobby pages viewed with no game launched (threshold 6)", "top game BlackJack MH at 2.29x uniform"], "rendered": ["Pick up BlackJack MH", "Evolution", "Opens the game. Nothing is staked until you choose."], "payload": {"game": "BlackJack MH", "provider": "Evolution", "stake_eur": 13.91, "taps_to_confirm": 1}}, "silent": {"rule": "casino_converted", "reasons": ["game launched without qualifying friction"], "session": 1702084536}, "clarify_card": {"action": "CLARIFY_INFO", "rule": "help_them_find_it", "session": 1702086231, "reasons": ["https://casino.feg.hr/jackpot visited 3x in this session (threshold 3)", "no selection made yet, so this is a navigation problem, not a betting one"], "rendered": ["Jump back to where you were", "Open your last fixture list.", "This only opens the list. No selection is made."]}, "odds_card": null, "competitions": {}, "games": {"BlackJack MH": 1297, "Lightning Roulette": 215, "Roulette Live": 209}}, "SYN_U07": {"key": "SYN_U07", "persona": "Big-event only", "player_id": "SYN_U07_5c37d81100ef497fef26d84e692a1a73cd018e724974fd6518716ade", "platform": "web", "vertical": "sports", "demo_note": "Long gaps, only shows up for finals. Tests the 'Big today' rail.", "first_seen": "2023-09-06T21:18:49.000Z", "last_seen": "2026-08-29T19:33:16.000Z", "sessions": 129, "events": 1018, "profile": {"top_sport": "Nogomet", "top_sport_share": 0.995, "top_competition": "Liga prvaka", "top_competition_share": 0.5056, "slip_type": "SOLO", "usual_stake_eur": 60.11, "n_placed_slips": 43, "top_game": null, "top_provider": null, "top_game_share": null, "top_game_lift": null, "usual_casino_stake_eur": null, "n_game_launches": 0, "active_hours": "22:00-01:00", "confidence": 0.873, "band": "high", "reasons": ["settled habit: enough actions and a concentrated preference"], "is_confident": true}, "stats": {"sessions_reaching_betslip": 68, "sessions_completing": 43, "final_step_abandon_pct": 36.8, "census": {"NO_ACTION": 76, "CLARIFY_INFO": 39, "CONTINUE_CARD": 14}, "friction": {"DEEP_PATH": 29, "NAV_LOOP": 39, "BETSLIP_EXIT": 25}, "n_movements": 2, "n_worse": 1, "n_better": 1}, "card": {"action": "CONTINUE_CARD", "rule": "restore_abandoned_slip", "session": 1702419925, "seq": 7, "ts": "2024-05-04T22:35:28+00:00", "reasons": ["left the betslip for prematchDetail with 1 selection(s) still un-placed", "betslip screen was reached at event 6", "stake EUR 60.11 taken from this player's own history", "profile confidence 0.873"], "rendered": ["Continue your Nogomet / Liga prvaka slip", "1 selection - SOLO - EUR 60.11 pre-filled", "Nothing is placed until you confirm."], "payload": {"sport": "Nogomet", "competition": "Liga prvaka", "slip_type": "SOLO", "n_selections": 1, "stake_eur": 60.11, "fixture_id": 3876379.0, "taps_to_confirm": 2}}, "silent": {"rule": "converted_cleanly", "reasons": ["session reached betslip_placed without qualifying friction"], "session": 1702411163}, "clarify_card": {"action": "CLARIFY_INFO", "rule": "help_them_find_it", "session": 1702413839, "reasons": ["prematchDetail visited 3x in this session (threshold 3)", "no selection made yet, so this is a navigation problem, not a betting one"], "rendered": ["Looking for Nogomet?", "Open Liga prvaka fixtures directly.", "This only opens the list. No selection is made."]}, "odds_card": {"session": 1702465399, "before": 3.05, "after": 3.54, "direction": "up", "pct": 16.1, "sport": "Nogomet", "competition": "Liga prvaka", "hours_away": 98.5, "rendered": ["Odds moved from 3.05 to 3.54 since you last looked.", "That is a greater return on the same stake.", "Nothing is placed until you confirm."]}, "competitions": {"Liga prvaka": 83, "Europska liga": 70}, "games": {}}, "SYN_U08": {"key": "SYN_U08", "persona": "New user (cold start)", "player_id": "SYN_U08_4f4953c768a78c95861534498e8cef2452e03b5f7a45590a14f68d0b", "platform": "SB iOS", "vertical": "sports", "demo_note": "Only 6 weeks of history, no settled habit. Tests the no-history path.", "first_seen": "2026-07-15T18:07:07.000Z", "last_seen": "2026-08-28T21:35:13.000Z", "sessions": 30, "events": 235, "profile": {"top_sport": "Nogomet", "top_sport_share": 0.6207, "top_competition": "HNL", "top_competition_share": 1.0, "slip_type": "SOLO", "usual_stake_eur": 10.7, "n_placed_slips": 7, "top_game": null, "top_provider": null, "top_game_share": null, "top_game_lift": null, "usual_casino_stake_eur": null, "n_game_launches": 0, "active_hours": "18:00-21:00", "confidence": 0.35, "band": "low", "reasons": ["only 7 placed bets < 20"], "is_confident": false}, "stats": {"sessions_reaching_betslip": 15, "sessions_completing": 7, "final_step_abandon_pct": 53.3, "census": {"NO_ACTION": 20, "CLARIFY_INFO": 10}, "friction": {"COLD_START": 30, "DEEP_PATH": 10, "NAV_LOOP": 10, "BETSLIP_EXIT": 8}, "n_movements": 2, "n_worse": 1, "n_better": 1}, "card": null, "silent": {"rule": "cold_start_no_prefill", "reasons": ["open slip abandoned, but profile confidence 0.350 < 0.4", "pre-filling a stake we cannot justify would be a guess"], "session": 1702478019}, "clarify_card": {"action": "CLARIFY_INFO", "rule": "help_them_find_it", "session": 1702478320, "reasons": ["prematchMatchesOverview visited 3x in this session (threshold 3)", "no selection made yet, so this is a navigation problem, not a betting one"], "rendered": ["Looking for Nogomet?", "Open HNL fixtures directly.", "This only opens the list. No selection is made."]}, "odds_card": {"session": 1702487049, "before": 2.65, "after": 2.76, "direction": "up", "pct": 4.2, "sport": "Nogomet", "competition": "HNL", "hours_away": 70.9, "rendered": ["Odds moved from 2.65 to 2.76 since you last looked.", "That is a greater return on the same stake.", "Nothing is placed until you confirm."]}, "competitions": {"HNL": 18}, "games": {}}}, "meta": {"total_events": 44261, "total_sessions": 5237, "total_players": 8, "first_seen": "2023-09-01 20:22:03+00:00", "last_seen": "2026-08-30 23:22:19+00:00", "movements_total": 450, "movements_worse": 226, "movements_better": 224}}</script>
+<script>
+(function () {
+  "use strict";
+  var DATA  = JSON.parse(document.getElementById("feg-data").textContent);
+  var USERS = DATA.users, META = DATA.meta;
+  var KEYS  = Object.keys(USERS).sort();
+  var LS    = "feg.player";
+  var $     = function (id) { return document.getElementById(id); };
+
+  var EMOJI = { "Nogomet": "\u26bd", "Ko\u0161arka": "\ud83c\udfc0", "Tenis": "\ud83c\udfbe" };
+  function emoji(sport) { return EMOJI[sport] || "\ud83c\udfaf"; }
+
+  // The dataset is Croatian. site_data.json keeps exactly what the engine
+  // emitted; only what an English reader sees is mapped, here and nowhere else.
+  // Competition names (HNL, Liga prvaka, Euroliga, ATP Masters) are proper
+  // nouns and stay as they are.
+  var SPORT_EN = { "Nogomet": "Football", "Ko\u0161arka": "Basketball", "Tenis": "Tennis" };
+  function tr(text) {
+    if (text === null || text === undefined) return text;
+    var out = String(text);
+    for (var hr in SPORT_EN) out = out.split(hr).join(SPORT_EN[hr]);
+    return out;
+  }
+
+  function eur(v) {
+    if (v === null || v === undefined) return "\u2014";
+    return v.toFixed(2).replace(".", ",") + " \u20ac";
+  }
+  function esc(t) {
+    return String(t === null || t === undefined ? "" : t)
+      .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  }
+  // Demo balance only. There is no balance field in the dataset.
+  function balance(u) {
+    var st = u.profile.usual_stake_eur || u.profile.usual_casino_stake_eur || 10;
+    return Math.round(st * 47 + 100) + 0.5;
+  }
+  function bandColor(b) {
+    return b === "high" ? "text-emerald-400" : b === "medium" ? "text-amber-400" : "text-orange-400";
+  }
+  function bandBg(b) {
+    return b === "high" ? "bg-emerald-500/15 text-emerald-400 border-emerald-500/30"
+         : b === "medium" ? "bg-amber-500/15 text-amber-400 border-amber-500/30"
+         : "bg-orange-500/15 text-orange-400 border-orange-500/30";
+  }
+
+  /* ────────────────────────── login modal ────────────────────────── */
+  function buildLogin() {
+    $("login-grid").innerHTML = KEYS.map(function (k) {
+      var u = USERS[k], p = u.profile;
+      var habit = p.top_game
+        ? p.top_game + " \u00b7 " + p.top_provider
+        : tr(p.top_sport || "\u2014") + " / " + (p.top_competition || "\u2014");
+      return '<button data-key="' + k + '" class="login-card text-left bg-[#161e2b] hover:bg-[#1c2637] border border-[#26334a] hover:border-blue-600 rounded-lg p-3 transition group">'
+        + '<div class="flex items-center justify-between mb-1.5">'
+        +   '<span class="w-8 h-8 rounded-full bg-[#22304a] group-hover:bg-blue-600 text-white font-black text-[11px] flex items-center justify-center transition">' + esc(k.slice(4)) + '</span>'
+        +   '<span class="text-[9px] font-bold uppercase px-1.5 py-0.5 rounded border ' + bandBg(p.band) + '">' + esc(p.band) + '</span>'
+        + '</div>'
+        + '<div class="text-white font-bold text-[12px] leading-tight">' + esc(u.persona) + '</div>'
+        + '<div class="text-gray-400 text-[10px] mt-0.5 truncate">' + esc(habit) + '</div>'
+        + '<div class="flex items-center gap-2.5 mt-2 text-[9px] text-gray-500 font-mono">'
+        +   '<span>' + u.sessions + ' ses.</span><span>' + u.events + ' ev.</span>'
+        +   '<span class="' + bandColor(p.band) + '">conf ' + p.confidence.toFixed(2) + '</span>'
+        + '</div>'
+        + '<div class="text-[9px] text-gray-600 mt-1.5 leading-snug line-clamp-2">' + esc(u.demo_note) + '</div>'
+        + '</button>';
+    }).join("");
+    Array.prototype.forEach.call(document.querySelectorAll(".login-card"), function (b) {
+      b.addEventListener("click", function () { login(b.dataset.key); });
+    });
+  }
+
+  function openLogin()  { $("login-modal").classList.remove("hidden"); $("login-modal").classList.add("flex"); }
+  function closeLogin() { $("login-modal").classList.add("hidden");    $("login-modal").classList.remove("flex"); }
+
+  function login(key) { localStorage.setItem(LS, key); closeLogin(); render(); }
+  function logout()   { localStorage.removeItem(LS); $("account-menu").classList.add("hidden"); render(); }
+
+  /* ────────────────────────── hero card ────────────────────────── */
+  function heroFor(u) {
+    var p = u.profile, c = u.card;
+
+    if (!c) {  // engine deliberately stays quiet
+      var sil = u.silent || { rule: "no_qualifying_friction", reasons: [] };
+      return '<div class="bg-[#1c1710] border border-amber-700/40 rounded-lg p-3.5">'
+        + '<div class="flex items-center gap-2 mb-2">'
+        +   '<i class="fa-solid fa-circle-pause text-amber-400"></i>'
+        +   '<span class="text-amber-300 font-black text-[11px] uppercase tracking-wide">Engine is staying quiet</span>'
+        +   '<span class="ml-auto font-mono text-[9px] text-amber-500/70">' + esc(sil.rule) + '</span>'
+        + '</div>'
+        + '<div class="text-white font-bold text-sm mb-1">Not enough history to pre-fill anything.</div>'
+        + '<div class="text-gray-400 text-[11px] mb-2.5">Profile confidence is ' + p.confidence.toFixed(3)
+        +   ', below the 0.40 threshold. Guessing a stake would be inventing one, so nothing is offered.</div>'
+        + '<ul class="space-y-1 text-[10px] text-amber-200/70 border-t border-amber-800/30 pt-2">'
+        +   (sil.reasons || []).map(function (r) { return '<li>\u2022 ' + esc(r) + '</li>'; }).join("")
+        + '</ul></div>';
+    }
+
+    var resume = c.action === "RESUME_GAME";
+    var accent = resume ? "purple" : "blue";
+    var lines  = c.rendered || [];
+    var pay    = c.payload || {};
+    var taps   = pay.taps_to_confirm || 2;
+
+    return '<div class="bg-gradient-to-r from-[#101a2e] to-[#141b27] border border-' + accent + '-700/50 rounded-lg overflow-hidden">'
+      + '<div class="px-3.5 py-2 bg-' + accent + '-900/30 border-b border-' + accent + '-800/40 flex items-center gap-2">'
+      +   '<i class="fa-solid ' + (resume ? "fa-dice" : "fa-bolt") + ' text-' + accent + '-400 text-xs"></i>'
+      +   '<span class="text-' + accent + '-300 font-black text-[10px] uppercase tracking-widest">' + esc(c.action) + '</span>'
+      +   '<span class="font-mono text-[9px] text-gray-500">' + esc(c.rule) + '</span>'
+      +   '<span class="ml-auto text-[9px] font-bold px-1.5 py-0.5 rounded border ' + bandBg(p.band) + '">confidence ' + p.confidence.toFixed(2) + '</span>'
+      + '</div>'
+      + '<div class="p-3.5 flex flex-col md:flex-row md:items-center gap-3">'
+      +   '<div class="flex-1 min-w-0">'
+      +     '<div class="text-white font-black text-[15px] leading-tight">' + esc(tr(lines[0] || "")) + '</div>'
+      +     '<div class="text-gray-300 text-[11px] mt-1">' + esc(tr(lines[1] || "")) + '</div>'
+      +     '<div class="text-gray-500 text-[10px] mt-1 italic">' + esc(lines[2] || "") + '</div>'
+      +   '</div>'
+      +   '<div class="flex items-center gap-2 flex-shrink-0">'
+      +     '<button class="px-4 py-2 bg-[#00b140] hover:bg-[#00c547] text-white font-black rounded text-[12px] uppercase tracking-wide shadow-lg transition" id="hero-accept">'
+      +       (resume ? "Open game" : "Continue") + ' \u00b7 ' + taps + (taps === 1 ? " tap" : " taps")
+      +     '</button>'
+      +     '<button class="px-3 py-2 text-gray-400 hover:text-white border border-[#2a3a57] rounded text-[11px] transition" id="hero-dismiss">Dismiss</button>'
+      +   '</div>'
+      + '</div>'
+      + '<div class="px-3.5 py-2 bg-black/25 border-t border-[#1e293c] flex flex-wrap items-center gap-x-4 gap-y-1 text-[10px] text-gray-500">'
+      +   '<span><span class="text-gray-600 line-through">8\u20139 taps + typing</span> \u2192 <span class="text-emerald-400 font-bold">' + taps + (taps === 1 ? " tap" : " taps") + ', no typing</span></span>'
+      +   '<span class="font-mono">' + (c.constructed ? "constructed lobby session" : "session " + esc(c.session)) + '</span>'
+      + '</div></div>';
+  }
+
+  /* ────────────────────────── odds movement ────────────────────────── */
+  function oddsFor(u) {
+    var o = u.odds_card;
+    if (!o) return "";
+    var worse = o.direction === "down";
+    var col = worse ? "rose" : "emerald";
+    return '<div class="bg-[#151d2b] border border-' + col + '-800/40 rounded-lg p-2.5">'
+      + '<div class="flex items-center gap-1.5 mb-1.5">'
+      +   '<i class="fa-solid fa-arrow-trend-' + (worse ? "down" : "up") + ' text-' + col + '-400 text-[11px]"></i>'
+      +   '<span class="text-' + col + '-300 font-bold text-[10px] uppercase tracking-wide">Odds movement</span>'
+      + '</div>'
+      + (o.rendered || []).map(function (line, i) {
+          return '<div class="text-[10px] ' + (i === 0 ? "text-white font-semibold" : i === 1 ? "text-" + col + "-200" : "text-gray-500 italic") + ' leading-snug">' + esc(line) + '</div>';
+        }).join("")
+      + '<div class="mt-1.5 pt-1.5 border-t border-[#22304a] text-[9px] text-gray-500 font-mono">'
+      +   esc(tr(o.sport || "")) + (o.competition ? " / " + esc(o.competition) : "") + ' \u00b7 ' + o.hours_away + ' h later'
+      + '</div></div>';
+  }
+
+  /* ────────────────────────── drawer ────────────────────────── */
+  function row(label, value, mono) {
+    return '<div class="flex items-baseline justify-between gap-3 py-1 border-b border-[#18202e]">'
+      + '<span class="text-gray-500">' + esc(label) + '</span>'
+      + '<span class="' + (mono ? "font-mono " : "") + 'text-gray-200 text-right">' + esc(value) + '</span></div>';
+  }
+  function section(title, inner) {
+    return '<div><h3 class="text-blue-400 font-black text-[10px] uppercase tracking-widest mb-1.5">' + esc(title) + '</h3>' + inner + '</div>';
+  }
+  function bar(label, value, total, color) {
+    var pct = total ? (value / total * 100) : 0;
+    return '<div class="mb-1.5"><div class="flex justify-between text-[10px] mb-0.5">'
+      + '<span class="text-gray-400 font-mono">' + esc(label) + '</span>'
+      + '<span class="text-gray-300 font-mono">' + value + ' \u00b7 ' + pct.toFixed(1) + '%</span></div>'
+      + '<div class="h-1.5 bg-[#1a2434] rounded overflow-hidden"><div class="h-full bg-' + color + '-500" style="width:' + pct.toFixed(1) + '%"></div></div></div>';
+  }
+
+  function buildDrawer(u) {
+    if (!u) {
+      $("drawer-body").innerHTML = '<div class="text-gray-500">Sign in to see the profile, the decisions and the evidence.</div>'
+        + section("Dataset", row("Events", META.total_events.toLocaleString("en-US"), true)
+          + row("Sessions", META.total_sessions.toLocaleString("en-US"), true)
+          + row("Players", META.total_players, true)
+          + row("Odds movements", META.movements_total, true)
+          + row("\u2026 worse / better", META.movements_worse + " / " + META.movements_better, true));
+      $("drawer-sub").textContent = "no player signed in";
+      return;
+    }
+    var p = u.profile, st = u.stats, cen = st.census || {}, fr = st.friction || {};
+    var totalSes = Object.keys(cen).reduce(function (a, k) { return a + cen[k]; }, 0);
+
+    var habit = p.top_game
+      ? row("Top game", p.top_game) + row("Provider", p.top_provider)
+        + row("Game share", (p.top_game_share * 100).toFixed(0) + "%", true)
+        + row("Lift over uniform", p.top_game_lift + "\u00d7", true)
+        + row("Usual stake", eur(p.usual_casino_stake_eur), true)
+        + row("Game launches", p.n_game_launches, true)
+      : row("Top sport", tr(p.top_sport)) + row("Sport share", (p.top_sport_share * 100).toFixed(0) + "%", true)
+        + row("Competition", p.top_competition)
+        + row("Competition share", p.top_competition_share ? (p.top_competition_share * 100).toFixed(0) + "%" : "\u2014", true)
+        + row("Slip shape", p.slip_type) + row("Usual stake", eur(p.usual_stake_eur), true)
+        + row("Placed slips", p.n_placed_slips, true);
+
+    $("drawer-sub").textContent = u.key + " \u00b7 " + u.persona;
+    $("drawer-body").innerHTML =
+      section("Habit profile", habit + row("Active hours", p.active_hours, true) + row("Vertical", u.vertical))
+      + section("Confidence",
+          '<div class="flex items-center gap-2 mb-2"><span class="text-2xl font-black ' + bandColor(p.band) + '">' + p.confidence.toFixed(3) + '</span>'
+          + '<span class="text-[9px] font-bold uppercase px-1.5 py-0.5 rounded border ' + bandBg(p.band) + '">' + esc(p.band) + '</span>'
+          + '<span class="ml-auto text-[10px] ' + (p.is_confident ? "text-emerald-400" : "text-orange-400") + '">'
+          + (p.is_confident ? "may pre-fill" : "must not pre-fill") + '</span></div>'
+          + '<ul class="space-y-1 text-[10px] text-gray-400">'
+          + p.reasons.map(function (r) { return '<li>\u2022 ' + esc(r) + '</li>'; }).join("") + '</ul>')
+      + section("Decisions across " + totalSes + " sessions",
+          bar("NO_ACTION",     cen.NO_ACTION     || 0, totalSes, "slate")
+        + bar("CLARIFY_INFO",  cen.CLARIFY_INFO  || 0, totalSes, "amber")
+        + bar("CONTINUE_CARD", cen.CONTINUE_CARD || 0, totalSes, "blue")
+        + bar("RESUME_GAME",   cen.RESUME_GAME   || 0, totalSes, "purple")
+        + '<div class="text-[9px] text-gray-600 mt-1">Doing nothing is the default decision, not the fallback.</div>')
+      + (u.clarify_card ? section("The other population \u2014 CLARIFY_INFO",
+          '<div class="bg-[#141d2c] border border-amber-800/30 rounded p-2 mb-1">'
+          + (u.clarify_card.rendered || []).map(function (l, i) {
+              return '<div class="' + (i === 0 ? "text-white font-semibold" : i === 1 ? "text-amber-200" : "text-gray-500 italic") + ' text-[10px] leading-snug">' + esc(l) + '</div>';
+            }).join("")
+          + '</div>'
+          + '<ul class="space-y-0.5 text-[10px] text-gray-500">'
+          + (u.clarify_card.reasons || []).map(function (r) { return '<li>\u2022 ' + esc(r) + '</li>'; }).join("")
+          + '</ul>'
+          + '<div class="text-[9px] text-gray-600 mt-1">Navigation help only \u2014 never a stake, odds, or a prompt to bet.</div>') : "")
+      + section("Friction (last 150 sessions)",
+          Object.keys(fr).length
+            ? Object.keys(fr).map(function (k) { return row(k, fr[k], true); }).join("")
+            : '<div class="text-gray-600 text-[10px]">no signals</div>')
+      + section("Odds movements",
+          row("Total for this player", st.n_movements, true)
+        + row("Worse for the player", st.n_worse, true)
+        + row("Better for the player", st.n_better, true)
+        + '<div class="text-[9px] text-gray-600 mt-1">Never filtered by direction. Both are shown in the same sentence.</div>')
+      + section("Conversion",
+          row("Sessions reaching the betslip", st.sessions_reaching_betslip, true)
+        + row("Completed", st.sessions_completing, true)
+        + row("Final-step abandon", st.final_step_abandon_pct + "%", true))
+      + section("Identity",
+          row("player_key", u.key, true) + row("Platform", u.platform)
+        + row("First seen", String(u.first_seen).slice(0, 10), true)
+        + row("Last seen", String(u.last_seen).slice(0, 10), true)
+        + '<div class="text-[9px] text-gray-600 mt-1 break-all font-mono">' + esc(u.player_id) + '</div>');
+  }
+
+  function openDrawer() {
+    $("drawer-scrim").classList.remove("hidden");
+    $("engine-drawer").classList.remove("translate-x-full");
+  }
+  function closeDrawer() {
+    $("drawer-scrim").classList.add("hidden");
+    $("engine-drawer").classList.add("translate-x-full");
+  }
+
+  /* ────────────────────────── account menu ────────────────────────── */
+  function buildAccount(u) {
+    $("account-menu").innerHTML =
+      '<div class="px-3.5 py-3 border-b border-[#1e2a3d]">'
+      + '<div class="text-white font-bold text-[12px]">' + esc(u.persona) + '</div>'
+      + '<div class="text-gray-500 text-[10px] font-mono">' + esc(u.key) + ' \u00b7 ' + esc(u.platform) + '</div></div>'
+      + '<div class="px-3.5 py-2.5 space-y-1 text-[11px] border-b border-[#1e2a3d]">'
+      +   '<div class="flex justify-between"><span class="text-gray-500">Balance (demo)</span><span class="text-white font-bold">' + eur(balance(u)) + '</span></div>'
+      +   '<div class="flex justify-between"><span class="text-gray-500">Sessions</span><span class="text-gray-300 font-mono">' + u.sessions + '</span></div>'
+      +   '<div class="flex justify-between"><span class="text-gray-500">Confidence</span><span class="' + bandColor(u.profile.band) + ' font-mono">' + u.profile.confidence.toFixed(3) + ' ' + esc(u.profile.band) + '</span></div>'
+      +   '<div class="text-[9px] text-gray-600 pt-1">Balance is a demo value. The dataset has no balance field.</div>'
+      + '</div>'
+      + '<button class="w-full text-left px-3.5 py-2 text-[11px] text-gray-300 hover:bg-[#1a2434]" id="menu-engine"><i class="fa-solid fa-microchip w-4 text-blue-400"></i> Engine details</button>'
+      + '<button class="w-full text-left px-3.5 py-2 text-[11px] text-gray-300 hover:bg-[#1a2434]" id="menu-switch"><i class="fa-solid fa-repeat w-4 text-gray-400"></i> Switch player</button>'
+      + '<button class="w-full text-left px-3.5 py-2 text-[11px] text-rose-400 hover:bg-[#1a2434] border-t border-[#1e2a3d]" id="menu-logout"><i class="fa-solid fa-right-from-bracket w-4"></i> Log out</button>';
+    $("menu-engine").addEventListener("click", function () { $("account-menu").classList.add("hidden"); buildDrawer(u); openDrawer(); });
+    $("menu-switch").addEventListener("click", function () { $("account-menu").classList.add("hidden"); openLogin(); });
+    $("menu-logout").addEventListener("click", logout);
+  }
+
+  /* ────────────────────────── main render ────────────────────────── */
+  // ?player=SYN_U03 (or #SYN_U03) preselects a player, so a demo link is shareable.
+  (function () {
+    var m = /[?&]player=(SYN_U\d\d)/.exec(location.search) || /^#(SYN_U\d\d)$/.exec(location.hash);
+    if (m && USERS[m[1]]) localStorage.setItem(LS, m[1]);
+  })();
+
+  function render() {
+    var key = localStorage.getItem(LS);
+    var u = key && USERS[key] ? USERS[key] : null;
+
+    // header
+    $("auth-out").classList.toggle("hidden", !!u);
+    $("auth-in").classList.toggle("hidden", !u);
+    $("auth-in").classList.toggle("flex", !!u);
+    $("account-menu").classList.add("hidden");
+
+    // reset personalised bits
+    $("rec-tag").classList.add("hidden");
+    $("stake-src").classList.add("hidden");
+    $("stake-badge").classList.add("hidden");
+    $("odds-card").innerHTML = "";
+
+    if (!u) {
+      $("engine-hero").innerHTML =
+        '<div class="bg-[#121a27] border border-dashed border-[#2b3a57] rounded-lg p-4 flex flex-col sm:flex-row sm:items-center gap-3" style="border-color:#2b3a57">'
+        + '<div class="flex-1"><div class="text-white font-bold text-sm">Sign in to see the personalisation</div>'
+        + '<div class="text-gray-400 text-[11px] mt-0.5">The engine derives sport, competition, slip shape and stake from the player\'s own history &mdash; nothing is invented.</div></div>'
+        + '<button class="px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded text-[12px] uppercase tracking-wide transition" id="hero-login">Sign in</button></div>';
+      $("hero-login").addEventListener("click", openLogin);
+      $("slip-callout-text").textContent = "Bet suggestions based off your choices";
+      buildDrawer(null);
+      return;
+    }
+
+    var p = u.profile;
+    $("hdr-avatar").textContent  = u.key.slice(4);
+    $("hdr-name").textContent    = u.persona;
+    $("hdr-persona").textContent = u.key + " \u00b7 " + u.platform;
+    $("hdr-balance").textContent = eur(balance(u));
+    buildAccount(u);
+
+    // hero
+    $("engine-hero").innerHTML = heroFor(u);
+    if ($("hero-dismiss")) {
+      $("hero-dismiss").addEventListener("click", function () {
+        $("engine-hero").innerHTML =
+          '<div class="bg-[#121a27] border border-[#243149] rounded-lg p-3 text-[11px] text-gray-400 flex items-center gap-2">'
+          + '<i class="fa-solid fa-circle-check text-gray-500"></i>'
+          + 'Dismissed. The engine now stays quiet for this player for 72 hours (cooldown).</div>';
+      });
+    }
+    if ($("hero-accept")) {
+      $("hero-accept").addEventListener("click", function () {
+        document.querySelector("aside.w-80").scrollIntoView({ behavior: "smooth", block: "nearest" });
+        $("stake-input").classList.add("ring-2", "ring-emerald-500");
+        setTimeout(function () { $("stake-input").classList.remove("ring-2", "ring-emerald-500"); }, 1400);
+      });
+    }
+
+    // left sidebar: this player's own competitions
+    var comps = Object.keys(u.competitions || {});
+    if (comps.length) {
+      $("rec-tag").classList.remove("hidden");
+      $("rec-list").innerHTML = comps.map(function (c, i) {
+        return '<li><a class="flex items-center justify-between py-1.5 px-2 rounded transition text-[12px] '
+          + (i === 0 ? 'bg-[#182130] text-blue-400 font-medium' : 'hover:bg-[#182130] text-gray-200')
+          + '" href="#"><span class="flex items-center min-w-0">'
+          + '<span class="w-4 h-4 mr-2.5 flex items-center justify-center text-xs">' + emoji(p.top_sport) + '</span>'
+          + '<span class="truncate">' + esc(c) + '</span></span>'
+          + '<span class="text-gray-600 text-[10px] font-mono ml-2">' + u.competitions[c] + '</span></a></li>';
+      }).join("");
+    } else if (Object.keys(u.games || {}).length) {
+      $("rec-tag").classList.remove("hidden");
+      $("rec-list").innerHTML = Object.keys(u.games).map(function (g, i) {
+        return '<li><a class="flex items-center justify-between py-1.5 px-2 rounded transition text-[12px] '
+          + (i === 0 ? 'bg-[#182130] text-purple-300 font-medium' : 'hover:bg-[#182130] text-gray-200')
+          + '" href="#"><span class="flex items-center min-w-0">'
+          + '<span class="w-4 h-4 mr-2.5 flex items-center justify-center text-xs">\ud83c\udfb0</span>'
+          + '<span class="truncate">' + esc(g) + '</span></span>'
+          + '<span class="text-gray-600 text-[10px] font-mono ml-2">' + u.games[g] + '</span></a></li>';
+      }).join("");
+    }
+
+    // highlight this player's sport in the sports list
+    Array.prototype.forEach.call($("sport-list").querySelectorAll("li > a"), function (a) {
+      var name = a.querySelector("div > span:last-child");
+      if (!name) return;
+      var isTop = p.top_sport && name.textContent.trim() === tr(p.top_sport);
+      a.className = isTop
+        ? "flex items-center justify-between py-1.5 px-2 rounded bg-blue-900/30 border-l-2 border-blue-500 text-white font-semibold"
+        : "flex items-center justify-between py-1.5 px-2 rounded hover:bg-[#182130] text-gray-300";
+      var count = a.querySelector("span.font-mono");
+      if (count) count.className = isTop ? "text-blue-400 text-[11px] font-mono" : "text-gray-500 text-[11px] font-mono";
+    });
+
+    // betslip
+    var c = u.card, pay = (c && c.payload) || {};
+    if (c && c.action === "CONTINUE_CARD") {
+      $("slip-type").textContent  = pay.slip_type || "Simple";
+      $("slip-title").textContent = tr(pay.sport || "") + (pay.competition ? " / " + pay.competition : "");
+      var n = pay.n_selections || 1;
+      $("slip-sub").textContent   = n + (n === 1 ? " selection" : " selections") + " \u00b7 " + (pay.slip_type || "slip");
+      $("slip-legs").innerHTML = Array.apply(null, Array(n)).map(function (_, i) {
+        return '<div class="flex items-center text-gray-200">'
+          + '<span class="w-1.5 h-1.5 rounded-full bg-blue-500 mr-1.5"></span>'
+          + esc(tr(pay.competition || pay.sport || "Selection") + " \u2014 selection " + (i + 1)) + '</div>';
+      }).join("");
+      $("slip-odds").textContent = (Math.pow(1.62, n)).toFixed(2);
+      if (pay.stake_eur) {
+        $("stake-input").value  = eur(pay.stake_eur);
+        $("bet-cta").textContent = "BET " + eur(pay.stake_eur);
+        $("stake-src").classList.remove("hidden");
+        $("stake-badge").classList.remove("hidden");
+      }
+      $("slip-callout-text").textContent = "Pre-filled from this player's own history. Nothing is placed until you confirm.";
+    } else if (c && c.action === "RESUME_GAME") {
+      $("slip-type").textContent  = "Casino";
+      $("slip-title").textContent = pay.game || "";
+      $("slip-sub").textContent   = (pay.provider || "") + " \u00b7 casino";
+      $("slip-legs").innerHTML = '<div class="flex items-center text-gray-200">'
+        + '<span class="w-1.5 h-1.5 rounded-full bg-purple-500 mr-1.5"></span>' + esc(pay.game || "") + '</div>';
+      $("slip-odds").textContent = "\u2014";
+      if (pay.stake_eur) {
+        $("stake-input").value   = eur(pay.stake_eur);
+        $("bet-cta").textContent = "PLAY " + eur(pay.stake_eur);
+        $("stake-src").classList.remove("hidden");
+        $("stake-badge").classList.remove("hidden");
+      }
+      $("slip-callout-text").textContent = "Opens the game. Nothing is staked until you choose.";
+    } else {
+      $("slip-type").textContent  = "Simple";
+      $("slip-title").textContent = "Empty betslip";
+      $("slip-sub").textContent   = "no pre-fill \u2014 confidence " + p.confidence.toFixed(3);
+      $("slip-legs").innerHTML = '<div class="text-gray-500 text-[10px]">The engine will not pre-fill a stake it has no evidence for.</div>';
+      $("slip-odds").textContent = "\u2014";
+      $("stake-input").value   = "1,00 \u20ac";
+      $("bet-cta").textContent = "BET 1,00 \u20ac";
+      $("slip-callout-text").textContent = "No settled habit yet. Navigation help only.";
+    }
+
+    $("odds-card").innerHTML = oddsFor(u);
+    buildDrawer(u);
+  }
+
+  /* ────────────────────────── wiring ────────────────────────── */
+  buildLogin();
+  $("btn-login").addEventListener("click", openLogin);
+  $("btn-register").addEventListener("click", openLogin);
+  $("login-close").addEventListener("click", closeLogin);
+  $("login-modal").addEventListener("click", function (e) { if (e.target === $("login-modal")) closeLogin(); });
+  $("btn-account").addEventListener("click", function (e) {
+    e.stopPropagation();
+    $("account-menu").classList.toggle("hidden");
+  });
+  document.addEventListener("click", function (e) {
+    if (!$("account-menu").contains(e.target) && e.target !== $("btn-account")) {
+      $("account-menu").classList.add("hidden");
+    }
+  });
+  $("engine-btn").addEventListener("click", function () {
+    var key = localStorage.getItem(LS);
+    buildDrawer(key && USERS[key] ? USERS[key] : null);
+    openDrawer();
+  });
+  $("drawer-close").addEventListener("click", closeDrawer);
+  $("drawer-scrim").addEventListener("click", closeDrawer);
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") { closeDrawer(); closeLogin(); $("account-menu").classList.add("hidden"); }
+  });
+
+  render();
+})();
+</script>
+
+</body></html>

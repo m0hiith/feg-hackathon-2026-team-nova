@@ -1,0 +1,917 @@
+{
+ "users": {
+  "SYN_U01": {
+   "key": "SYN_U01",
+   "persona": "Football loyalist",
+   "player_id": "SYN_U01_4b05437db520b41729d30dfc6d8122545db7e0f1e2519c5d0e0a26f1",
+   "platform": "SB Android",
+   "vertical": "sports",
+   "demo_note": "Deep single-sport habit. Proves sport-level (not category-level) recommendation.",
+   "first_seen": "2023-09-02T19:40:18.000Z",
+   "last_seen": "2026-08-30T21:29:33.000Z",
+   "sessions": 808,
+   "events": 9348,
+   "profile": {
+    "top_sport": "Nogomet",
+    "top_sport_share": 0.9516,
+    "top_competition": "HNL",
+    "top_competition_share": 0.3605,
+    "slip_type": "AKO",
+    "usual_stake_eur": 18.29,
+    "n_placed_slips": 414,
+    "top_game": null,
+    "top_provider": null,
+    "top_game_share": null,
+    "top_game_lift": null,
+    "usual_casino_stake_eur": null,
+    "n_game_launches": 0,
+    "active_hours": "22:00-01:00",
+    "confidence": 1.0,
+    "band": "high",
+    "reasons": [
+     "settled habit: enough actions and a concentrated preference"
+    ],
+    "is_confident": true
+   },
+   "stats": {
+    "sessions_reaching_betslip": 470,
+    "sessions_completing": 414,
+    "final_step_abandon_pct": 11.9,
+    "census": {
+     "NO_ACTION": 646,
+     "CLARIFY_INFO": 114,
+     "CONTINUE_CARD": 48
+    },
+    "friction": {
+     "DEEP_PATH": 11,
+     "NAV_LOOP": 14,
+     "BETSLIP_EXIT": 11
+    },
+    "n_movements": 137,
+    "n_worse": 71,
+    "n_better": 66
+   },
+   "card": {
+    "action": "CONTINUE_CARD",
+    "rule": "restore_abandoned_slip",
+    "session": 1700019759,
+    "seq": 10,
+    "ts": "2023-10-20T21:48:01+00:00",
+    "reasons": [
+     "left the betslip for liveDetail with 4 selection(s) still un-placed",
+     "betslip screen was reached at event 9",
+     "stake EUR 18.29 taken from this player's own history",
+     "profile confidence 1.000"
+    ],
+    "rendered": [
+     "Continue your Nogomet / HNL slip",
+     "4 selections - AKO - EUR 18.29 pre-filled",
+     "Nothing is placed until you confirm."
+    ],
+    "payload": {
+     "sport": "Nogomet",
+     "competition": "HNL",
+     "slip_type": "AKO",
+     "n_selections": 4,
+     "stake_eur": 18.29,
+     "fixture_id": 3066929.0,
+     "taps_to_confirm": 2
+    }
+   },
+   "silent": {
+    "rule": "converted_cleanly",
+    "reasons": [
+     "session reached betslip_placed without qualifying friction"
+    ],
+    "session": 1700000528
+   },
+   "clarify_card": {
+    "action": "CLARIFY_INFO",
+    "rule": "help_them_find_it",
+    "session": 1700002968,
+    "reasons": [
+     "homepage visited 3x in this session (threshold 3)",
+     "no selection made yet, so this is a navigation problem, not a betting one"
+    ],
+    "rendered": [
+     "Looking for Nogomet?",
+     "Open HNL fixtures directly.",
+     "This only opens the list. No selection is made."
+    ]
+   },
+   "odds_card": {
+    "session": 1700183612,
+    "before": 4.49,
+    "after": 4.07,
+    "direction": "down",
+    "pct": -9.4,
+    "sport": "Nogomet",
+    "competition": "Liga prvaka",
+    "hours_away": 27.8,
+    "rendered": [
+     "Odds moved from 4.49 to 4.07 since you last looked.",
+     "That is a smaller return on the same stake.",
+     "Nothing is placed until you confirm."
+    ]
+   },
+   "competitions": {
+    "HNL": 1488,
+    "Premier League": 1423,
+    "Liga prvaka": 1386
+   },
+   "games": {}
+  },
+  "SYN_U02": {
+   "key": "SYN_U02",
+   "persona": "Tennis live specialist",
+   "player_id": "SYN_U02_44e798a70fa50d4e9cbb2d2084ae1e8f2acdee67de388db4f21f4b8c",
+   "platform": "SB iOS",
+   "vertical": "sports",
+   "demo_note": "Live-heavy, single-selection. Different habit shape from U01.",
+   "first_seen": "2023-09-04T12:17:54.000Z",
+   "last_seen": "2026-08-25T21:03:12.000Z",
+   "sessions": 631,
+   "events": 4848,
+   "profile": {
+    "top_sport": "Tenis",
+    "top_sport_share": 0.9459,
+    "top_competition": "ATP Masters",
+    "top_competition_share": 0.3684,
+    "slip_type": "SOLO",
+    "usual_stake_eur": 40.07,
+    "n_placed_slips": 240,
+    "top_game": null,
+    "top_provider": null,
+    "top_game_share": null,
+    "top_game_lift": null,
+    "usual_casino_stake_eur": null,
+    "n_game_launches": 0,
+    "active_hours": "10:00-13:00",
+    "confidence": 1.0,
+    "band": "high",
+    "reasons": [
+     "settled habit: enough actions and a concentrated preference"
+    ],
+    "is_confident": true
+   },
+   "stats": {
+    "sessions_reaching_betslip": 336,
+    "sessions_completing": 240,
+    "final_step_abandon_pct": 28.6,
+    "census": {
+     "NO_ACTION": 418,
+     "CLARIFY_INFO": 144,
+     "CONTINUE_CARD": 69
+    },
+    "friction": {
+     "NAV_LOOP": 33,
+     "DEEP_PATH": 28,
+     "BETSLIP_EXIT": 25
+    },
+    "n_movements": 19,
+    "n_worse": 11,
+    "n_better": 8
+   },
+   "card": {
+    "action": "CONTINUE_CARD",
+    "rule": "restore_abandoned_slip",
+    "session": 1700387108,
+    "seq": 7,
+    "ts": "2023-09-16T10:25:05+00:00",
+    "reasons": [
+     "left the betslip for liveDetail with 1 selection(s) still un-placed",
+     "betslip screen was reached at event 6",
+     "stake EUR 40.07 taken from this player's own history",
+     "profile confidence 1.000"
+    ],
+    "rendered": [
+     "Continue your Tenis / WTA 1000 slip",
+     "1 selection - SOLO - EUR 40.07 pre-filled",
+     "Nothing is placed until you confirm."
+    ],
+    "payload": {
+     "sport": "Tenis",
+     "competition": "WTA 1000",
+     "slip_type": "SOLO",
+     "n_selections": 1,
+     "stake_eur": 40.07,
+     "fixture_id": 3687339.0,
+     "taps_to_confirm": 2
+    }
+   },
+   "silent": {
+    "rule": "no_qualifying_friction",
+    "reasons": [
+     "terminal intent COMPARING; nothing worth interrupting for"
+    ],
+    "session": 1700383221
+   },
+   "clarify_card": {
+    "action": "CLARIFY_INFO",
+    "rule": "help_them_find_it",
+    "session": 1700385990,
+    "reasons": [
+     "homepage visited 3x in this session (threshold 3)",
+     "no selection made yet, so this is a navigation problem, not a betting one"
+    ],
+    "rendered": [
+     "Looking for Tenis?",
+     "Open ATP Masters fixtures directly.",
+     "This only opens the list. No selection is made."
+    ]
+   },
+   "odds_card": {
+    "session": 1700585590,
+    "before": 2.5,
+    "after": 2.39,
+    "direction": "down",
+    "pct": -4.4,
+    "sport": "Tenis",
+    "competition": "WTA 1000",
+    "hours_away": 80.7,
+    "rendered": [
+     "Odds moved from 2.50 to 2.39 since you last looked.",
+     "That is a smaller return on the same stake.",
+     "Nothing is placed until you confirm."
+    ]
+   },
+   "competitions": {
+    "ATP Masters": 274,
+    "WTA 1000": 254,
+    "Grand Slam": 242
+   },
+   "games": {}
+  },
+  "SYN_U03": {
+   "key": "SYN_U03",
+   "persona": "Basketball high-abandoner",
+   "player_id": "SYN_U03_ce30d610bf6a579f75ed9905dbbf4905f03244dd1df0de981bbe931f",
+   "platform": "SB Android",
+   "vertical": "sports",
+   "demo_note": "THE demo user. Reaches betslip and leaves 41% of the time.",
+   "first_seen": "2023-09-02T23:00:29.000Z",
+   "last_seen": "2026-08-30T21:27:59.000Z",
+   "sessions": 885,
+   "events": 9154,
+   "profile": {
+    "top_sport": "Košarka",
+    "top_sport_share": 0.928,
+    "top_competition": "NBA",
+    "top_competition_share": 0.3676,
+    "slip_type": "LEG_COMBI",
+    "usual_stake_eur": 9.63,
+    "n_placed_slips": 291,
+    "top_game": null,
+    "top_provider": null,
+    "top_game_share": null,
+    "top_game_lift": null,
+    "usual_casino_stake_eur": null,
+    "n_game_launches": 0,
+    "active_hours": "22:00-01:00",
+    "confidence": 1.0,
+    "band": "high",
+    "reasons": [
+     "settled habit: enough actions and a concentrated preference"
+    ],
+    "is_confident": true
+   },
+   "stats": {
+    "sessions_reaching_betslip": 488,
+    "sessions_completing": 291,
+    "final_step_abandon_pct": 40.4,
+    "census": {
+     "NO_ACTION": 435,
+     "CLARIFY_INFO": 318,
+     "CONTINUE_CARD": 132
+    },
+    "friction": {
+     "NAV_LOOP": 58,
+     "DEEP_PATH": 56,
+     "BETSLIP_EXIT": 30
+    },
+    "n_movements": 201,
+    "n_worse": 102,
+    "n_better": 99
+   },
+   "card": {
+    "action": "CONTINUE_CARD",
+    "rule": "restore_abandoned_slip",
+    "session": 1700680371,
+    "seq": 6,
+    "ts": "2023-09-09T19:33:05+00:00",
+    "reasons": [
+     "left the betslip for prematchDetail with 2 selection(s) still un-placed",
+     "betslip screen was reached at event 5",
+     "stake EUR 9.63 taken from this player's own history",
+     "profile confidence 1.000"
+    ],
+    "rendered": [
+     "Continue your Košarka / Euroliga slip",
+     "2 selections - LEG_COMBI - EUR 9.63 pre-filled",
+     "Nothing is placed until you confirm."
+    ],
+    "payload": {
+     "sport": "Košarka",
+     "competition": "Euroliga",
+     "slip_type": "LEG_COMBI",
+     "n_selections": 2,
+     "stake_eur": 9.63,
+     "fixture_id": 3346710.0,
+     "taps_to_confirm": 2
+    }
+   },
+   "silent": {
+    "rule": "converted_cleanly",
+    "reasons": [
+     "session reached betslip_placed without qualifying friction"
+    ],
+    "session": 1700678214
+   },
+   "clarify_card": {
+    "action": "CLARIFY_INFO",
+    "rule": "help_them_find_it",
+    "session": 1700677480,
+    "reasons": [
+     "prematchMatchesOverview visited 3x in this session (threshold 3)",
+     "no selection made yet, so this is a navigation problem, not a betting one"
+    ],
+    "rendered": [
+     "Looking for Košarka?",
+     "Open NBA fixtures directly.",
+     "This only opens the list. No selection is made."
+    ]
+   },
+   "odds_card": {
+    "session": 1700921545,
+    "before": 1.7,
+    "after": 1.74,
+    "direction": "up",
+    "pct": 2.4,
+    "sport": "Košarka",
+    "competition": "NBA",
+    "hours_away": 49.6,
+    "rendered": [
+     "Odds moved from 1.70 to 1.74 since you last looked.",
+     "That is a greater return on the same stake.",
+     "Nothing is placed until you confirm."
+    ]
+   },
+   "competitions": {
+    "Euroliga": 849,
+    "NBA": 801,
+    "ABA Liga": 795
+   },
+   "games": {}
+  },
+  "SYN_U04": {
+   "key": "SYN_U04",
+   "persona": "Slots regular",
+   "player_id": "SYN_U04_dd93218b6aa35c739620d1464406f87fe3f8d2267ec701b9889e66d3",
+   "platform": "GM",
+   "vertical": "casino",
+   "demo_note": "One provider family. Proves casino side of the same engine.",
+   "first_seen": "2023-09-03 22:03:37.000000 UTC",
+   "last_seen": "2026-08-30 23:22:19.000000 UTC",
+   "sessions": 1080,
+   "events": 6445,
+   "profile": {
+    "top_sport": null,
+    "top_sport_share": null,
+    "top_competition": null,
+    "top_competition_share": null,
+    "slip_type": null,
+    "usual_stake_eur": null,
+    "n_placed_slips": 0,
+    "top_game": "Sizzling Hot Deluxe",
+    "top_provider": "Greentube",
+    "top_game_share": 0.3517,
+    "top_game_lift": 2.81,
+    "usual_casino_stake_eur": 2.5,
+    "n_game_launches": 2628,
+    "active_hours": "21:00-00:00",
+    "confidence": 0.963,
+    "band": "high",
+    "reasons": [
+     "settled habit: enough actions and a concentrated preference"
+    ],
+    "is_confident": true
+   },
+   "stats": {
+    "sessions_reaching_betslip": 0,
+    "sessions_completing": 0,
+    "final_step_abandon_pct": null,
+    "census": {
+     "NO_ACTION": 937,
+     "CLARIFY_INFO": 143
+    },
+    "friction": {
+     "NAV_LOOP": 20
+    },
+    "n_movements": 0,
+    "n_worse": 0,
+    "n_better": 0
+   },
+   "card": {
+    "action": "RESUME_GAME",
+    "rule": "resume_usual_game",
+    "session": null,
+    "seq": 5,
+    "ts": null,
+    "constructed": true,
+    "reasons": [
+     "6 lobby pages viewed with no game launched (threshold 6)",
+     "top game Sizzling Hot Deluxe at 2.81x uniform"
+    ],
+    "rendered": [
+     "Pick up Sizzling Hot Deluxe",
+     "Greentube",
+     "Opens the game. Nothing is staked until you choose."
+    ],
+    "payload": {
+     "game": "Sizzling Hot Deluxe",
+     "provider": "Greentube",
+     "stake_eur": 2.5,
+     "taps_to_confirm": 1
+    }
+   },
+   "silent": {
+    "rule": "casino_converted",
+    "reasons": [
+     "game launched without qualifying friction"
+    ],
+    "session": 1701102754
+   },
+   "clarify_card": {
+    "action": "CLARIFY_INFO",
+    "rule": "help_them_find_it",
+    "session": 1701103829,
+    "reasons": [
+     "https://casino.feg.hr/ visited 3x in this session (threshold 3)",
+     "no selection made yet, so this is a navigation problem, not a betting one"
+    ],
+    "rendered": [
+     "Jump back to where you were",
+     "Open your last fixture list.",
+     "This only opens the list. No selection is made."
+    ]
+   },
+   "odds_card": null,
+   "competitions": {},
+   "games": {
+    "Sizzling Hot Deluxe": 907,
+    "100 Hot Wild": 891,
+    "100 Power Hot Dice Edition Golden Coins Link": 187,
+    "40 Bulky Fruits Golden Coins Link": 176,
+    "Royal Seven XXL": 123
+   }
+  },
+  "SYN_U05": {
+   "key": "SYN_U05",
+   "persona": "Hybrid sports + casino",
+   "player_id": "SYN_U05_0507b194f70564b8a96b32b2392c05b05adbdbfd5974ea9a01f47a10",
+   "platform": "SB Android",
+   "vertical": "hybrid",
+   "demo_note": "Uses both products but NEVER in one session. The cross-vertical gap.",
+   "first_seen": "2023-09-01T20:22:03.000Z",
+   "last_seen": "2026-08-27T01:00:25.000Z",
+   "sessions": 985,
+   "events": 9101,
+   "profile": {
+    "top_sport": "Nogomet",
+    "top_sport_share": 0.9022,
+    "top_competition": "HNL",
+    "top_competition_share": 0.5488,
+    "slip_type": "AKO",
+    "usual_stake_eur": 22.09,
+    "n_placed_slips": 249,
+    "top_game": "Sugar Rush 1000",
+    "top_provider": "Pragmatic Play",
+    "top_game_share": 0.7298,
+    "top_game_lift": 2.19,
+    "usual_casino_stake_eur": 22.01,
+    "n_game_launches": 883,
+    "active_hours": "22:00-01:00",
+    "confidence": 1.0,
+    "band": "high",
+    "reasons": [
+     "settled habit: enough actions and a concentrated preference"
+    ],
+    "is_confident": true
+   },
+   "stats": {
+    "sessions_reaching_betslip": 339,
+    "sessions_completing": 249,
+    "final_step_abandon_pct": 26.5,
+    "census": {
+     "NO_ACTION": 733,
+     "CLARIFY_INFO": 180,
+     "CONTINUE_CARD": 72
+    },
+    "friction": {
+     "NAV_LOOP": 27,
+     "DEEP_PATH": 22,
+     "BETSLIP_EXIT": 15
+    },
+    "n_movements": 89,
+    "n_worse": 40,
+    "n_better": 49
+   },
+   "card": {
+    "action": "CONTINUE_CARD",
+    "rule": "restore_abandoned_slip",
+    "session": 1701616345,
+    "seq": 9,
+    "ts": "2023-09-14T17:23:42+00:00",
+    "reasons": [
+     "left the betslip for prematchDetail with 4 selection(s) still un-placed",
+     "betslip screen was reached at event 8",
+     "stake EUR 22.09 taken from this player's own history",
+     "profile confidence 1.000"
+    ],
+    "rendered": [
+     "Continue your Nogomet / HNL slip",
+     "4 selections - AKO - EUR 22.09 pre-filled",
+     "Nothing is placed until you confirm."
+    ],
+    "payload": {
+     "sport": "Nogomet",
+     "competition": "HNL",
+     "slip_type": "AKO",
+     "n_selections": 4,
+     "stake_eur": 22.09,
+     "fixture_id": 3425642.0,
+     "taps_to_confirm": 2
+    }
+   },
+   "silent": {
+    "rule": "converted_cleanly",
+    "reasons": [
+     "session reached betslip_placed without qualifying friction"
+    ],
+    "session": 1701611016
+   },
+   "clarify_card": {
+    "action": "CLARIFY_INFO",
+    "rule": "help_them_find_it",
+    "session": 1701611464,
+    "reasons": [
+     "prematchDetail visited 3x in this session (threshold 3)",
+     "no selection made yet, so this is a navigation problem, not a betting one"
+    ],
+    "rendered": [
+     "Looking for Nogomet?",
+     "Open HNL fixtures directly.",
+     "This only opens the list. No selection is made."
+    ]
+   },
+   "odds_card": {
+    "session": 1701921126,
+    "before": 2.34,
+    "after": 2.29,
+    "direction": "down",
+    "pct": -2.1,
+    "sport": "Nogomet",
+    "competition": "Liga prvaka",
+    "hours_away": 17.5,
+    "rendered": [
+     "Odds moved from 2.34 to 2.29 since you last looked.",
+     "That is a smaller return on the same stake.",
+     "Nothing is placed until you confirm."
+    ]
+   },
+   "competitions": {
+    "HNL": 1446,
+    "Liga prvaka": 1171
+   },
+   "games": {
+    "Sugar Rush 1000": 654,
+    "Big Bass Bonanza": 117,
+    "Gates of Olympus Super Scatter": 112
+   }
+  },
+  "SYN_U06": {
+   "key": "SYN_U06",
+   "persona": "Live table games",
+   "player_id": "SYN_U06_7b645054caa3a88ad780c92ee423a15ab754ebe273c3c03863cdf8c8",
+   "platform": "Casino Android",
+   "vertical": "casino",
+   "demo_note": "Table games, not slots. Tests that casino recs are not one-size-fits-all.",
+   "first_seen": "2023-09-01 23:54:48.000000 UTC",
+   "last_seen": "2026-08-29 22:36:43.000000 UTC",
+   "sessions": 689,
+   "events": 4112,
+   "profile": {
+    "top_sport": null,
+    "top_sport_share": null,
+    "top_competition": null,
+    "top_competition_share": null,
+    "slip_type": null,
+    "usual_stake_eur": null,
+    "n_placed_slips": 0,
+    "top_game": "BlackJack MH",
+    "top_provider": "Evolution",
+    "top_game_share": 0.7637,
+    "top_game_lift": 2.29,
+    "usual_casino_stake_eur": 13.91,
+    "n_game_launches": 1721,
+    "active_hours": "21:00-00:00",
+    "confidence": 0.858,
+    "band": "high",
+    "reasons": [
+     "settled habit: enough actions and a concentrated preference"
+    ],
+    "is_confident": true
+   },
+   "stats": {
+    "sessions_reaching_betslip": 0,
+    "sessions_completing": 0,
+    "final_step_abandon_pct": null,
+    "census": {
+     "NO_ACTION": 633,
+     "CLARIFY_INFO": 56
+    },
+    "friction": {
+     "NAV_LOOP": 6
+    },
+    "n_movements": 0,
+    "n_worse": 0,
+    "n_better": 0
+   },
+   "card": {
+    "action": "RESUME_GAME",
+    "rule": "resume_usual_game",
+    "session": null,
+    "seq": 5,
+    "ts": null,
+    "constructed": true,
+    "reasons": [
+     "6 lobby pages viewed with no game launched (threshold 6)",
+     "top game BlackJack MH at 2.29x uniform"
+    ],
+    "rendered": [
+     "Pick up BlackJack MH",
+     "Evolution",
+     "Opens the game. Nothing is staked until you choose."
+    ],
+    "payload": {
+     "game": "BlackJack MH",
+     "provider": "Evolution",
+     "stake_eur": 13.91,
+     "taps_to_confirm": 1
+    }
+   },
+   "silent": {
+    "rule": "casino_converted",
+    "reasons": [
+     "game launched without qualifying friction"
+    ],
+    "session": 1702084536
+   },
+   "clarify_card": {
+    "action": "CLARIFY_INFO",
+    "rule": "help_them_find_it",
+    "session": 1702086231,
+    "reasons": [
+     "https://casino.feg.hr/jackpot visited 3x in this session (threshold 3)",
+     "no selection made yet, so this is a navigation problem, not a betting one"
+    ],
+    "rendered": [
+     "Jump back to where you were",
+     "Open your last fixture list.",
+     "This only opens the list. No selection is made."
+    ]
+   },
+   "odds_card": null,
+   "competitions": {},
+   "games": {
+    "BlackJack MH": 1297,
+    "Lightning Roulette": 215,
+    "Roulette Live": 209
+   }
+  },
+  "SYN_U07": {
+   "key": "SYN_U07",
+   "persona": "Big-event only",
+   "player_id": "SYN_U07_5c37d81100ef497fef26d84e692a1a73cd018e724974fd6518716ade",
+   "platform": "web",
+   "vertical": "sports",
+   "demo_note": "Long gaps, only shows up for finals. Tests the 'Big today' rail.",
+   "first_seen": "2023-09-06T21:18:49.000Z",
+   "last_seen": "2026-08-29T19:33:16.000Z",
+   "sessions": 129,
+   "events": 1018,
+   "profile": {
+    "top_sport": "Nogomet",
+    "top_sport_share": 0.995,
+    "top_competition": "Liga prvaka",
+    "top_competition_share": 0.5056,
+    "slip_type": "SOLO",
+    "usual_stake_eur": 60.11,
+    "n_placed_slips": 43,
+    "top_game": null,
+    "top_provider": null,
+    "top_game_share": null,
+    "top_game_lift": null,
+    "usual_casino_stake_eur": null,
+    "n_game_launches": 0,
+    "active_hours": "22:00-01:00",
+    "confidence": 0.873,
+    "band": "high",
+    "reasons": [
+     "settled habit: enough actions and a concentrated preference"
+    ],
+    "is_confident": true
+   },
+   "stats": {
+    "sessions_reaching_betslip": 68,
+    "sessions_completing": 43,
+    "final_step_abandon_pct": 36.8,
+    "census": {
+     "NO_ACTION": 76,
+     "CLARIFY_INFO": 39,
+     "CONTINUE_CARD": 14
+    },
+    "friction": {
+     "DEEP_PATH": 29,
+     "NAV_LOOP": 39,
+     "BETSLIP_EXIT": 25
+    },
+    "n_movements": 2,
+    "n_worse": 1,
+    "n_better": 1
+   },
+   "card": {
+    "action": "CONTINUE_CARD",
+    "rule": "restore_abandoned_slip",
+    "session": 1702419925,
+    "seq": 7,
+    "ts": "2024-05-04T22:35:28+00:00",
+    "reasons": [
+     "left the betslip for prematchDetail with 1 selection(s) still un-placed",
+     "betslip screen was reached at event 6",
+     "stake EUR 60.11 taken from this player's own history",
+     "profile confidence 0.873"
+    ],
+    "rendered": [
+     "Continue your Nogomet / Liga prvaka slip",
+     "1 selection - SOLO - EUR 60.11 pre-filled",
+     "Nothing is placed until you confirm."
+    ],
+    "payload": {
+     "sport": "Nogomet",
+     "competition": "Liga prvaka",
+     "slip_type": "SOLO",
+     "n_selections": 1,
+     "stake_eur": 60.11,
+     "fixture_id": 3876379.0,
+     "taps_to_confirm": 2
+    }
+   },
+   "silent": {
+    "rule": "converted_cleanly",
+    "reasons": [
+     "session reached betslip_placed without qualifying friction"
+    ],
+    "session": 1702411163
+   },
+   "clarify_card": {
+    "action": "CLARIFY_INFO",
+    "rule": "help_them_find_it",
+    "session": 1702413839,
+    "reasons": [
+     "prematchDetail visited 3x in this session (threshold 3)",
+     "no selection made yet, so this is a navigation problem, not a betting one"
+    ],
+    "rendered": [
+     "Looking for Nogomet?",
+     "Open Liga prvaka fixtures directly.",
+     "This only opens the list. No selection is made."
+    ]
+   },
+   "odds_card": {
+    "session": 1702465399,
+    "before": 3.05,
+    "after": 3.54,
+    "direction": "up",
+    "pct": 16.1,
+    "sport": "Nogomet",
+    "competition": "Liga prvaka",
+    "hours_away": 98.5,
+    "rendered": [
+     "Odds moved from 3.05 to 3.54 since you last looked.",
+     "That is a greater return on the same stake.",
+     "Nothing is placed until you confirm."
+    ]
+   },
+   "competitions": {
+    "Liga prvaka": 83,
+    "Europska liga": 70
+   },
+   "games": {}
+  },
+  "SYN_U08": {
+   "key": "SYN_U08",
+   "persona": "New user (cold start)",
+   "player_id": "SYN_U08_4f4953c768a78c95861534498e8cef2452e03b5f7a45590a14f68d0b",
+   "platform": "SB iOS",
+   "vertical": "sports",
+   "demo_note": "Only 6 weeks of history, no settled habit. Tests the no-history path.",
+   "first_seen": "2026-07-15T18:07:07.000Z",
+   "last_seen": "2026-08-28T21:35:13.000Z",
+   "sessions": 30,
+   "events": 235,
+   "profile": {
+    "top_sport": "Nogomet",
+    "top_sport_share": 0.6207,
+    "top_competition": "HNL",
+    "top_competition_share": 1.0,
+    "slip_type": "SOLO",
+    "usual_stake_eur": 10.7,
+    "n_placed_slips": 7,
+    "top_game": null,
+    "top_provider": null,
+    "top_game_share": null,
+    "top_game_lift": null,
+    "usual_casino_stake_eur": null,
+    "n_game_launches": 0,
+    "active_hours": "18:00-21:00",
+    "confidence": 0.35,
+    "band": "low",
+    "reasons": [
+     "only 7 placed bets < 20"
+    ],
+    "is_confident": false
+   },
+   "stats": {
+    "sessions_reaching_betslip": 15,
+    "sessions_completing": 7,
+    "final_step_abandon_pct": 53.3,
+    "census": {
+     "NO_ACTION": 20,
+     "CLARIFY_INFO": 10
+    },
+    "friction": {
+     "COLD_START": 30,
+     "DEEP_PATH": 10,
+     "NAV_LOOP": 10,
+     "BETSLIP_EXIT": 8
+    },
+    "n_movements": 2,
+    "n_worse": 1,
+    "n_better": 1
+   },
+   "card": null,
+   "silent": {
+    "rule": "cold_start_no_prefill",
+    "reasons": [
+     "open slip abandoned, but profile confidence 0.350 < 0.4",
+     "pre-filling a stake we cannot justify would be a guess"
+    ],
+    "session": 1702478019
+   },
+   "clarify_card": {
+    "action": "CLARIFY_INFO",
+    "rule": "help_them_find_it",
+    "session": 1702478320,
+    "reasons": [
+     "prematchMatchesOverview visited 3x in this session (threshold 3)",
+     "no selection made yet, so this is a navigation problem, not a betting one"
+    ],
+    "rendered": [
+     "Looking for Nogomet?",
+     "Open HNL fixtures directly.",
+     "This only opens the list. No selection is made."
+    ]
+   },
+   "odds_card": {
+    "session": 1702487049,
+    "before": 2.65,
+    "after": 2.76,
+    "direction": "up",
+    "pct": 4.2,
+    "sport": "Nogomet",
+    "competition": "HNL",
+    "hours_away": 70.9,
+    "rendered": [
+     "Odds moved from 2.65 to 2.76 since you last looked.",
+     "That is a greater return on the same stake.",
+     "Nothing is placed until you confirm."
+    ]
+   },
+   "competitions": {
+    "HNL": 18
+   },
+   "games": {}
+  }
+ },
+ "meta": {
+  "total_events": 44261,
+  "total_sessions": 5237,
+  "total_players": 8,
+  "first_seen": "2023-09-01 20:22:03+00:00",
+  "last_seen": "2026-08-30 23:22:19+00:00",
+  "movements_total": 450,
+  "movements_worse": 226,
+  "movements_better": 224
+ }
+}

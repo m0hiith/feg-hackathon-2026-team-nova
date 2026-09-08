@@ -1,0 +1,26 @@
+# SessionSense — consolidated requirements for both halves of the system.
+# Exact versions are the ones the engine was built and verified against
+# (see docs/dependencies.md). Install once at the repo root; detection/ and
+# response/ both import from this single environment.
+
+# ── shared / core ──────────────────────────────────────────────────────────
+pandas==3.0.5
+pyarrow==25.0.1          # transitive: pandas parquet engine
+numpy==2.5.3             # transitive: pandas
+openpyxl>=3.1            # transitive: pandas .xlsx read/write (dataset generators, profile.py)
+
+# ── detection/ only ─────────────────────────────────────────────────────────
+duckdb==1.5.5            # detection/src, detection/scripts: reads the event parquet/CSV
+
+# ── detection/ UI build + test tooling only (not required to run the pipeline) ──
+playwright==1.62.0       # detection/scripts/check_ui.py: drives the demo UI in a real browser
+greenlet==3.5.5          # transitive: playwright
+pyee==13.0.1             # transitive: playwright
+
+# response/ has no third-party dependency beyond pandas/numpy/openpyxl above —
+# its src/ modules (data_loader, intent, friction, profiler, odds_movement,
+# next_best_help) are pandas + the Python standard library only.
+
+# check_ui.py launches channel="chrome" (real, locally installed Google Chrome,
+# not Playwright's bundled Chromium) — install Chrome separately; no
+# `playwright install` step is required for this project.

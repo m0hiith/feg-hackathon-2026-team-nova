@@ -1,0 +1,29 @@
+# ── Data: never commit. Hackathon data is large and may be sensitive. ──
+data/
+data set/
+data set /
+*.csv
+*.xlsx
+*.parquet
+*.zip
+*.duckdb
+
+# Derived / cache
+.cache/
+build/
+dist/
+
+# Python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+venv/
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
+
+# Local dev venv for the UI build/check scripts
+.venv-ui/

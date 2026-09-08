@@ -1,0 +1,32 @@
+# ── FEG's real event data (detection/): never commit. ──────────────────────
+# Real behavioural data lives only under detection/. response/ is synthetic
+# (is_synthetic=True everywhere) and IS meant to be committed — do not extend
+# these patterns to the repo root or to response/.
+detection/data/
+detection/data set/
+detection/data set /
+detection/.cache/
+detection/*.duckdb
+detection/.venv-ui/
+
+# Derived caches, wherever they show up
+*.parquet
+
+# Python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+venv/
+
+# Env
+.env
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
+
+# Build output
+build/
+dist/
