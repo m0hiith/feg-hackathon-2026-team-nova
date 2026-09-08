@@ -1,16 +1,34 @@
 # Demo video
 
-Link: _TODO — add the recorded walkthrough link before submitting._
+**Link:** _TODO — add the recorded walkthrough link here once it's uploaded._
 
-Suggested flow to record (see README.md "Demo flow" for the full script):
+**Screenshots:** _TODO — capture the six shots below into `demo/screenshots/`
+once the link above is filled in._
 
-1. `detection/` — run `python3 src/trigger.py` live in a terminal, then open
-   `detection/src/ui/index.html` and replay both demo sessions, showing the
-   `FIRE` panel and a `STAY_SILENT` session side by side.
-2. `response/` — open `response/feg-session-engine.html` and switch between
-   at least three personas (SYN_U03 abandoner, SYN_U04 casino, SYN_U08 cold
-   start) to show `CONTINUE_CARD`, `RESUME_GAME`, and the cold-start refusal.
-3. Odds disclosure — show one worse-price card and one better-price card
-   side by side to demonstrate symmetric rendering.
-4. Close on `docs/impact-case.md` §1 (the measured 25.29% abandonment
-   finding) and §5 (the 8–9 → 2 taps design claim, named as a design claim).
+---
+
+## Screenshots — `demo/screenshots/`
+
+Consistent window size, light-on-dark, no browser bookmarks bar showing.
+
+| file | shot |
+|---|---|
+| `01-continue-card.png` | U03 home with the `CONTINUE_CARD`, engine drawer open |
+| `02-odds-moved-worse.png` | The disclosure panel showing a worse movement |
+| `03-no-action.png` | A persona where the engine returns `NO_ACTION` |
+| `04-cold-start-refusal.png` | U08, `cold_start_no_prefill` |
+| `05-replay-stall.png` | Session A, trigger fired, stall score at 100 |
+| `06-replay-silent.png` | Session B, `STAY_SILENT` / `already_converted` |
+
+## Recording — 3 minutes, one take, no cuts
+
+| time | beat |
+|---|---|
+| 0:00 | Detection engine on FEG's provided event log. Session A stalls, trigger fires. |
+| 0:40 | Session B converts. `STAY_SILENT` / `already_converted` — silence is a returned decision. |
+| 1:20 | Switch to the synthetic site. U03 continue card, stake pre-filled from history. |
+| 1:50 | Odds moved worse since you last looked. Same rendering as better. |
+| 2:20 | U08 — the refusal. "Pre-filling a stake we cannot justify would be a guess." |
+| 2:45 | One line: two halves, one system. Detection proves on FEG data; response needs synthetic because FEG's log holds no monetary values. |
+
+**End on the refusal, not on a feature.**
