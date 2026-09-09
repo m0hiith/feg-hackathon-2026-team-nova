@@ -2,8 +2,8 @@
 
 **Link:** _TODO — add the recorded walkthrough link here once it's uploaded._
 
-**Screenshots:** _TODO — capture the six shots below into `demo/screenshots/`
-once the link above is filled in._
+**Screenshots:** Captured — all six are in `demo/screenshots/` and embedded in
+the [README](../README.md#screenshots).
 
 ---
 

@@ -245,6 +245,49 @@ failure — there is no separate assertion framework to install.
    (1.75x → 1.19x), and the 8–9→2 taps figure named explicitly as a design
    claim.
 
+Recording script and shot list: [`demo/demo-video-link.md`](demo/demo-video-link.md).
+
+## Screenshots
+
+### `response/` — the help engine on synthetic data
+
+**The continue card.** SYN_U03's abandoned slip handed back with sport,
+competition, slip type and stake pre-filled from that player's own history —
+2 taps to confirm instead of ~8–9 plus typing.
+
+![CONTINUE_CARD — SYN_U03's abandoned slip restored with stake pre-filled from history](demo/screenshots/01-continue-card.png)
+
+**Odds moved against the player, disclosed anyway.** The price got worse
+since they last looked and the card says so, in the same sentence structure
+and visual weight used when a price improves — no filtering on sign, no
+urgency framing (`docs/compliance-note.md` §5).
+
+![Odds-movement disclosure showing a worse price, rendered identically to an improved one](demo/screenshots/02-odds-moved-worse.png)
+
+**Silence, as a returned decision.** `NO_ACTION` with a named reason — the
+engine's default at 74.4% of all sessions, not an absence of output.
+
+![NO_ACTION — the engine returning silence with a named reason](demo/screenshots/03-no-action.png)
+
+**The cold-start refusal.** SYN_U08 has 6 weeks of history and confidence
+0.350, below the 0.40 pre-fill gate, so the engine declines to pre-fill a
+stake: *"pre-filling a stake we cannot justify would be a guess."*
+
+![cold_start_no_prefill — the engine refusing to pre-fill a stake it cannot justify](demo/screenshots/04-cold-start-refusal.png)
+
+### `detection/` — the trigger on FEG's provided event log
+
+**Session A: stalled, trigger fired.** Slip built, pace collapsed against the
+session's own peak, inline panel offered with two equally weighted exits.
+
+![Session replay — stalled slip, trigger fired, inline panel shown](demo/screenshots/05-replay-stall.png)
+
+**Session B: converted, stayed silent.** `STAY_SILENT` / `already_converted`
+— the bet is placed, so nudging is the worst available action. This is the
+99.73% case.
+
+![Session replay — converted session, STAY_SILENT / already_converted](demo/screenshots/06-replay-silent.png)
+
 ## Known limitations and assumptions
 
 - **The two halves are not integrated at runtime.** `detection/`'s `FIRE`
