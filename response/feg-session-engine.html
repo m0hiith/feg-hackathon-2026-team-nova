@@ -1209,13 +1209,100 @@ No passwords, no real identities. Every <span class="font-mono text-gray-400">Pl
       + '</div></div>';
   }
 
+  /* ============ cold start: what everyone else is doing ============ */
+  // When the engine has no settled habit to act on it still owes the player
+  // something to look at. These two picks are ranked across the whole dataset,
+  // are identical for every cold-start player, and carry no stake — they are a
+  // popularity list, not a recommendation.
+  // Computed on first use: the game catalogue it reads from is defined further
+  // down the file, so this cannot run while the script is still being parsed.
+  var POPULAR = null;
+  function popular() {
+    if (POPULAR) return POPULAR;
+    var comps = {}, sportOf = {}, games = {};
+    KEYS.forEach(function (k) {
+      var u = USERS[k];
+      Object.keys(u.competitions || {}).forEach(function (c) {
+        comps[c] = (comps[c] || 0) + u.competitions[c];
+        sportOf[c] = u.profile.top_sport;
+      });
+      Object.keys(u.games || {}).forEach(function (g) {
+        games[g] = (games[g] || 0) + u.games[g];
+      });
+    });
+    function top(obj) {
+      return Object.keys(obj).sort(function (a, b) { return obj[b] - obj[a]; })[0] || null;
+    }
+    var c = top(comps), g = top(games);
+    POPULAR = {
+      competition: c, sport: sportOf[c], slips: comps[c] || 0,
+      game: g, provider: g ? providerFor(g, null) : null, launches: games[g] || 0
+    };
+    return POPULAR;
+  }
+
+  function seedOf(text) {
+    var n = 0;
+    for (var i = 0; i < text.length; i++) n = (n * 31 + text.charCodeAt(i)) % 9999991;
+    return n * 7 + 1000000;
+  }
+
+  function popularPicks() {
+    var P = popular();
+    if (!P.competition && !P.game) return "";
+    var out = '<div class="px-3.5 py-3 bg-[#0e1522] border-t border-amber-800/30">'
+      + '<div class="flex items-center gap-2 mb-2 flex-wrap">'
+      +   '<i class="fa-solid fa-fire text-orange-400 text-[11px]"></i>'
+      +   '<span class="text-orange-300 font-black text-[10px] uppercase tracking-widest">Popular right now</span>'
+      +   '<span class="text-[10px] text-gray-500">most-backed across all ' + META.total_players + ' players — not picked for you</span>'
+      + '</div>'
+      + '<div class="grid grid-cols-1 md:grid-cols-2 gap-2.5">';
+
+    if (P.competition) {
+      var pair  = FIXTURES[P.competition] || ["Home (synthetic)", "Away (synthetic)"];
+      var seed  = seedOf(P.competition);
+      var sport = tr(P.sport || "");
+      var isBask = sport === "Basketball", isTen = sport === "Tennis";
+      var boxes = isBask
+        ? oddsBox("1", oddsVal(seed, 5, 1.4, 2.4), false) + oddsBox("2", oddsVal(seed, 6, 1.5, 2.6), false) + oddsBox("O 168.5", oddsVal(seed, 7, 1.7, 2.0), false)
+        : isTen
+        ? oddsBox("1", oddsVal(seed, 5, 1.3, 2.3), false) + oddsBox("2", oddsVal(seed, 6, 1.6, 3.1), false) + oddsBox("O 21.5", oddsVal(seed, 7, 1.7, 2.1), false)
+        : oddsBox("1", oddsVal(seed, 5, 1.5, 3.2), false) + oddsBox("X", oddsVal(seed, 6, 2.9, 3.9), false) + oddsBox("2", oddsVal(seed, 7, 1.9, 4.6), false);
+      out += '<div class="bg-[#141c29] border border-[#22304a] rounded-lg p-2.5">'
+        + '<div class="text-[9px] font-bold uppercase tracking-wide text-gray-500 mb-1">Top bet · most slips in the data</div>'
+        + '<div class="text-white font-bold text-[12px] truncate">' + esc(pair[0]) + ' <span class="text-gray-500 font-normal">v</span> ' + esc(pair[1]) + '</div>'
+        + '<div class="text-[10px] font-mono text-gray-500 mb-2">' + esc(sport) + ' / ' + esc(P.competition) + ' · ' + P.slips.toLocaleString("en-US") + ' slips</div>'
+        + '<div class="flex items-center gap-1.5">' + boxes + '</div>'
+        + '</div>';
+    }
+
+    if (P.game) {
+      var m = metaFor(P.game);
+      out += '<div class="bg-[#141c29] border border-[#22304a] rounded-lg p-2.5 flex flex-col">'
+        + '<div class="text-[9px] font-bold uppercase tracking-wide text-gray-500 mb-1">Top casino game · most launches</div>'
+        + '<div class="flex items-center gap-2.5">'
+        +   '<span class="w-9 h-9 rounded bg-gradient-to-br ' + m.g + ' border border-[#28374f] flex items-center justify-center text-white text-[14px] flex-shrink-0"><i class="fa-solid ' + m.ico + '"></i></span>'
+        +   '<div class="min-w-0 flex-1">'
+        +     '<div class="text-white font-bold text-[12px] truncate">' + esc(P.game) + '</div>'
+        +     '<div class="text-[10px] font-mono text-gray-500 truncate">' + esc(P.provider || "") + ' · ' + P.launches.toLocaleString("en-US") + ' launches</div>'
+        +   '</div>'
+        +   '<button class="hero-casino px-3 py-1.5 rounded bg-[#28354b] hover:bg-purple-600 text-white text-[10px] font-black uppercase tracking-wide transition flex-shrink-0">Open lobby</button>'
+        + '</div></div>';
+    }
+
+    return out + '</div>'
+      + '<div class="text-[9px] text-gray-500 mt-2">Ranked from the same event data, identical for every cold-start player. Nothing is pre-filled and no stake is suggested.</div>'
+      + '</div>';
+  }
+
   /* ========================= hero banner ========================= */
   function heroHTML(u) {
     var p = u.profile, c = u.card;
 
     if (!c) {  // engine deliberately stays quiet
       var sil = u.silent || { rule: "no_qualifying_friction", reasons: [] };
-      return '<div class="bg-[#1c1710] border border-amber-700/40 rounded-lg p-3.5">'
+      return '<div class="bg-[#1c1710] border border-amber-700/40 rounded-lg overflow-hidden">'
+        + '<div class="p-3.5">'
         + '<div class="flex items-center gap-2 mb-2">'
         +   '<i class="fa-solid fa-circle-pause text-amber-400"></i>'
         +   '<span class="text-amber-300 font-black text-[11px] uppercase tracking-wide">Engine is staying quiet</span>'
@@ -1226,7 +1313,9 @@ No passwords, no real identities. Every <span class="font-mono text-gray-400">Pl
         +   ', below the 0.40 threshold. Guessing a stake would be inventing one, so nothing is offered.</div>'
         + '<ul class="space-y-1 text-[10px] text-amber-200/70 border-t border-amber-800/30 pt-2">'
         +   (sil.reasons || []).map(function (r) { return '<li>• ' + esc(r) + '</li>'; }).join("")
-        + '</ul></div>';
+        + '</ul></div>'
+        + popularPicks()
+        + '</div>';
     }
 
     var resume = c.action === "RESUME_GAME";
@@ -1281,6 +1370,8 @@ No passwords, no real identities. Every <span class="font-mono text-gray-400">Pl
         + '<i class="fa-solid fa-circle-check text-gray-500"></i>'
         + 'Dismissed. The engine now stays quiet for this player for 72 hours (cooldown).</div>';
     });
+    var cas = el.querySelector(".hero-casino");
+    if (cas) cas.addEventListener("click", function () { setView("casino"); });
     var acc = el.querySelector(".hero-accept");
     if (acc) acc.addEventListener("click", function () {
       var resume = u.card && u.card.action === "RESUME_GAME";
