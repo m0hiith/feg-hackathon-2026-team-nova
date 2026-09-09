@@ -159,13 +159,13 @@ tailwind.config = {
 </span>
 <!-- Main Product Links -->
 <nav class="hidden lg:flex items-center space-x-0.5 h-full text-[13px] font-semibold tracking-wide uppercase">
-<a class="px-3 h-full flex items-center bg-blue-700/60 text-white border-b-2 border-white" href="#">SPORT</a>
-<a class="px-3 h-full flex items-center hover:bg-blue-600/60 text-white/90 relative" href="#">
+<a class="nav-tab nav-sport px-3 h-full flex items-center text-white/90" data-view="sports" href="#">SPORT</a>
+<a class="nav-tab nav-sport px-3 h-full flex items-center text-white/90 relative" data-view="sports" href="#">
             LIVE
             <span class="ml-1 px-1 py-0.2 bg-red-600 text-[9px] font-bold rounded text-white animate-pulse">LIVE</span>
 </a>
-<a class="px-3 h-full flex items-center hover:bg-blue-600/60 text-white/90" href="#">CASINO</a>
-<a class="px-3 h-full flex items-center hover:bg-blue-600/60 text-white/90 relative" href="#">
+<a class="nav-tab nav-casino px-3 h-full flex items-center text-white/90" data-view="casino" href="#">CASINO</a>
+<a class="nav-tab nav-casino px-3 h-full flex items-center text-white/90 relative" data-view="casino" href="#">
             LIVE CASINO
             <span class="ml-1 text-[8px] bg-red-500 font-extrabold px-1 rounded-sm text-white uppercase">NEW</span>
 </a>
@@ -195,7 +195,7 @@ tailwind.config = {
 <div class="hidden items-center space-x-3" id="auth-in">
 <div class="hidden sm:flex flex-col items-end leading-tight normal-case tracking-normal">
 <span class="text-[11px] text-blue-100">Balance</span>
-<span class="font-black text-sm text-white" id="hdr-balance">0,00 €</span>
+<span class="font-black text-sm text-white" id="hdr-balance">0,00 &euro;</span>
 </div>
 <button class="flex items-center gap-2 pl-1 pr-2 py-1 rounded-full bg-blue-800/60 hover:bg-blue-900/70 border border-blue-400/30 transition normal-case tracking-normal" id="btn-account">
 <span class="w-7 h-7 rounded-full bg-white text-blue-800 font-black text-[11px] flex items-center justify-center" id="hdr-avatar">U0</span>
@@ -210,7 +210,7 @@ tailwind.config = {
 </div>
 <!-- Secondary Utility Sub-Bar -->
 <div class="px-3 h-8 bg-[#003cb5] flex items-center justify-between text-[11px] text-blue-100">
-<div class="flex items-center space-x-4 overflow-x-auto no-scrollbar">
+<div class="flex items-center space-x-4 overflow-x-auto no-scrollbar" id="sub-nav">
 <a class="flex items-center gap-1 hover:text-white transition" href="#"><i class="fa-solid fa-house text-xs"></i></a>
 <a class="hover:text-white transition flex items-center gap-1" href="#"><i class="fa-solid fa-mobile-screen"></i> Mobile app</a>
 <a class="hover:text-white transition" href="#">Results</a>
@@ -238,6 +238,8 @@ tailwind.config = {
 <!-- ==================== LEFT SIDEBAR ==================== -->
 <!-- BEGIN: LeftSidebar -->
 <aside class="w-64 bg-[#0f141d] border-r border-[#1e2738] flex flex-col flex-shrink-0 select-none overflow-y-auto h-[calc(100vh-5rem)]">
+<!-- ---------- SPORTS RAIL ---------- -->
+<div id="left-sports">
 <!-- Recommended Matches Section -->
 <div class="p-3 border-b border-[#1b2332]">
 <h3 class="text-gray-400 font-bold text-[11px] uppercase tracking-wider mb-2 flex items-center justify-between">
@@ -247,37 +249,37 @@ tailwind.config = {
 <ul class="space-y-1" id="rec-list">
 <li>
 <a class="flex items-center py-1.5 px-2 rounded hover:bg-[#182130] text-gray-200 transition text-[12px] group" href="#">
-<span class="w-4 h-4 mr-2.5 flex items-center justify-center text-lime-400 text-xs">🎾</span>
+<span class="w-4 h-4 mr-2.5 flex items-center justify-center text-lime-400 text-xs">&#127934;</span>
 <span class="truncate">Schoenhaus M. - Dodig M.</span>
 </a>
 </li>
 <li>
 <a class="flex items-center py-1.5 px-2 rounded hover:bg-[#182130] text-gray-200 transition text-[12px]" href="#">
-<span class="w-4 h-4 mr-2.5 flex items-center justify-center text-lime-400 text-xs">🎾</span>
+<span class="w-4 h-4 mr-2.5 flex items-center justify-center text-lime-400 text-xs">&#127934;</span>
 <span class="truncate">US Open (M)</span>
 </a>
 </li>
 <li>
 <a class="flex items-center py-1.5 px-2 rounded hover:bg-[#182130] text-gray-200 transition text-[12px]" href="#">
-<span class="w-4 h-4 mr-2.5 flex items-center justify-center text-lime-400 text-xs">🎾</span>
+<span class="w-4 h-4 mr-2.5 flex items-center justify-center text-lime-400 text-xs">&#127934;</span>
 <span class="truncate">US Open (W)</span>
 </a>
 </li>
 <li>
 <a class="flex items-center py-1.5 px-2 rounded hover:bg-[#182130] text-gray-200 transition text-[12px]" href="#">
-<span class="w-4 h-4 mr-2.5 flex items-center justify-center text-gray-400 text-xs">⚽</span>
-<span class="truncate">Varaždin - Istra 1961</span>
+<span class="w-4 h-4 mr-2.5 flex items-center justify-center text-gray-400 text-xs">&#9917;</span>
+<span class="truncate">Vara&#382;din - Istra 1961</span>
 </a>
 </li>
 <li>
 <a class="flex items-center py-1.5 px-2 rounded hover:bg-[#182130] text-gray-200 transition text-[12px]" href="#">
-<span class="w-4 h-4 mr-2.5 flex items-center justify-center text-gray-400 text-xs">⚽</span>
+<span class="w-4 h-4 mr-2.5 flex items-center justify-center text-gray-400 text-xs">&#9917;</span>
 <span class="truncate">Paris SG - Monaco</span>
 </a>
 </li>
 <li>
 <a class="flex items-center py-1.5 px-2 rounded hover:bg-[#182130] bg-[#182130] text-blue-400 font-medium transition text-[12px]" href="#">
-<span class="w-4 h-4 mr-2.5 flex items-center justify-center text-gray-300 text-xs">⚽</span>
+<span class="w-4 h-4 mr-2.5 flex items-center justify-center text-gray-300 text-xs">&#9917;</span>
 <span class="truncate">Betis - Real Madrid</span>
 </a>
 </li>
@@ -344,7 +346,7 @@ tailwind.config = {
 <li class="pt-2">
 <a class="flex items-center justify-between py-1.5 px-2 rounded bg-blue-900/30 border-l-2 border-blue-500 text-white font-semibold" href="#">
 <div class="flex items-center">
-<span class="mr-2">⚽</span>
+<span class="mr-2">&#9917;</span>
 <span>Football</span>
 </div>
 <span class="text-blue-400 text-[11px] font-mono">322</span>
@@ -353,7 +355,7 @@ tailwind.config = {
 <li>
 <a class="flex items-center justify-between py-1.5 px-2 rounded hover:bg-[#182130] text-gray-300" href="#">
 <div class="flex items-center">
-<span class="mr-2">🎾</span>
+<span class="mr-2">&#127934;</span>
 <span>Tennis</span>
 </div>
 <span class="text-gray-500 text-[11px] font-mono">143</span>
@@ -362,7 +364,7 @@ tailwind.config = {
 <li>
 <a class="flex items-center justify-between py-1.5 px-2 rounded hover:bg-[#182130] text-gray-300" href="#">
 <div class="flex items-center">
-<span class="mr-2">🏀</span>
+<span class="mr-2">&#127936;</span>
 <span>Basketball</span>
 </div>
 <span class="text-gray-500 text-[11px] font-mono">54</span>
@@ -370,11 +372,73 @@ tailwind.config = {
 </li>
 </ul>
 </div>
+</div>
+<!-- ---------- CASINO RAIL ---------- -->
+<div class="hidden" id="left-casino">
+<div class="p-3 border-b border-[#1b2332]">
+<h3 class="text-gray-400 font-bold text-[11px] uppercase tracking-wider mb-2 flex items-center justify-between">
+<span>Your games</span>
+<span class="hidden text-[9px] font-bold text-purple-300 normal-case tracking-normal" id="cas-rec-tag">from your history</span>
+</h3>
+<ul class="space-y-1" id="cas-rec-list"></ul>
+</div>
+<div class="p-3">
+<h3 class="text-gray-400 font-bold text-[11px] uppercase tracking-wider mb-2">Casino</h3>
+<ul class="space-y-0.5 text-[12px]" id="cas-cat-list">
+<li>
+<a class="cas-cat flex items-center justify-between py-1.5 px-2 rounded bg-blue-900/30 border-l-2 border-blue-500 text-white font-semibold" href="#">
+<div class="flex items-center"><span class="text-red-500 text-xs mr-2"><i class="fa-solid fa-tower-broadcast"></i></span><span>Live lobby</span></div>
+<span class="text-blue-400 text-[11px] font-mono">48</span>
+</a>
+</li>
+<li>
+<a class="cas-cat flex items-center justify-between py-1.5 px-2 rounded hover:bg-[#182130] text-gray-300" href="#">
+<div class="flex items-center"><span class="bg-[#1f2a3a] text-yellow-500 font-black text-[9px] px-1 rounded mr-2">FEG</span><span>Only in FEG</span></div>
+<span class="text-gray-500 text-[11px] font-mono">14</span>
+</a>
+</li>
+<li>
+<a class="cas-cat flex items-center justify-between py-1.5 px-2 rounded hover:bg-[#182130] text-gray-300" href="#">
+<div class="flex items-center"><span class="text-blue-400 text-xs mr-2"><i class="fa-solid fa-dharmachakra"></i></span><span>Roulette</span></div>
+<span class="text-gray-500 text-[11px] font-mono">56</span>
+</a>
+</li>
+<li>
+<a class="cas-cat flex items-center justify-between py-1.5 px-2 rounded hover:bg-[#182130] text-gray-300" href="#">
+<div class="flex items-center"><span class="text-emerald-400 text-xs mr-2"><i class="fa-solid fa-dice"></i></span><span>Blackjack &amp; tables</span></div>
+<span class="text-gray-500 text-[11px] font-mono">31</span>
+</a>
+</li>
+<li>
+<a class="cas-cat flex items-center justify-between py-1.5 px-2 rounded hover:bg-[#182130] text-gray-300" href="#">
+<div class="flex items-center"><span class="text-purple-400 text-xs mr-2"><i class="fa-solid fa-gamepad"></i></span><span>Slots</span></div>
+<span class="text-gray-500 text-[11px] font-mono">212</span>
+</a>
+</li>
+<li>
+<a class="cas-cat flex items-center justify-between py-1.5 px-2 rounded hover:bg-[#182130] text-gray-300" href="#">
+<div class="flex items-center"><span class="text-amber-400 text-xs mr-2"><i class="fa-solid fa-trophy"></i></span><span>Jackpots</span></div>
+<span class="text-gray-500 text-[11px] font-mono">9</span>
+</a>
+</li>
+<li>
+<a class="cas-cat flex items-center justify-between py-1.5 px-2 rounded hover:bg-[#182130] text-gray-300" href="#">
+<div class="flex items-center"><span class="text-gray-400 text-xs mr-2"><i class="fa-solid fa-layer-group"></i></span><span>All games</span></div>
+<span class="text-gray-500 text-[11px] font-mono">370</span>
+</a>
+</li>
+</ul>
+<div class="mt-3 pt-3 border-t border-[#1b2332] text-[10px] text-gray-500 leading-snug">
+<i class="fa-solid fa-flask text-amber-400/80 mr-1"></i>
+Synthetic catalogue. Counts are illustrative; game names come from the dataset&rsquo;s own launch events.
+</div>
+</div>
+</div>
 </aside>
 <!-- END: LeftSidebar -->
-<!-- ==================== CENTER MAIN CONTENT ==================== -->
+<!-- ==================== CENTER: SPORTS ==================== -->
 <!-- BEGIN: MainCenterArea -->
-<section class="flex-1 min-w-0 bg-[#0c1017] overflow-y-auto px-3.5 py-3 h-[calc(100vh-5rem)]">
+<section class="flex-1 min-w-0 bg-[#0c1017] overflow-y-auto px-3.5 py-3 h-[calc(100vh-5rem)]" id="center-sports">
 <!-- Time Range Navigation Tabs -->
 <div class="flex items-center bg-[#131924] rounded-lg p-1 mb-3 border border-[#20293a] text-xs font-semibold">
 <button class="flex items-center px-4 py-1.5 rounded text-gray-400 hover:text-white transition">
@@ -388,7 +452,7 @@ tailwind.config = {
 <button class="px-4 py-1.5 rounded text-gray-400 hover:text-white transition">TOMORROW</button>
 <button class="px-4 py-1.5 rounded text-gray-400 hover:text-white transition">ALL</button>
 </div>
-<!-- ENGINE: personalised hero slot (filled by feg-engine.js) -->
+<!-- ENGINE: personalised hero slot, with the odds inline in the banner itself -->
 <div class="mb-3" id="engine-hero"></div>
 <!-- Top Promotional Banner Cards Row -->
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2.5 mb-3">
@@ -399,9 +463,8 @@ tailwind.config = {
 <h4 class="text-base font-black text-cyan-300 uppercase leading-none mt-0.5">FREE BET</h4>
 </div>
 <div class="absolute right-2 top-2 opacity-90">
-<!-- Lottery 1€ graphic replica -->
 <div class="w-14 h-14 rounded-full border-2 border-yellow-400 flex items-center justify-center bg-gradient-to-tr from-amber-500 to-yellow-300 text-black font-black text-xl shadow-lg">
-              1€
+              1&euro;
             </div>
 </div>
 <div class="z-10 flex justify-between items-end">
@@ -466,7 +529,7 @@ tailwind.config = {
 <i class="fa-solid fa-list-check text-base mb-1 text-teal-400"></i>
 <span>Missions</span>
 </a>
-<a class="flex flex-col items-center px-2 py-1 hover:text-blue-400 min-w-[56px]" href="#">
+<a class="nav-casino flex flex-col items-center px-2 py-1 hover:text-blue-400 min-w-[56px]" data-view="casino" href="#">
 <i class="fa-solid fa-dharmachakra text-base mb-1 text-blue-400"></i>
 <span>Casino</span>
 </a>
@@ -486,7 +549,7 @@ tailwind.config = {
 <i class="fa-solid fa-shield-cat text-base mb-1 text-blue-300"></i>
 <span class="text-[10px]">Champions Club</span>
 </a>
-<a class="flex flex-col items-center px-2 py-1 hover:text-blue-400 min-w-[56px]" href="#">
+<a class="nav-casino flex flex-col items-center px-2 py-1 hover:text-blue-400 min-w-[56px]" data-view="casino" href="#">
 <i class="fa-solid fa-tower-broadcast text-base mb-1 text-red-500"></i>
 <span>Live Casino</span>
 </a>
@@ -499,9 +562,8 @@ tailwind.config = {
 <span>Forum</span>
 </a>
 </div>
-<!-- Boosted Combo & Featured Specials (3 Cards) -->
+<!-- Boosted Combo &amp; Featured Specials (3 Cards) -->
 <div class="grid grid-cols-1 md:grid-cols-3 gap-2.5 mb-3">
-<!-- Card 1 -->
 <div class="bg-[#141b27] border border-[#212c3e] rounded-lg p-3 flex flex-col justify-between hover:border-blue-700/50 transition">
 <div>
 <div class="flex items-center justify-between text-[11px] text-gray-400 mb-1.5">
@@ -509,7 +571,7 @@ tailwind.config = {
 <i class="fa-solid fa-chevron-right text-[9px]"></i>
 </div>
 <div class="font-bold text-white text-[13px] mb-2 flex items-center">
-<span class="mr-1.5 text-xs text-gray-400">⚽</span> IPSWICH - LIVERPOOL
+<span class="mr-1.5 text-xs text-gray-400">&#9917;</span> IPSWICH - LIVERPOOL
             </div>
 <div class="text-[11px] text-gray-300 space-y-1 mb-3">
 <div class="flex items-center"><span class="w-1.5 h-1.5 rounded-full bg-blue-500 mr-2"></span>Liverpool to win</div>
@@ -522,17 +584,19 @@ tailwind.config = {
 <span class="text-white font-extrabold text-sm">2.40</span>
 </button>
 </div>
-<!-- Card 2 (Active/Highlighted Bet) -->
 <div class="bg-[#151e2c] border-2 border-blue-600 rounded-lg p-3 flex flex-col justify-between shadow-lg shadow-blue-950/30">
 <div>
 <div class="flex items-center justify-between text-[11px] mb-1.5">
 <div class="flex items-center space-x-1.5">
+<span class="bg-red-950/80 text-red-400 border border-red-800/40 text-[9px] font-bold px-1.5 py-0.2 rounded flex items-center">
+<i class="fa-solid fa-fire mr-1 text-[8px]"></i> 364+ BETS
+                </span>
 <span class="text-gray-400 font-semibold uppercase text-[10px]">STARTS IN 4H</span>
 </div>
 <i class="fa-solid fa-chevron-right text-[9px] text-gray-400"></i>
 </div>
 <div class="font-bold text-white text-[13px] mb-2 flex items-center">
-<span class="mr-1.5 text-xs text-gray-400">⚽</span> BETIS - REAL MADRID
+<span class="mr-1.5 text-xs text-gray-400">&#9917;</span> BETIS - REAL MADRID
             </div>
 <div class="text-[11px] text-gray-200 space-y-1 mb-3">
 <div class="flex items-center"><span class="w-1.5 h-1.5 rounded-full bg-blue-500 mr-2"></span>Real Madrid to win</div>
@@ -543,7 +607,6 @@ tailwind.config = {
 <span>1.80</span>
 </button>
 </div>
-<!-- Card 3 -->
 <div class="bg-[#141b27] border border-[#212c3e] rounded-lg p-3 flex flex-col justify-between hover:border-blue-700/50 transition">
 <div>
 <div class="flex items-center justify-between text-[11px] text-gray-400 mb-1.5">
@@ -551,7 +614,7 @@ tailwind.config = {
 <i class="fa-solid fa-chevron-right text-[9px]"></i>
 </div>
 <div class="font-bold text-white text-[13px] mb-2 flex items-center">
-<span class="mr-1.5 text-xs text-gray-400">⚽</span> PARIS SG - MONACO
+<span class="mr-1.5 text-xs text-gray-400">&#9917;</span> PARIS SG - MONACO
             </div>
 <div class="text-[11px] text-gray-300 space-y-1 mb-3">
 <div class="flex items-center"><span class="w-1.5 h-1.5 rounded-full bg-blue-500 mr-2"></span>PSG to win</div>
@@ -568,25 +631,23 @@ tailwind.config = {
 <!-- Sports Filter Carousel Chips -->
 <div class="flex items-center space-x-2 mb-3 overflow-x-auto pb-1 text-xs">
 <button class="px-3 py-1.5 bg-[#253043] text-white font-bold rounded-full flex items-center space-x-1.5 border border-blue-500">
-<span>⚽</span> <span>Football</span>
+<span>&#9917;</span> <span>Football</span>
 </button>
 <button class="px-3 py-1.5 bg-[#171f2c] text-gray-300 hover:text-white rounded-full flex items-center space-x-1.5 border border-[#222e40]">
-<span>🎾</span> <span>Tennis</span>
+<span>&#127934;</span> <span>Tennis</span>
 </button>
 <button class="px-3 py-1.5 bg-[#171f2c] text-gray-300 hover:text-white rounded-full flex items-center space-x-1.5 border border-[#222e40]">
-<span>🏀</span> <span>Basketball</span>
+<span>&#127936;</span> <span>Basketball</span>
 </button>
 <button class="px-3 py-1.5 bg-[#171f2c] text-gray-300 hover:text-white rounded-full flex items-center space-x-1.5 border border-[#222e40]">
-<span>🤾</span> <span>Handball</span>
+<span>&#129342;</span> <span>Handball</span>
 </button>
 <button class="px-3 py-1.5 bg-[#171f2c] text-gray-300 hover:text-white rounded-full flex items-center space-x-1.5 border border-[#222e40]">
-<span>🏒</span> <span>Ice Hockey</span>
+<span>&#127954;</span> <span>Ice Hockey</span>
 </button>
 </div>
 <!-- ==================== MATCH ODDS TABLES ==================== -->
-<!-- League Block 1: 1. England -->
 <div class="bg-[#141b27] border border-[#202b3c] rounded-lg mb-3 overflow-hidden">
-<!-- League Header -->
 <div class="bg-[#192231] px-3 py-2 flex items-center justify-between border-b border-[#222f42]">
 <div class="flex items-center space-x-2 font-bold text-gray-200">
 <i class="fa-regular fa-star text-gray-400 text-xs cursor-pointer hover:text-yellow-400"></i>
@@ -596,7 +657,6 @@ tailwind.config = {
 <span>Main offer</span>
 </div>
 </div>
-<!-- Match Row 1 -->
 <div class="p-2.5 border-b border-[#1b2535] flex flex-col md:flex-row md:items-center justify-between hover:bg-[#182130] transition">
 <div class="flex-1">
 <div class="flex items-center space-x-2 mb-1">
@@ -609,7 +669,6 @@ tailwind.config = {
 <div class="flex items-center"><span class="w-2 h-2 rounded-full bg-red-600 mr-2"></span> Liverpool</div>
 </div>
 </div>
-<!-- 1 X 2 Odds Box -->
 <div class="grid grid-cols-3 gap-1.5 mt-2 md:mt-0 w-full md:w-64">
 <button class="bg-[#20293a] hover:bg-[#2a374d] rounded p-1.5 text-center flex flex-col justify-center transition border border-[#263449]">
 <span class="text-[10px] text-gray-400">1</span>
@@ -626,7 +685,6 @@ tailwind.config = {
 </button>
 </div>
 </div>
-<!-- Match Row 2 -->
 <div class="p-2.5 flex flex-col md:flex-row md:items-center justify-between hover:bg-[#182130] transition">
 <div class="flex-1">
 <div class="flex items-center space-x-2 mb-1">
@@ -639,7 +697,6 @@ tailwind.config = {
 <div class="flex items-center"><span class="w-2 h-2 rounded-full bg-blue-400 mr-2"></span> Coventry</div>
 </div>
 </div>
-<!-- 1 X 2 Odds Box -->
 <div class="grid grid-cols-3 gap-1.5 mt-2 md:mt-0 w-full md:w-64">
 <button class="bg-[#20293a] hover:bg-[#2a374d] rounded p-1.5 text-center flex flex-col justify-center transition border border-[#263449] relative">
 <span class="badge-top absolute -top-1 -right-1">TOP</span>
@@ -657,9 +714,7 @@ tailwind.config = {
 </div>
 </div>
 </div>
-<!-- League Block 2: 1. Spain -->
 <div class="bg-[#141b27] border border-[#202b3c] rounded-lg mb-3 overflow-hidden">
-<!-- League Header -->
 <div class="bg-[#192231] px-3 py-2 flex items-center justify-between border-b border-[#222f42]">
 <div class="flex items-center space-x-2 font-bold text-gray-200">
 <i class="fa-regular fa-star text-gray-400 text-xs cursor-pointer hover:text-yellow-400"></i>
@@ -669,7 +724,6 @@ tailwind.config = {
 <span>Main offer</span>
 </div>
 </div>
-<!-- Match Row -->
 <div class="p-2.5 flex flex-col md:flex-row md:items-center justify-between hover:bg-[#182130] transition">
 <div class="flex-1">
 <div class="flex items-center space-x-2 mb-1">
@@ -682,7 +736,6 @@ tailwind.config = {
 <div class="flex items-center"><span class="w-2 h-2 rounded-full bg-white mr-2"></span> Real Madrid</div>
 </div>
 </div>
-<!-- 1 X 2 Odds Box -->
 <div class="grid grid-cols-3 gap-1.5 mt-2 md:mt-0 w-full md:w-64">
 <button class="bg-[#20293a] hover:bg-[#2a374d] rounded p-1.5 text-center flex flex-col justify-center transition border border-[#263449]">
 <span class="text-[10px] text-gray-400">1</span>
@@ -699,9 +752,7 @@ tailwind.config = {
 </div>
 </div>
 </div>
-<!-- League Block 3: 1. France -->
 <div class="bg-[#141b27] border border-[#202b3c] rounded-lg mb-3 overflow-hidden">
-<!-- League Header -->
 <div class="bg-[#192231] px-3 py-2 flex items-center justify-between border-b border-[#222f42]">
 <div class="flex items-center space-x-2 font-bold text-gray-200">
 <i class="fa-regular fa-star text-gray-400 text-xs cursor-pointer hover:text-yellow-400"></i>
@@ -711,7 +762,6 @@ tailwind.config = {
 <span>Main offer</span>
 </div>
 </div>
-<!-- Match Row -->
 <div class="p-2.5 flex flex-col md:flex-row md:items-center justify-between hover:bg-[#182130] transition">
 <div class="flex-1">
 <div class="flex items-center space-x-2 mb-1">
@@ -725,7 +775,6 @@ tailwind.config = {
 <div class="flex items-center"><span class="w-2 h-2 rounded-full bg-red-700 mr-2"></span> Monaco</div>
 </div>
 </div>
-<!-- 1 X 2 Odds Box -->
 <div class="grid grid-cols-3 gap-1.5 mt-2 md:mt-0 w-full md:w-64">
 <button class="bg-[#20293a] hover:bg-[#2a374d] rounded p-1.5 text-center flex flex-col justify-center transition border border-[#263449] relative">
 <span class="badge-top absolute -top-1 -right-1">TOP</span>
@@ -745,10 +794,75 @@ tailwind.config = {
 </div>
 </section>
 <!-- END: MainCenterArea -->
-<!-- ==================== RIGHT BETSLIP SIDEBAR ==================== -->
+<!-- ==================== CENTER: CASINO ==================== -->
+<!-- BEGIN: CasinoCenterArea -->
+<section class="hidden flex-1 min-w-0 bg-[#0c1017] overflow-y-auto px-3.5 py-3 h-[calc(100vh-5rem)]" id="center-casino">
+<!-- Casino sub-tabs -->
+<div class="flex items-center bg-[#131924] rounded-lg p-1 mb-3 border border-[#20293a] text-xs font-semibold">
+<button class="flex items-center px-4 py-1.5 rounded bg-[#1c2436] text-white font-bold shadow-sm">
+<i class="fa-solid fa-tower-broadcast mr-1.5 text-[10px] text-red-500"></i> LIVE CASINO
+</button>
+<button class="px-4 py-1.5 rounded text-gray-400 hover:text-white transition">TOP WINNERS</button>
+<button class="px-4 py-1.5 rounded text-gray-400 hover:text-white transition">PROMOTIONS</button>
+<button class="px-4 py-1.5 rounded text-gray-400 hover:text-white transition">TOURNAMENTS</button>
+<button class="ml-auto px-3 py-1.5 rounded text-gray-400 hover:text-white transition flex items-center gap-1.5" id="casino-back">
+<i class="fa-solid fa-chevron-right rotate-180 text-[9px]"></i> BACK TO SPORT
+</button>
+</div>
+<!-- ENGINE: the same personalised banner as sport, casino side -->
+<div class="mb-3" id="casino-hero"></div>
+<!-- Casino promo strip -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2.5 mb-3">
+<div class="bg-gradient-to-br from-[#0f2b6b] to-[#101827] border border-blue-900/60 rounded-lg p-3 relative overflow-hidden h-32 flex flex-col justify-between shadow">
+<div>
+<span class="text-[10px] font-bold text-blue-300 uppercase tracking-wider">Only in FEG</span>
+<h4 class="text-sm font-black text-white uppercase leading-tight mt-0.5">PLAY EXCLUSIVE<br/>GAMES</h4>
+</div>
+<div class="absolute right-2 bottom-2 text-4xl opacity-70">&#127183;</div>
+<span class="text-[11px] text-gray-300 font-semibold z-10">14 titles</span>
+</div>
+<div class="bg-gradient-to-br from-[#123a7a] to-[#0d1522] border border-blue-800/60 rounded-lg p-3 relative overflow-hidden h-32 flex flex-col justify-between shadow">
+<div>
+<span class="text-[10px] font-bold text-blue-300 uppercase tracking-wider">Live roulette</span>
+<h4 class="text-sm font-black text-white uppercase leading-tight mt-0.5">24/7 AT<br/>FEG CASINO</h4>
+</div>
+<div class="absolute right-2 bottom-2 text-4xl opacity-70"><i class="fa-solid fa-dharmachakra text-amber-300"></i></div>
+<span class="text-[11px] text-gray-300 font-semibold z-10">56 tables</span>
+</div>
+<div class="md:col-span-2 bg-gradient-to-r from-[#1531a8] to-[#0a1a4d] border border-blue-700/50 rounded-lg p-4 relative overflow-hidden h-32 flex flex-col justify-between shadow">
+<div class="z-10">
+<span class="text-[10px] font-bold text-blue-200 uppercase tracking-widest">Blackjack classic</span>
+<h4 class="text-xl font-black text-white uppercase leading-none mt-1">FOR TRUE <span class="text-cyan-300">CON</span>noisseurs</h4>
+</div>
+<button class="z-10 self-start px-5 py-1.5 rounded-full border border-cyan-300/70 text-cyan-200 text-[11px] font-black uppercase tracking-wider hover:bg-cyan-300/10 transition">Play</button>
+<div class="absolute -right-3 top-1/2 -translate-y-1/2 text-7xl opacity-25 select-none">&#127183;</div>
+<div class="absolute right-6 bottom-3 text-[9px] font-mono text-blue-200/70">first person</div>
+</div>
+</div>
+<!-- Game category tabs + search -->
+<div class="flex items-center gap-2 mb-3 flex-wrap">
+<div class="flex items-center gap-1.5 overflow-x-auto pb-0.5 text-xs flex-1 min-w-0" id="casino-tabs"></div>
+<div class="flex items-center gap-2 flex-shrink-0">
+<div class="relative">
+<i class="fa-solid fa-magnifying-glass absolute left-2.5 top-1/2 -translate-y-1/2 text-[10px] text-gray-500"></i>
+<input class="w-44 bg-[#131924] border border-[#222e40] rounded-full pl-7 pr-3 py-1.5 text-[11px] text-gray-200 placeholder-gray-500 focus:outline-none focus:border-blue-500" id="casino-search" placeholder="Find your game" type="text"/>
+</div>
+<button class="px-3 py-1.5 bg-[#131924] border border-[#222e40] rounded-full text-[11px] text-gray-300 font-semibold hover:text-white transition">
+<i class="fa-solid fa-list-check text-[10px] mr-1"></i> FILTERS
+</button>
+</div>
+</div>
+<!-- Game rows, rendered by the engine -->
+<div id="casino-rows"></div>
+<div class="text-[10px] text-gray-500 leading-snug border-t border-[#1b2332] pt-2 mt-1">
+<i class="fa-solid fa-flask text-amber-400/80 mr-1"></i>
+Synthetic catalogue built for the demo. Titles marked <span class="text-gray-300">from your history</span> are real launch events in the dataset; the rest are invented so nothing here impersonates a live product.
+</div>
+</section>
+<!-- END: CasinoCenterArea -->
+<!-- ==================== RIGHT: BETSLIP (sports) ==================== -->
 <!-- BEGIN: BetslipSidebar -->
-<aside class="w-80 bg-[#141a24] border-l border-[#1e2738] flex flex-col flex-shrink-0 h-[calc(100vh-5rem)]">
-<!-- Betslip Header & Numbered Tabs (1, 2, 3, 4) -->
+<aside class="w-80 bg-[#141a24] border-l border-[#1e2738] flex flex-col flex-shrink-0 h-[calc(100vh-5rem)]" id="right-betslip">
 <div class="p-2 border-b border-[#1f2838] flex items-center justify-between">
 <div class="flex items-center space-x-1">
 <button class="w-6 h-6 rounded-full bg-blue-600 text-white font-bold text-xs flex items-center justify-center">1</button>
@@ -762,7 +876,6 @@ tailwind.config = {
 <button class="hover:text-red-400" title="Clear"><i class="fa-regular fa-trash-can"></i></button>
 </div>
 </div>
-<!-- Ticket Type Dropdown -->
 <div class="px-3 pt-2 pb-1">
 <div class="relative">
 <button class="w-full bg-[#1b2331] border border-[#273247] rounded px-3 py-1.5 text-left flex items-center justify-between text-xs text-white font-semibold">
@@ -771,11 +884,8 @@ tailwind.config = {
 </button>
 </div>
 </div>
-<!-- Betslip Scrollable Bets Container -->
 <div class="flex-1 overflow-y-auto px-3 py-2 space-y-2.5">
-<!-- Active Single Bet Item -->
 <div class="bg-[#1a2332] border border-[#29364d] rounded-lg p-2.5 relative">
-<!-- Close Bet Button -->
 <button class="absolute top-2 right-2 text-gray-400 hover:text-white text-xs">
 <i class="fa-solid fa-xmark"></i>
 </button>
@@ -784,14 +894,14 @@ tailwind.config = {
 <span class="badge-bb">BB</span>
 </div>
 <div class="font-bold text-white text-xs mb-0.5" id="slip-title">Betis - Real Madrid</div>
-<div class="text-[11px] text-gray-400 mb-2" id="slip-sub">2 events • Football / 1.Spain</div>
+<div class="text-[11px] text-gray-400 mb-2" id="slip-sub">2 events &bull; Football / 1.Spain</div>
 <div class="bg-[#141b26] rounded p-2 text-[11px] space-y-1 mb-2 border border-[#1f293a]" id="slip-legs">
 <div class="flex items-center text-gray-200">
 <span class="w-1.5 h-1.5 rounded-full bg-blue-500 mr-1.5"></span> Real Madrid to win
-            </div>
+</div>
 <div class="flex items-center text-gray-200">
 <span class="w-1.5 h-1.5 rounded-full bg-blue-500 mr-1.5"></span> Kylian Mbappe to score anytime
-            </div>
+</div>
 </div>
 <div class="flex items-center justify-between pt-1 border-t border-[#222d3e]">
 <span class="text-[11px] text-gray-400">Odds:</span>
@@ -807,35 +917,31 @@ tailwind.config = {
 <span class="text-[11px] text-gray-300 leading-tight" id="slip-callout-text">Bet suggestions based off your choices</span>
 </div>
 <button class="px-2.5 py-1 bg-[#28354b] hover:bg-blue-600 text-white font-bold rounded text-[10px] uppercase transition" id="slip-callout-btn">
-            VIEW
-          </button>
+VIEW
+</button>
 </div>
 </div>
-<!-- Betslip Bottom Control & Stake Form -->
 <div class="p-3 bg-[#111620] border-t border-[#1d2536] space-y-2.5">
-<!-- Rate changes dropdown toggle -->
 <div class="flex items-center justify-between bg-[#192230] px-2.5 py-1.5 rounded text-[11px] text-gray-300 border border-[#243044] cursor-pointer">
 <span>Accept all rate changes</span>
 <i class="fa-solid fa-chevron-down text-[10px] text-gray-400"></i>
 </div>
-<!-- Stake / Payin Input Box -->
 <div class="space-y-1">
 <div class="flex justify-between text-gray-400 text-[11px]">
 <span>Stake (Payin):</span>
 <span class="hidden text-[10px] text-emerald-400 font-bold" id="stake-src">from your history</span>
 </div>
 <div class="relative">
-<input class="w-full bg-[#18202d] border border-[#2a364d] rounded py-1.5 px-3 text-right text-white font-extrabold text-sm focus:outline-none focus:border-blue-500" id="stake-input" type="text" value="1,00 €"/>
+<input class="w-full bg-[#18202d] border border-[#2a364d] rounded py-1.5 px-3 text-right text-white font-extrabold text-sm focus:outline-none focus:border-blue-500" id="stake-input" type="text" value="1,00 &euro;"/>
 <span class="hidden absolute left-2 top-1/2 -translate-y-1/2 text-[9px] font-bold text-emerald-400 uppercase" id="stake-badge">pre-filled</span>
 </div>
 </div>
-<!-- Quick Stake Chips -->
 <div class="grid grid-cols-4 gap-1.5 text-xs font-bold">
 <button class="py-1 bg-[#1d2636] hover:bg-[#28354c] text-gray-200 rounded text-center border border-[#273347] transition">3,00</button>
 <button class="py-1 bg-[#1d2636] hover:bg-[#28354c] text-gray-200 rounded text-center border border-[#273347] transition">5,00</button>
 <button class="py-1 bg-[#1d2636] hover:bg-[#28354c] text-gray-200 rounded text-center border border-[#273347] transition">10,00</button>
+<button class="py-1 bg-[#253247] hover:bg-[#2e3e57] text-yellow-400 rounded text-center border border-[#30405b] text-[10px] uppercase transition">ALL IN</button>
 </div>
-<!-- Retail Ticket Switch -->
 <div class="flex items-center justify-between pt-1 text-[11px] text-gray-400">
 <span>Switch to retail ticket</span>
 <label class="relative inline-flex items-center cursor-pointer">
@@ -843,23 +949,44 @@ tailwind.config = {
 <div class="w-7 h-4 bg-gray-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all peer-checked:bg-blue-600"></div>
 </label>
 </div>
-<!-- Final Bet Submission CTA -->
 <button class="w-full py-2.5 bg-[#00b140] hover:bg-[#00c547] text-white font-black rounded text-sm uppercase tracking-wider shadow-lg shadow-green-950/40 transition active:scale-[0.99] flex items-center justify-center space-x-1.5">
-<span id="bet-cta">BET 1,00 €</span>
+<span id="bet-cta">BET 1,00 &euro;</span>
 </button>
 </div>
 </aside>
 <!-- END: BetslipSidebar -->
+<!-- ==================== RIGHT: CASINO LAST 24 HOURS ==================== -->
+<!-- BEGIN: CasinoActivitySidebar -->
+<aside class="hidden flex w-80 bg-[#141a24] border-l border-[#1e2738] flex-col flex-shrink-0 h-[calc(100vh-5rem)]" id="right-casino">
+<div class="px-3 py-2.5 border-b border-[#1f2838] flex items-center gap-2">
+<span class="relative flex h-2 w-2 flex-shrink-0">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-500 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
+</span>
+<div class="min-w-0">
+<div class="text-white font-black text-[12px] leading-tight">Casino &mdash; last 24 hours</div>
+<div class="text-gray-500 text-[10px]">masked handles &middot; synthetic sessions</div>
+</div>
+<button class="ml-auto text-[9px] font-bold uppercase tracking-wide text-gray-400 hover:text-white border border-[#2a3a57] rounded px-2 py-1 transition flex-shrink-0" id="feed-toggle">Hide</button>
+</div>
+<div class="px-3 py-2 border-b border-[#1f2838] bg-[#111620]" id="feed-summary"></div>
+<div class="flex-1 overflow-y-auto px-3 py-2 space-y-1.5" id="cas-feed"></div>
+<div class="p-3 bg-[#111620] border-t border-[#1d2536] text-[10px] text-gray-500 leading-snug">
+<i class="fa-solid fa-shield-halved text-emerald-400 mr-1"></i>
+Winning <span class="text-gray-300">and</span> non-winning sessions both appear, because a wins-only feed is a dark pattern. No bonus, free spin or offer is attached, and nothing here is targeted at a specific player.
+</div>
+</aside>
+<!-- END: CasinoActivitySidebar -->
 </main>
 <!-- END: MainContentLayout -->
 
-<!-- ══════════════════ SYNTHETIC-DATA NOTICE ══════════════════ -->
+<!-- ================== SYNTHETIC-DATA NOTICE ================== -->
 <div class="w-full bg-[#1a1508] border-t border-[#3a2f10] text-[10px] text-amber-300/80 px-3 py-1 flex items-center gap-2 justify-center">
 <i class="fa-solid fa-flask"></i>
 <span>Prototype on synthetic data &mdash; FEG Hackathon 2026, Challenge 1. 44,261 events &middot; 8 players &middot; 5,237 sessions. No real players, no real identities.</span>
 </div>
 
-<!-- ══════════════════ LOGIN MODAL ══════════════════ -->
+<!-- ================== LOGIN MODAL ================== -->
 <div class="hidden fixed inset-0 z-[100] bg-black/75 backdrop-blur-sm items-center justify-center p-4 overflow-y-auto" id="login-modal">
 <div class="bg-[#111823] border border-[#25324a] rounded-xl w-full max-w-4xl shadow-2xl my-8">
 <div class="px-5 py-4 border-b border-[#1e2a3d] flex items-start justify-between">
@@ -876,10 +1003,10 @@ No passwords, no real identities. Every <span class="font-mono text-gray-400">Pl
 </div>
 </div>
 
-<!-- ══════════════════ ACCOUNT MENU ══════════════════ -->
+<!-- ================== ACCOUNT MENU ================== -->
 <div class="hidden fixed z-[95] right-3 top-[52px] w-72 bg-[#111823] border border-[#25324a] rounded-lg shadow-2xl overflow-hidden" id="account-menu"></div>
 
-<!-- ══════════════════ ENGINE DRAWER ══════════════════ -->
+<!-- ================== ENGINE DRAWER ================== -->
 <button class="fixed z-[90] bottom-4 left-4 px-3.5 py-2.5 rounded-full bg-[#1b2740] hover:bg-[#243350] border border-[#31456b] text-blue-300 shadow-xl flex items-center gap-2 text-[11px] font-bold uppercase tracking-wide transition" id="engine-btn">
 <i class="fa-solid fa-microchip"></i><span>Engine</span>
 </button>
@@ -905,14 +1032,14 @@ No passwords, no real identities. Every <span class="font-mono text-gray-400">Pl
   var LS    = "feg.player";
   var $     = function (id) { return document.getElementById(id); };
 
-  var EMOJI = { "Nogomet": "\u26bd", "Ko\u0161arka": "\ud83c\udfc0", "Tenis": "\ud83c\udfbe" };
-  function emoji(sport) { return EMOJI[sport] || "\ud83c\udfaf"; }
+  var EMOJI = { "Nogomet": "⚽", "Košarka": "🏀", "Tenis": "🎾" };
+  function emoji(sport) { return EMOJI[sport] || "🎯"; }
 
   // The dataset is Croatian. site_data.json keeps exactly what the engine
   // emitted; only what an English reader sees is mapped, here and nowhere else.
   // Competition names (HNL, Liga prvaka, Euroliga, ATP Masters) are proper
   // nouns and stay as they are.
-  var SPORT_EN = { "Nogomet": "Football", "Ko\u0161arka": "Basketball", "Tenis": "Tennis" };
+  var SPORT_EN = { "Nogomet": "Football", "Košarka": "Basketball", "Tenis": "Tennis" };
   function tr(text) {
     if (text === null || text === undefined) return text;
     var out = String(text);
@@ -921,8 +1048,8 @@ No passwords, no real identities. Every <span class="font-mono text-gray-400">Pl
   }
 
   function eur(v) {
-    if (v === null || v === undefined) return "\u2014";
-    return v.toFixed(2).replace(".", ",") + " \u20ac";
+    if (v === null || v === undefined) return "—";
+    return v.toFixed(2).replace(".", ",") + " €";
   }
   function esc(t) {
     return String(t === null || t === undefined ? "" : t)
@@ -941,14 +1068,31 @@ No passwords, no real identities. Every <span class="font-mono text-gray-400">Pl
          : b === "medium" ? "bg-amber-500/15 text-amber-400 border-amber-500/30"
          : "bg-orange-500/15 text-orange-400 border-orange-500/30";
   }
+  // Deterministic pseudo-randomness: the same fixture always renders the same
+  // numbers, so nothing on screen shifts between reloads.
+  function rnd(seed, i) { var x = Math.sin(seed * 0.0001 + i * 7.13) * 10000; return x - Math.floor(x); }
+  function oddsVal(seed, i, lo, hi) { return (lo + rnd(seed, i) * (hi - lo)).toFixed(2); }
 
-  /* ────────────────────────── login modal ────────────────────────── */
+  var FIXTURES = {
+    "HNL":            ["NK Sjever",            "NK Primorje"],
+    "Liga prvaka":    ["FK Kontinental",       "AC Meridijan"],
+    "Premier League": ["Northport FC",         "Ashfield United"],
+    "Europska liga":  ["FK Zapad",             "SC Delta"],
+    "NBA":            ["Harbor City Waves",    "Prairie State Bolts"],
+    "Euroliga":       ["BC Adriatik",          "BC Panonija"],
+    "ABA Liga":       ["KK Dinara",            "KK Velebit"],
+    "ATP Masters":    ["I. Petrović",     "T. Lindqvist"],
+    "WTA 1000":       ["M. Babić",        "K. Larsen"],
+    "Grand Slam":     ["N. Farkaš",       "D. Ricci"]
+  };
+
+  /* ========================= login modal ========================= */
   function buildLogin() {
     $("login-grid").innerHTML = KEYS.map(function (k) {
       var u = USERS[k], p = u.profile;
       var habit = p.top_game
-        ? p.top_game + " \u00b7 " + p.top_provider
-        : tr(p.top_sport || "\u2014") + " / " + (p.top_competition || "\u2014");
+        ? p.top_game + " · " + p.top_provider
+        : tr(p.top_sport || "—") + " / " + (p.top_competition || "—");
       return '<button data-key="' + k + '" class="login-card text-left bg-[#161e2b] hover:bg-[#1c2637] border border-[#26334a] hover:border-blue-600 rounded-lg p-3 transition group">'
         + '<div class="flex items-center justify-between mb-1.5">'
         +   '<span class="w-8 h-8 rounded-full bg-[#22304a] group-hover:bg-blue-600 text-white font-black text-[11px] flex items-center justify-center transition">' + esc(k.slice(4)) + '</span>'
@@ -974,13 +1118,191 @@ No passwords, no real identities. Every <span class="font-mono text-gray-400">Pl
   function login(key) { localStorage.setItem(LS, key); closeLogin(); render(); }
   function logout()   { localStorage.removeItem(LS); $("account-menu").classList.add("hidden"); render(); }
 
-  /* ────────────────────────── hero card ────────────────────────── */
-  function heroFor(u) {
+  /* ============ the odds, inside the banner itself ============ */
+  // No modal, no second click: the event behind the recommendation and its
+  // current prices sit in the same card as the recommendation.
+  function oddsBox(label, value, top) {
+    return '<button class="relative bg-[#1a2434] hover:bg-[#22304a] border border-[#28374f] rounded px-3 py-1 min-w-[62px] text-center transition">'
+      + (top ? '<span class="badge-top absolute -top-1.5 -right-1.5">TOP</span>' : '')
+      + '<span class="block text-[9px] text-gray-400 leading-none">' + esc(label) + '</span>'
+      + '<span class="block font-extrabold text-white text-[13px] leading-tight mt-0.5">' + esc(value) + '</span>'
+      + '</button>';
+  }
+
+  function inlineOdds(u) {
+    var c = u.card || {}, pay = c.payload || {}, o = u.odds_card;
+    var comp  = pay.competition || (o && o.competition) || u.profile.top_competition;
+    var sport = tr(pay.sport || (o && o.sport) || u.profile.top_sport || "");
+    if (!comp) return "";
+    var pair = FIXTURES[comp] || ["Home (synthetic)", "Away (synthetic)"];
+    var seed = pay.fixture_id || c.session || 3000000;
+    var live = rnd(seed, 1) > 0.55;
+    var isBask = sport === "Basketball", isTen = sport === "Tennis";
+    var hs = isBask ? 60 + Math.floor(rnd(seed, 3) * 30) : Math.floor(rnd(seed, 3) * 3);
+    var as = isBask ? 58 + Math.floor(rnd(seed, 4) * 30) : Math.floor(rnd(seed, 4) * 3);
+    var minute = 20 + Math.floor(rnd(seed, 2) * 65);
+
+    var boxes = isBask
+      ? oddsBox("1", oddsVal(seed, 5, 1.4, 2.4), false)
+        + oddsBox("2", oddsVal(seed, 6, 1.5, 2.6), true)
+        + oddsBox("O 168.5", oddsVal(seed, 7, 1.7, 2.0), false)
+      : isTen
+      ? oddsBox("1", oddsVal(seed, 5, 1.3, 2.3), true)
+        + oddsBox("2", oddsVal(seed, 6, 1.6, 3.1), false)
+        + oddsBox("O 21.5", oddsVal(seed, 7, 1.7, 2.1), false)
+      : oddsBox("1", oddsVal(seed, 5, 1.5, 3.2), false)
+        + oddsBox("X", oddsVal(seed, 6, 2.9, 3.9), false)
+        + oddsBox("2", oddsVal(seed, 7, 1.9, 4.6), true);
+
+    var when = live
+      ? '<span class="px-1.5 py-0.5 rounded bg-red-600 text-white text-[9px] font-black uppercase flex-shrink-0">Live ' + (isBask ? "Q" + (1 + Math.floor(rnd(seed, 2) * 4)) : minute + "’") + '</span>'
+      : '<span class="px-1.5 py-0.5 rounded bg-[#26334a] text-gray-300 text-[9px] font-black uppercase flex-shrink-0">Pre-match</span>';
+
+    var score = live
+      ? '<span class="font-mono text-white font-black text-[13px] flex-shrink-0">' + hs + ':' + as + '</span>'
+      : '';
+
+    var move = "";
+    if (o) {
+      var down = o.direction === "down";
+      var col = down ? "rose" : "emerald";
+      move = '<div class="mt-2 pt-2 border-t border-[#1a2536] flex flex-wrap items-center gap-x-2.5 gap-y-1">'
+        + '<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-' + col + '-500/10 border border-' + col + '-500/30 text-' + col + '-300 text-[10px] font-bold">'
+        +   '<i class="fa-solid fa-arrow-trend-' + (down ? "down" : "up") + ' text-[9px]"></i>'
+        +   '<span class="font-mono">' + o.before.toFixed(2) + ' → ' + o.after.toFixed(2) + '</span>'
+        +   '<span class="font-mono">' + (o.pct > 0 ? "+" : "") + o.pct + '%</span>'
+        + '</span>'
+        + '<span class="text-[10px] text-gray-400">' + esc(o.rendered[1] || "") + '</span>'
+        + '<span class="ml-auto text-[9px] font-mono text-gray-600">shown both ways · ' + u.stats.n_worse + ' worse / ' + u.stats.n_better + ' better</span>'
+        + '</div>';
+    }
+
+    return '<div class="px-3.5 py-2.5 bg-[#0e1522] border-t border-[#1e293c]">'
+      + '<div class="flex flex-wrap items-center gap-x-2.5 gap-y-2">'
+      +   when + score
+      +   '<span class="text-white font-bold text-[12px] truncate">' + esc(pair[0]) + ' <span class="text-gray-500 font-normal">v</span> ' + esc(pair[1]) + '</span>'
+      +   '<span class="text-[10px] font-mono text-gray-500 truncate">' + esc(sport) + ' / ' + esc(comp)
+      +     (o && !live ? ' · in ' + o.hours_away + ' h' : '') + '</span>'
+      +   '<div class="ml-auto flex items-center gap-1.5 flex-shrink-0">' + boxes + '</div>'
+      + '</div>'
+      + move
+      + '</div>';
+  }
+
+  function casinoStrip(u) {
+    var p = u.profile, pay = (u.card && u.card.payload) || {};
+    var game = pay.game || p.top_game;
+    if (!game) return "";
+    var pill = function (label, value) {
+      return '<span class="inline-flex items-baseline gap-1.5 px-2 py-1 rounded bg-[#1a2434] border border-[#28374f]">'
+        + '<span class="text-[9px] uppercase tracking-wide text-gray-500">' + esc(label) + '</span>'
+        + '<span class="text-[12px] font-extrabold text-white font-mono">' + esc(value) + '</span></span>';
+    };
+    return '<div class="px-3.5 py-2.5 bg-[#0e1522] border-t border-[#1e293c] flex flex-wrap items-center gap-x-2.5 gap-y-2">'
+      + '<span class="w-8 h-8 rounded bg-gradient-to-br from-purple-600 to-indigo-800 flex items-center justify-center text-white text-[13px] flex-shrink-0"><i class="fa-solid fa-dice"></i></span>'
+      + '<span class="text-white font-bold text-[12px] truncate">' + esc(game) + '</span>'
+      + '<span class="text-[10px] font-mono text-gray-500 truncate">' + esc(pay.provider || p.top_provider || "") + '</span>'
+      + '<div class="ml-auto flex items-center gap-1.5 flex-shrink-0">'
+      +   pill("usual stake", eur(pay.stake_eur || p.usual_casino_stake_eur))
+      +   pill("your launches", (p.top_game_share * 100).toFixed(0) + "%")
+      +   pill("vs uniform", p.top_game_lift + "×")
+      + '</div></div>';
+  }
+
+  /* ============ cold start: what everyone else is doing ============ */
+  // When the engine has no settled habit to act on it still owes the player
+  // something to look at. These two picks are ranked across the whole dataset,
+  // are identical for every cold-start player, and carry no stake — they are a
+  // popularity list, not a recommendation.
+  // Computed on first use: the game catalogue it reads from is defined further
+  // down the file, so this cannot run while the script is still being parsed.
+  var POPULAR = null;
+  function popular() {
+    if (POPULAR) return POPULAR;
+    var comps = {}, sportOf = {}, games = {};
+    KEYS.forEach(function (k) {
+      var u = USERS[k];
+      Object.keys(u.competitions || {}).forEach(function (c) {
+        comps[c] = (comps[c] || 0) + u.competitions[c];
+        sportOf[c] = u.profile.top_sport;
+      });
+      Object.keys(u.games || {}).forEach(function (g) {
+        games[g] = (games[g] || 0) + u.games[g];
+      });
+    });
+    function top(obj) {
+      return Object.keys(obj).sort(function (a, b) { return obj[b] - obj[a]; })[0] || null;
+    }
+    var c = top(comps), g = top(games);
+    POPULAR = {
+      competition: c, sport: sportOf[c], slips: comps[c] || 0,
+      game: g, provider: g ? providerFor(g, null) : null, launches: games[g] || 0
+    };
+    return POPULAR;
+  }
+
+  function seedOf(text) {
+    var n = 0;
+    for (var i = 0; i < text.length; i++) n = (n * 31 + text.charCodeAt(i)) % 9999991;
+    return n * 7 + 1000000;
+  }
+
+  function popularPicks() {
+    var P = popular();
+    if (!P.competition && !P.game) return "";
+    var out = '<div class="px-3.5 py-3 bg-[#0e1522] border-t border-amber-800/30">'
+      + '<div class="flex items-center gap-2 mb-2 flex-wrap">'
+      +   '<i class="fa-solid fa-fire text-orange-400 text-[11px]"></i>'
+      +   '<span class="text-orange-300 font-black text-[10px] uppercase tracking-widest">Popular right now</span>'
+      +   '<span class="text-[10px] text-gray-500">most-backed across all ' + META.total_players + ' players — not picked for you</span>'
+      + '</div>'
+      + '<div class="grid grid-cols-1 md:grid-cols-2 gap-2.5">';
+
+    if (P.competition) {
+      var pair  = FIXTURES[P.competition] || ["Home (synthetic)", "Away (synthetic)"];
+      var seed  = seedOf(P.competition);
+      var sport = tr(P.sport || "");
+      var isBask = sport === "Basketball", isTen = sport === "Tennis";
+      var boxes = isBask
+        ? oddsBox("1", oddsVal(seed, 5, 1.4, 2.4), false) + oddsBox("2", oddsVal(seed, 6, 1.5, 2.6), false) + oddsBox("O 168.5", oddsVal(seed, 7, 1.7, 2.0), false)
+        : isTen
+        ? oddsBox("1", oddsVal(seed, 5, 1.3, 2.3), false) + oddsBox("2", oddsVal(seed, 6, 1.6, 3.1), false) + oddsBox("O 21.5", oddsVal(seed, 7, 1.7, 2.1), false)
+        : oddsBox("1", oddsVal(seed, 5, 1.5, 3.2), false) + oddsBox("X", oddsVal(seed, 6, 2.9, 3.9), false) + oddsBox("2", oddsVal(seed, 7, 1.9, 4.6), false);
+      out += '<div class="bg-[#141c29] border border-[#22304a] rounded-lg p-2.5">'
+        + '<div class="text-[9px] font-bold uppercase tracking-wide text-gray-500 mb-1">Top bet · most slips in the data</div>'
+        + '<div class="text-white font-bold text-[12px] truncate">' + esc(pair[0]) + ' <span class="text-gray-500 font-normal">v</span> ' + esc(pair[1]) + '</div>'
+        + '<div class="text-[10px] font-mono text-gray-500 mb-2">' + esc(sport) + ' / ' + esc(P.competition) + ' · ' + P.slips.toLocaleString("en-US") + ' slips</div>'
+        + '<div class="flex items-center gap-1.5">' + boxes + '</div>'
+        + '</div>';
+    }
+
+    if (P.game) {
+      var m = metaFor(P.game);
+      out += '<div class="bg-[#141c29] border border-[#22304a] rounded-lg p-2.5 flex flex-col">'
+        + '<div class="text-[9px] font-bold uppercase tracking-wide text-gray-500 mb-1">Top casino game · most launches</div>'
+        + '<div class="flex items-center gap-2.5">'
+        +   '<span class="w-9 h-9 rounded bg-gradient-to-br ' + m.g + ' border border-[#28374f] flex items-center justify-center text-white text-[14px] flex-shrink-0"><i class="fa-solid ' + m.ico + '"></i></span>'
+        +   '<div class="min-w-0 flex-1">'
+        +     '<div class="text-white font-bold text-[12px] truncate">' + esc(P.game) + '</div>'
+        +     '<div class="text-[10px] font-mono text-gray-500 truncate">' + esc(P.provider || "") + ' · ' + P.launches.toLocaleString("en-US") + ' launches</div>'
+        +   '</div>'
+        +   '<button class="hero-casino px-3 py-1.5 rounded bg-[#28354b] hover:bg-purple-600 text-white text-[10px] font-black uppercase tracking-wide transition flex-shrink-0">Open lobby</button>'
+        + '</div></div>';
+    }
+
+    return out + '</div>'
+      + '<div class="text-[9px] text-gray-500 mt-2">Ranked from the same event data, identical for every cold-start player. Nothing is pre-filled and no stake is suggested.</div>'
+      + '</div>';
+  }
+
+  /* ========================= hero banner ========================= */
+  function heroHTML(u) {
     var p = u.profile, c = u.card;
 
     if (!c) {  // engine deliberately stays quiet
       var sil = u.silent || { rule: "no_qualifying_friction", reasons: [] };
-      return '<div class="bg-[#1c1710] border border-amber-700/40 rounded-lg p-3.5">'
+      return '<div class="bg-[#1c1710] border border-amber-700/40 rounded-lg overflow-hidden">'
+        + '<div class="p-3.5">'
         + '<div class="flex items-center gap-2 mb-2">'
         +   '<i class="fa-solid fa-circle-pause text-amber-400"></i>'
         +   '<span class="text-amber-300 font-black text-[11px] uppercase tracking-wide">Engine is staying quiet</span>'
@@ -990,8 +1312,10 @@ No passwords, no real identities. Every <span class="font-mono text-gray-400">Pl
         + '<div class="text-gray-400 text-[11px] mb-2.5">Profile confidence is ' + p.confidence.toFixed(3)
         +   ', below the 0.40 threshold. Guessing a stake would be inventing one, so nothing is offered.</div>'
         + '<ul class="space-y-1 text-[10px] text-amber-200/70 border-t border-amber-800/30 pt-2">'
-        +   (sil.reasons || []).map(function (r) { return '<li>\u2022 ' + esc(r) + '</li>'; }).join("")
-        + '</ul></div>';
+        +   (sil.reasons || []).map(function (r) { return '<li>• ' + esc(r) + '</li>'; }).join("")
+        + '</ul></div>'
+        + popularPicks()
+        + '</div>';
     }
 
     var resume = c.action === "RESUME_GAME";
@@ -1000,8 +1324,8 @@ No passwords, no real identities. Every <span class="font-mono text-gray-400">Pl
     var pay    = c.payload || {};
     var taps   = pay.taps_to_confirm || 2;
 
-    return '<div class="bg-gradient-to-r from-[#101a2e] to-[#141b27] border border-' + accent + '-700/50 rounded-lg overflow-hidden">'
-      + '<div class="px-3.5 py-2 bg-' + accent + '-900/30 border-b border-' + accent + '-800/40 flex items-center gap-2">'
+    return '<div class="bg-gradient-to-r from-[#101a2e] to-[#141b27] border border-' + accent + '-700/50 rounded-lg overflow-hidden shadow-lg shadow-black/20">'
+      + '<div class="px-3.5 py-2 bg-' + accent + '-900/30 border-b border-' + accent + '-800/40 flex items-center gap-2 flex-wrap">'
       +   '<i class="fa-solid ' + (resume ? "fa-dice" : "fa-bolt") + ' text-' + accent + '-400 text-xs"></i>'
       +   '<span class="text-' + accent + '-300 font-black text-[10px] uppercase tracking-widest">' + esc(c.action) + '</span>'
       +   '<span class="font-mono text-[9px] text-gray-500">' + esc(c.rule) + '</span>'
@@ -1014,19 +1338,62 @@ No passwords, no real identities. Every <span class="font-mono text-gray-400">Pl
       +     '<div class="text-gray-500 text-[10px] mt-1 italic">' + esc(lines[2] || "") + '</div>'
       +   '</div>'
       +   '<div class="flex items-center gap-2 flex-shrink-0">'
-      +     '<button class="px-4 py-2 bg-[#00b140] hover:bg-[#00c547] text-white font-black rounded text-[12px] uppercase tracking-wide shadow-lg transition" id="hero-accept">'
-      +       (resume ? "Open game" : "Continue") + ' \u00b7 ' + taps + (taps === 1 ? " tap" : " taps")
+      +     '<button class="hero-accept px-4 py-2 bg-[#00b140] hover:bg-[#00c547] text-white font-black rounded text-[12px] uppercase tracking-wide shadow-lg transition">'
+      +       (resume ? "Open game" : "Continue") + ' · ' + taps + (taps === 1 ? " tap" : " taps")
       +     '</button>'
-      +     '<button class="px-3 py-2 text-gray-400 hover:text-white border border-[#2a3a57] rounded text-[11px] transition" id="hero-dismiss">Dismiss</button>'
+      +     '<button class="hero-dismiss px-3 py-2 text-gray-400 hover:text-white border border-[#2a3a57] rounded text-[11px] transition">Dismiss</button>'
       +   '</div>'
       + '</div>'
+      + (resume ? casinoStrip(u) : inlineOdds(u))
       + '<div class="px-3.5 py-2 bg-black/25 border-t border-[#1e293c] flex flex-wrap items-center gap-x-4 gap-y-1 text-[10px] text-gray-500">'
-      +   '<span><span class="text-gray-600 line-through">8\u20139 taps + typing</span> \u2192 <span class="text-emerald-400 font-bold">' + taps + (taps === 1 ? " tap" : " taps") + ', no typing</span></span>'
+      +   '<span><span class="text-gray-600 line-through">8–9 taps + typing</span> → <span class="text-emerald-400 font-bold">' + taps + (taps === 1 ? " tap" : " taps") + ', no typing</span></span>'
       +   '<span class="font-mono">' + (c.constructed ? "constructed lobby session" : "session " + esc(c.session)) + '</span>'
       + '</div></div>';
   }
 
-  /* ────────────────────────── odds movement ────────────────────────── */
+  function mountHero(el, u) {
+    if (!u) {
+      el.innerHTML =
+        '<div class="bg-[#121a27] border border-dashed border-[#2b3a57] rounded-lg p-4 flex flex-col sm:flex-row sm:items-center gap-3">'
+        + '<div class="flex-1"><div class="text-white font-bold text-sm">Sign in to see the personalisation</div>'
+        + '<div class="text-gray-400 text-[11px] mt-0.5">The engine derives sport, competition, slip shape and stake from the player\'s own history — nothing is invented.</div></div>'
+        + '<button class="hero-login px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded text-[12px] uppercase tracking-wide transition">Sign in</button></div>';
+      var lg = el.querySelector(".hero-login");
+      if (lg) lg.addEventListener("click", openLogin);
+      return;
+    }
+    el.innerHTML = heroHTML(u);
+    var dis = el.querySelector(".hero-dismiss");
+    if (dis) dis.addEventListener("click", function () {
+      el.innerHTML =
+        '<div class="bg-[#121a27] border border-[#243149] rounded-lg p-3 text-[11px] text-gray-400 flex items-center gap-2">'
+        + '<i class="fa-solid fa-circle-check text-gray-500"></i>'
+        + 'Dismissed. The engine now stays quiet for this player for 72 hours (cooldown).</div>';
+    });
+    var cas = el.querySelector(".hero-casino");
+    if (cas) cas.addEventListener("click", function () { setView("casino"); });
+    var acc = el.querySelector(".hero-accept");
+    if (acc) acc.addEventListener("click", function () {
+      var resume = u.card && u.card.action === "RESUME_GAME";
+      if (resume) {
+        acc.textContent = "Game opened";
+      } else {
+        // Nothing is written to the betslip until the player taps this.
+        paintSlip(u, true);
+        var slip = $("right-betslip");
+        if (slip && !slip.classList.contains("hidden")) {
+          slip.scrollIntoView({ behavior: "smooth", block: "nearest" });
+          $("stake-input").classList.add("ring-2", "ring-emerald-500");
+          setTimeout(function () { $("stake-input").classList.remove("ring-2", "ring-emerald-500"); }, 1400);
+        }
+        acc.textContent = "Added to betslip";
+      }
+      acc.disabled = true;
+      acc.className = "hero-accept px-4 py-2 bg-[#1c3a2a] text-emerald-300 font-black rounded text-[12px] uppercase tracking-wide cursor-default";
+    });
+  }
+
+  /* ============ odds movement, repeated at the point of stake ============ */
   function oddsFor(u) {
     var o = u.odds_card;
     if (!o) return "";
@@ -1036,16 +1403,17 @@ No passwords, no real identities. Every <span class="font-mono text-gray-400">Pl
       + '<div class="flex items-center gap-1.5 mb-1.5">'
       +   '<i class="fa-solid fa-arrow-trend-' + (worse ? "down" : "up") + ' text-' + col + '-400 text-[11px]"></i>'
       +   '<span class="text-' + col + '-300 font-bold text-[10px] uppercase tracking-wide">Odds movement</span>'
+      +   '<span class="ml-auto font-mono text-[9px] text-gray-500">' + (o.pct > 0 ? "+" : "") + o.pct + '%</span>'
       + '</div>'
       + (o.rendered || []).map(function (line, i) {
           return '<div class="text-[10px] ' + (i === 0 ? "text-white font-semibold" : i === 1 ? "text-" + col + "-200" : "text-gray-500 italic") + ' leading-snug">' + esc(line) + '</div>';
         }).join("")
       + '<div class="mt-1.5 pt-1.5 border-t border-[#22304a] text-[9px] text-gray-500 font-mono">'
-      +   esc(tr(o.sport || "")) + (o.competition ? " / " + esc(o.competition) : "") + ' \u00b7 ' + o.hours_away + ' h later'
+      +   esc(tr(o.sport || "")) + (o.competition ? " / " + esc(o.competition) : "") + ' · ' + o.hours_away + ' h later'
       + '</div></div>';
   }
 
-  /* ────────────────────────── drawer ────────────────────────── */
+  /* ========================= engine drawer ========================= */
   function row(label, value, mono) {
     return '<div class="flex items-baseline justify-between gap-3 py-1 border-b border-[#18202e]">'
       + '<span class="text-gray-500">' + esc(label) + '</span>'
@@ -1058,7 +1426,7 @@ No passwords, no real identities. Every <span class="font-mono text-gray-400">Pl
     var pct = total ? (value / total * 100) : 0;
     return '<div class="mb-1.5"><div class="flex justify-between text-[10px] mb-0.5">'
       + '<span class="text-gray-400 font-mono">' + esc(label) + '</span>'
-      + '<span class="text-gray-300 font-mono">' + value + ' \u00b7 ' + pct.toFixed(1) + '%</span></div>'
+      + '<span class="text-gray-300 font-mono">' + value + ' · ' + pct.toFixed(1) + '%</span></div>'
       + '<div class="h-1.5 bg-[#1a2434] rounded overflow-hidden"><div class="h-full bg-' + color + '-500" style="width:' + pct.toFixed(1) + '%"></div></div></div>';
   }
 
@@ -1069,7 +1437,7 @@ No passwords, no real identities. Every <span class="font-mono text-gray-400">Pl
           + row("Sessions", META.total_sessions.toLocaleString("en-US"), true)
           + row("Players", META.total_players, true)
           + row("Odds movements", META.movements_total, true)
-          + row("\u2026 worse / better", META.movements_worse + " / " + META.movements_better, true));
+          + row("… worse / better", META.movements_worse + " / " + META.movements_better, true));
       $("drawer-sub").textContent = "no player signed in";
       return;
     }
@@ -1079,16 +1447,16 @@ No passwords, no real identities. Every <span class="font-mono text-gray-400">Pl
     var habit = p.top_game
       ? row("Top game", p.top_game) + row("Provider", p.top_provider)
         + row("Game share", (p.top_game_share * 100).toFixed(0) + "%", true)
-        + row("Lift over uniform", p.top_game_lift + "\u00d7", true)
+        + row("Lift over uniform", p.top_game_lift + "×", true)
         + row("Usual stake", eur(p.usual_casino_stake_eur), true)
         + row("Game launches", p.n_game_launches, true)
       : row("Top sport", tr(p.top_sport)) + row("Sport share", (p.top_sport_share * 100).toFixed(0) + "%", true)
         + row("Competition", p.top_competition)
-        + row("Competition share", p.top_competition_share ? (p.top_competition_share * 100).toFixed(0) + "%" : "\u2014", true)
+        + row("Competition share", p.top_competition_share ? (p.top_competition_share * 100).toFixed(0) + "%" : "—", true)
         + row("Slip shape", p.slip_type) + row("Usual stake", eur(p.usual_stake_eur), true)
         + row("Placed slips", p.n_placed_slips, true);
 
-    $("drawer-sub").textContent = u.key + " \u00b7 " + u.persona;
+    $("drawer-sub").textContent = u.key + " · " + u.persona;
     $("drawer-body").innerHTML =
       section("Habit profile", habit + row("Active hours", p.active_hours, true) + row("Vertical", u.vertical))
       + section("Confidence",
@@ -1097,23 +1465,23 @@ No passwords, no real identities. Every <span class="font-mono text-gray-400">Pl
           + '<span class="ml-auto text-[10px] ' + (p.is_confident ? "text-emerald-400" : "text-orange-400") + '">'
           + (p.is_confident ? "may pre-fill" : "must not pre-fill") + '</span></div>'
           + '<ul class="space-y-1 text-[10px] text-gray-400">'
-          + p.reasons.map(function (r) { return '<li>\u2022 ' + esc(r) + '</li>'; }).join("") + '</ul>')
+          + p.reasons.map(function (r) { return '<li>• ' + esc(r) + '</li>'; }).join("") + '</ul>')
       + section("Decisions across " + totalSes + " sessions",
           bar("NO_ACTION",     cen.NO_ACTION     || 0, totalSes, "slate")
         + bar("CLARIFY_INFO",  cen.CLARIFY_INFO  || 0, totalSes, "amber")
         + bar("CONTINUE_CARD", cen.CONTINUE_CARD || 0, totalSes, "blue")
         + bar("RESUME_GAME",   cen.RESUME_GAME   || 0, totalSes, "purple")
         + '<div class="text-[9px] text-gray-600 mt-1">Doing nothing is the default decision, not the fallback.</div>')
-      + (u.clarify_card ? section("The other population \u2014 CLARIFY_INFO",
+      + (u.clarify_card ? section("The other population — CLARIFY_INFO",
           '<div class="bg-[#141d2c] border border-amber-800/30 rounded p-2 mb-1">'
           + (u.clarify_card.rendered || []).map(function (l, i) {
               return '<div class="' + (i === 0 ? "text-white font-semibold" : i === 1 ? "text-amber-200" : "text-gray-500 italic") + ' text-[10px] leading-snug">' + esc(l) + '</div>';
             }).join("")
           + '</div>'
           + '<ul class="space-y-0.5 text-[10px] text-gray-500">'
-          + (u.clarify_card.reasons || []).map(function (r) { return '<li>\u2022 ' + esc(r) + '</li>'; }).join("")
+          + (u.clarify_card.reasons || []).map(function (r) { return '<li>• ' + esc(r) + '</li>'; }).join("")
           + '</ul>'
-          + '<div class="text-[9px] text-gray-600 mt-1">Navigation help only \u2014 never a stake, odds, or a prompt to bet.</div>') : "")
+          + '<div class="text-[9px] text-gray-600 mt-1">Navigation help only — never a stake, odds, or a prompt to bet.</div>') : "")
       + section("Friction (last 150 sessions)",
           Object.keys(fr).length
             ? Object.keys(fr).map(function (k) { return row(k, fr[k], true); }).join("")
@@ -1122,7 +1490,7 @@ No passwords, no real identities. Every <span class="font-mono text-gray-400">Pl
           row("Total for this player", st.n_movements, true)
         + row("Worse for the player", st.n_worse, true)
         + row("Better for the player", st.n_better, true)
-        + '<div class="text-[9px] text-gray-600 mt-1">Never filtered by direction. Both are shown in the same sentence.</div>')
+        + '<div class="text-[9px] text-gray-600 mt-1">Never filtered by direction. Both are shown in the banner, in the same sentence.</div>')
       + section("Conversion",
           row("Sessions reaching the betslip", st.sessions_reaching_betslip, true)
         + row("Completed", st.sessions_completing, true)
@@ -1143,12 +1511,12 @@ No passwords, no real identities. Every <span class="font-mono text-gray-400">Pl
     $("engine-drawer").classList.add("translate-x-full");
   }
 
-  /* ────────────────────────── account menu ────────────────────────── */
+  /* ========================= account menu ========================= */
   function buildAccount(u) {
     $("account-menu").innerHTML =
       '<div class="px-3.5 py-3 border-b border-[#1e2a3d]">'
       + '<div class="text-white font-bold text-[12px]">' + esc(u.persona) + '</div>'
-      + '<div class="text-gray-500 text-[10px] font-mono">' + esc(u.key) + ' \u00b7 ' + esc(u.platform) + '</div></div>'
+      + '<div class="text-gray-500 text-[10px] font-mono">' + esc(u.key) + ' · ' + esc(u.platform) + '</div></div>'
       + '<div class="px-3.5 py-2.5 space-y-1 text-[11px] border-b border-[#1e2a3d]">'
       +   '<div class="flex justify-between"><span class="text-gray-500">Balance (demo)</span><span class="text-white font-bold">' + eur(balance(u)) + '</span></div>'
       +   '<div class="flex justify-between"><span class="text-gray-500">Sessions</span><span class="text-gray-300 font-mono">' + u.sessions + '</span></div>'
@@ -1163,7 +1531,313 @@ No passwords, no real identities. Every <span class="font-mono text-gray-400">Pl
     $("menu-logout").addEventListener("click", logout);
   }
 
-  /* ────────────────────────── main render ────────────────────────── */
+  /* ====== the betslip fills only on the player's own Continue tap ====== */
+  function paintSlip(u, applied) {
+    var p = u.profile, c = u.card, pay = (c && c.payload) || {};
+    $("stake-src").classList.toggle("hidden", !applied);
+    $("stake-badge").classList.toggle("hidden", !applied);
+    $("stake-badge").textContent = "you added this";
+    $("stake-input").placeholder = "0,00 €";
+
+    if (c && c.action === "CONTINUE_CARD") {
+      var n = pay.n_selections || 1;
+      $("slip-type").textContent  = pay.slip_type || "Simple";
+      $("slip-title").textContent = tr(pay.sport || "") + (pay.competition ? " / " + pay.competition : "");
+      if (!applied) {
+        $("slip-sub").textContent = "suggestion ready — nothing added yet";
+        $("slip-legs").innerHTML =
+          '<div class="text-gray-400 text-[10px] leading-snug">Betslip is empty. The engine has a '
+          + n + '-selection ' + esc(pay.slip_type || "slip") + ' and a stake from this player’s own history, '
+          + 'but it is added only when <span class="text-white font-semibold">you</span> press Continue.</div>';
+        $("slip-odds").textContent = "—";
+        $("stake-input").value = "";
+        $("bet-cta").textContent = "BETSLIP EMPTY";
+        $("slip-callout-text").textContent = "Nothing is added to the betslip until you press Continue.";
+        return;
+      }
+      $("slip-sub").textContent = n + (n === 1 ? " selection" : " selections") + " · " + (pay.slip_type || "slip") + " · added by you";
+      $("slip-legs").innerHTML = Array.apply(null, Array(n)).map(function (_, i) {
+        return '<div class="flex items-center text-gray-200">'
+          + '<span class="w-1.5 h-1.5 rounded-full bg-blue-500 mr-1.5"></span>'
+          + esc(tr(pay.competition || pay.sport || "Selection") + " — selection " + (i + 1)) + '</div>';
+      }).join("");
+      $("slip-odds").textContent = (Math.pow(1.62, n)).toFixed(2);
+      if (pay.stake_eur) {
+        $("stake-input").value   = eur(pay.stake_eur);
+        $("bet-cta").textContent = "BET " + eur(pay.stake_eur);
+      }
+      $("slip-callout-text").textContent = "Added because you pressed Continue. Still nothing placed until you confirm.";
+
+    } else if (c && c.action === "RESUME_GAME") {
+      $("slip-type").textContent  = "Casino";
+      $("slip-title").textContent = pay.game || "";
+      $("slip-sub").textContent   = "casino player — the betslip stays empty";
+      $("slip-legs").innerHTML = '<div class="text-gray-400 text-[10px] leading-snug">'
+        + esc(pay.game || "") + ' lives in the casino tab. Nothing is staked until you open the game yourself.</div>';
+      $("slip-odds").textContent = "—";
+      $("stake-input").value = "";
+      $("bet-cta").textContent = "NOTHING STAKED";
+      $("slip-callout-text").textContent = "Opening the game is your call. Nothing is staked before that.";
+
+    } else {
+      $("slip-type").textContent  = "Simple";
+      $("slip-title").textContent = "Empty betslip";
+      $("slip-sub").textContent   = "no pre-fill — confidence " + p.confidence.toFixed(3);
+      $("slip-legs").innerHTML = '<div class="text-gray-500 text-[10px]">The engine will not pre-fill a stake it has no evidence for.</div>';
+      $("slip-odds").textContent = "—";
+      $("stake-input").value = "";
+      $("bet-cta").textContent = "BETSLIP EMPTY";
+      $("slip-callout-text").textContent = "No settled habit yet. Navigation help only.";
+    }
+  }
+
+  /* ===================== casino: catalogue ===================== */
+  // Titles that appear in the dataset's own launch events are marked `real: true`
+  // so the UI can say which of them the signed-in player actually plays.
+  var CATALOGUE = [
+    { id: "feg", title: "Only in FEG", icon: "fa-star", count: 14, games: [
+      { n: "FEG Gold Roulette",     p: "FEG Studios",    min: 0.10, tag: "EXCLUSIVE", ico: "fa-dharmachakra", g: "from-[#1b4b2f] to-[#0c2419]" },
+      { n: "FEG Blackjack Prime",   p: "FEG Studios",    min: 0.50, tag: "EXCLUSIVE", ico: "fa-dice",         g: "from-[#2a1f5c] to-[#131033]" },
+      { n: "Dinara Deluxe",         p: "FEG Studios",    min: 0.10, tag: "EXCLUSIVE", ico: "fa-gamepad",      g: "from-[#7a2d12] to-[#2a1108]" },
+      { n: "Adriatic Riches",       p: "FEG Studios",    min: 0.20, tag: "NEW",       ico: "fa-bowling-ball", g: "from-[#12496b] to-[#08202f]" },
+      { n: "Velebit Wilds",         p: "FEG Studios",    min: 0.10, tag: "EXCLUSIVE", ico: "fa-fire",         g: "from-[#6b1226] to-[#2a0812]" },
+      { n: "Nova Spin Lab",         p: "FEG Studios",    min: 0.10, tag: "NEW",       ico: "fa-bolt",         g: "from-[#123f6b] to-[#0a1c30]" }
+    ]},
+    { id: "roulette", title: "Roulette", icon: "fa-dharmachakra", count: 56, games: [
+      { n: "Lightning Roulette",    p: "Evolution",      min: 0.20, tag: "LIVE", real: true, ico: "fa-bolt",         g: "from-[#5b1020] to-[#22060c]" },
+      { n: "Roulette Live",         p: "Evolution",      min: 0.10, tag: "LIVE", real: true, ico: "fa-dharmachakra", g: "from-[#0f4a2c] to-[#061c11]" },
+      { n: "FEG Gold Roulette",     p: "FEG Studios",    min: 0.10, tag: "EXCLUSIVE",       ico: "fa-dharmachakra", g: "from-[#5c4310] to-[#241a06]" },
+      { n: "Adriatic Auto Roulette",p: "Evolution",      min: 0.10, tag: "LIVE",            ico: "fa-rotate",       g: "from-[#123a55] to-[#081722]" },
+      { n: "Speed Roulette Nova",   p: "Evolution",      min: 0.20, tag: "LIVE",            ico: "fa-plane-departure", g: "from-[#2c1450] to-[#120820]" },
+      { n: "Quantum Wheel",         p: "Playtech",       min: 0.10, tag: "NEW",             ico: "fa-microchip",    g: "from-[#0d3f63] to-[#06202f]" }
+    ]},
+    { id: "tables", title: "Blackjack & tables", icon: "fa-dice", count: 31, games: [
+      { n: "BlackJack MH",          p: "Evolution",      min: 1.00, tag: "LIVE", real: true, ico: "fa-dice",       g: "from-[#0e4630] to-[#051a12]" },
+      { n: "FEG Blackjack Prime",   p: "FEG Studios",    min: 0.50, tag: "EXCLUSIVE",       ico: "fa-dice",         g: "from-[#243a6b] to-[#0d1628]" },
+      { n: "Baccarat Adriatic",     p: "Evolution",      min: 1.00, tag: "LIVE",            ico: "fa-chess-queen",  g: "from-[#5c1030] to-[#230612]" },
+      { n: "Casino Hold'em Nova",   p: "Evolution",      min: 0.50, tag: "LIVE",            ico: "fa-layer-group",  g: "from-[#123c5c] to-[#071823]" },
+      { n: "Dragon Tiger Live",     p: "Evolution",      min: 0.20, tag: "LIVE",            ico: "fa-fire",         g: "from-[#6b3a10] to-[#2a1606]" },
+      { n: "First Person Baccarat", p: "Evolution",      min: 0.50, tag: "NEW",             ico: "fa-vr-cardboard", g: "from-[#2a2060] to-[#100c26]" }
+    ]},
+    { id: "slots", title: "Slots", icon: "fa-gamepad", count: 212, games: [
+      { n: "Sizzling Hot Deluxe",   p: "Greentube",      min: 0.10, tag: "CLASSIC", real: true, ico: "fa-fire",     g: "from-[#7a1f10] to-[#2a0a06]" },
+      { n: "100 Hot Wild",          p: "Greentube",      min: 0.10, tag: "CLASSIC", real: true, ico: "fa-bolt",     g: "from-[#6b4a10] to-[#2a1c06]" },
+      { n: "Royal Seven XXL",       p: "Greentube",      min: 0.20, tag: "CLASSIC", real: true, ico: "fa-star",     g: "from-[#5c1024] to-[#23060e]" },
+      { n: "Sugar Rush 1000",       p: "Pragmatic Play", min: 0.20, tag: "HOT",     real: true, ico: "fa-gift",     g: "from-[#8a1f6b] to-[#2f0a24]" },
+      { n: "Big Bass Bonanza",      p: "Pragmatic Play", min: 0.10, tag: "HOT",     real: true, ico: "fa-bowling-ball", g: "from-[#0f4a63] to-[#061c26]" },
+      { n: "Gates of Olympus Super Scatter", p: "Pragmatic Play", min: 0.20, tag: "HOT", real: true, ico: "fa-bolt", g: "from-[#2c1a63] to-[#120a26]" }
+    ]},
+    { id: "jackpots", title: "Jackpots", icon: "fa-trophy", count: 9, games: [
+      { n: "100 Power Hot Dice Edition Golden Coins Link", p: "Greentube", min: 1.00, tag: "JACKPOT", real: true, ico: "fa-trophy", g: "from-[#6b5210] to-[#2a2006]" },
+      { n: "40 Bulky Fruits Golden Coins Link", p: "Greentube", min: 0.50, tag: "JACKPOT", real: true, ico: "fa-gift", g: "from-[#0f5c2c] to-[#062211]" },
+      { n: "Velebit Wilds Jackpot", p: "FEG Studios",    min: 0.40, tag: "JACKPOT",        ico: "fa-fire",        g: "from-[#5c2410] to-[#230e06]" },
+      { n: "Panonija Riches",       p: "FEG Studios",    min: 0.30, tag: "JACKPOT",        ico: "fa-trophy",      g: "from-[#243a6b] to-[#0d1628]" }
+    ]}
+  ];
+
+  var TAGCOL = {
+    EXCLUSIVE: "bg-purple-600/90", NEW: "bg-red-600/90", LIVE: "bg-red-600/90",
+    JACKPOT: "bg-amber-500/90 text-black", HOT: "bg-orange-600/90", CLASSIC: "bg-[#26334a]"
+  };
+
+  function providerFor(name, u) {
+    for (var i = 0; i < CATALOGUE.length; i++) {
+      for (var j = 0; j < CATALOGUE[i].games.length; j++) {
+        if (CATALOGUE[i].games[j].n === name) return CATALOGUE[i].games[j].p;
+      }
+    }
+    return (u && u.profile.top_provider) || "—";
+  }
+  function metaFor(name) {
+    for (var i = 0; i < CATALOGUE.length; i++) {
+      for (var j = 0; j < CATALOGUE[i].games.length; j++) {
+        if (CATALOGUE[i].games[j].n === name) return CATALOGUE[i].games[j];
+      }
+    }
+    return { n: name, p: "—", min: 0.10, tag: "", ico: "fa-gamepad", g: "from-[#1f2b40] to-[#0d1420]" };
+  }
+
+  var CAS_TAB = "live", CAS_Q = "";
+
+  function tile(g, u) {
+    var mine  = u && u.profile.top_game === g.n;
+    var known = u && u.games && Object.prototype.hasOwnProperty.call(u.games, g.n);
+    var tag   = mine ? "YOUR USUAL" : (known ? "IN YOUR HISTORY" : g.tag);
+    var tagCl = mine ? "bg-purple-600" : (known ? "bg-emerald-600" : (TAGCOL[g.tag] || "bg-[#26334a]"));
+    return '<div class="group relative rounded-lg overflow-hidden border ' + (mine ? "border-purple-500 ring-1 ring-purple-500/60" : "border-[#22304a] hover:border-blue-600")
+      + ' bg-gradient-to-br ' + g.g + ' aspect-[3/4] cursor-pointer transition">'
+      + '<span class="absolute top-1.5 left-1.5 z-20 bg-black/55 text-white text-[9px] font-bold px-1.5 py-0.5 rounded">' + eur(g.min) + '</span>'
+      + (tag ? '<span class="absolute top-1.5 right-1.5 z-20 ' + tagCl + ' text-white text-[8px] font-black uppercase px-1.5 py-0.5 rounded tracking-wide">' + esc(tag) + '</span>' : '')
+      + '<div class="absolute inset-0 flex items-center justify-center"><i class="fa-solid ' + g.ico + ' text-4xl text-white/80 drop-shadow"></i></div>'
+      + '<div class="absolute inset-x-0 bottom-0 z-10 bg-gradient-to-t from-black/90 via-black/60 to-transparent p-2 pt-7">'
+      +   '<div class="text-white font-bold text-[11px] leading-tight line-clamp-2">' + esc(g.n) + '</div>'
+      +   '<div class="text-gray-400 text-[9px] truncate mt-0.5">' + esc(g.p) + '</div>'
+      + '</div>'
+      + '<div class="absolute inset-0 z-20 bg-black/55 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">'
+      +   '<span class="px-3 py-1 rounded-full bg-[#00b140] text-white text-[10px] font-black uppercase tracking-wide">Play</span>'
+      + '</div></div>';
+  }
+
+  function rowBlock(title, icon, count, tiles, note) {
+    return '<div class="mb-4">'
+      + '<div class="flex items-center justify-between mb-2">'
+      +   '<h3 class="flex items-center gap-2 text-white font-black text-[13px]">'
+      +     '<i class="fa-solid ' + icon + ' text-blue-400 text-[12px]"></i>' + esc(title)
+      +     (note ? '<span class="text-[9px] font-bold uppercase tracking-wide text-purple-300 bg-purple-500/15 border border-purple-500/30 rounded px-1.5 py-0.5">' + esc(note) + '</span>' : '')
+      +   '</h3>'
+      +   '<div class="flex items-center gap-2">'
+      +     (count ? '<span class="text-[10px] font-bold text-gray-400 uppercase tracking-wide">See all ' + count + '</span>' : '')
+      +     '<button class="w-6 h-6 rounded-full bg-[#1a2434] border border-[#26334a] text-gray-400 hover:text-white text-[9px] flex items-center justify-center"><i class="fa-solid fa-chevron-right rotate-180"></i></button>'
+      +     '<button class="w-6 h-6 rounded-full bg-[#1a2434] border border-[#26334a] text-gray-400 hover:text-white text-[9px] flex items-center justify-center"><i class="fa-solid fa-chevron-right"></i></button>'
+      +   '</div>'
+      + '</div>'
+      + '<div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-2.5">' + tiles + '</div>'
+      + '</div>';
+  }
+
+  function renderCasinoRows(u) {
+    var q = CAS_Q.trim().toLowerCase();
+    var out = "";
+
+    // The player's own titles come first, straight out of their launch history.
+    if (u && Object.keys(u.games || {}).length) {
+      var mine = Object.keys(u.games).filter(function (n) { return !q || n.toLowerCase().indexOf(q) >= 0; });
+      if (mine.length && (CAS_TAB === "live" || CAS_TAB === "all")) {
+        out += rowBlock("Continue where you left off", "fa-clock", 0,
+          mine.map(function (n) { return tile(metaFor(n), u); }).join(""),
+          "from your history");
+      }
+    }
+
+    CATALOGUE.forEach(function (cat) {
+      if (CAS_TAB !== "live" && CAS_TAB !== "all" && CAS_TAB !== cat.id) return;
+      var games = cat.games.filter(function (g) { return !q || g.n.toLowerCase().indexOf(q) >= 0 || g.p.toLowerCase().indexOf(q) >= 0; });
+      if (!games.length) return;
+      out += rowBlock(cat.title, cat.icon, cat.count, games.map(function (g) { return tile(g, u); }).join(""), "");
+    });
+
+    if (!out) {
+      out = '<div class="text-gray-500 text-[12px] py-10 text-center border border-dashed border-[#243149] rounded-lg">No game matches “' + esc(CAS_Q) + '”.</div>';
+    }
+    $("casino-rows").innerHTML = out;
+  }
+
+  function renderCasinoTabs(u) {
+    var tabs = [{ id: "live", label: "Live lobby" }]
+      .concat(CATALOGUE.map(function (c) { return { id: c.id, label: c.title }; }))
+      .concat([{ id: "all", label: "All games" }]);
+    $("casino-tabs").innerHTML = tabs.map(function (t) {
+      var on = t.id === CAS_TAB;
+      return '<button data-tab="' + t.id + '" class="cas-tab px-3 py-1.5 rounded-full flex items-center gap-1.5 border whitespace-nowrap transition '
+        + (on ? 'bg-[#253043] text-white font-bold border-blue-500' : 'bg-[#171f2c] text-gray-300 hover:text-white border-[#222e40]')
+        + '">' + esc(t.label) + '</button>';
+    }).join("");
+    Array.prototype.forEach.call($("casino-tabs").querySelectorAll(".cas-tab"), function (b) {
+      b.addEventListener("click", function () {
+        CAS_TAB = b.dataset.tab;
+        renderCasinoTabs(u);
+        renderCasinoRows(u);
+      });
+    });
+  }
+
+  /* ============ casino: the last 24 hours, right-hand rail ============ */
+  var FEED_HIDDEN = false;
+  var MULT = [0, 12.4, 0, 0, 3.8, 41.6, 0, 6.2, 0, 18.9, 0, 2.1, 0, 7.5];
+  function mask(key) { return key.slice(0, 1) + "•••" + key.slice(-2); }
+
+  function casinoFeed() {
+    var rows = [], i = 0;
+    KEYS.forEach(function (k) {
+      var u = USERS[k], gs = Object.keys(u.games || {});
+      gs.forEach(function (g) {
+        var st  = u.profile.usual_casino_stake_eur || 2.50;
+        var mul = MULT[i % MULT.length];
+        rows.push({
+          key: k, handle: mask(k), game: g, provider: providerFor(g, u),
+          stake: st, ret: st * mul, won: mul > 0, mins: (23 + i * 137) % 1435, ico: metaFor(g).ico
+        });
+        i++;
+      });
+    });
+    rows.sort(function (a, b) { return a.mins - b.mins; });
+    return rows;
+  }
+
+  function ago(mins) {
+    var h = Math.floor(mins / 60), m = mins % 60;
+    return h ? h + " h " + m + " m ago" : m + " m ago";
+  }
+
+  function buildFeed(u) {
+    var rows = casinoFeed();
+    var wins = rows.filter(function (r) { return r.won; }).length;
+
+    $("feed-summary").innerHTML =
+      '<div class="flex items-center justify-between text-[10px]">'
+      + '<span class="text-gray-400"><span class="text-white font-bold font-mono">' + rows.length + '</span> sessions</span>'
+      + '<span class="text-gray-400"><span class="text-emerald-400 font-bold font-mono">' + wins + '</span> returned more than the stake</span>'
+      + '<span class="text-gray-400"><span class="text-gray-300 font-bold font-mono">' + (rows.length - wins) + '</span> did not</span>'
+      + '</div>';
+
+    $("feed-toggle").textContent = FEED_HIDDEN ? "Show" : "Hide";
+
+    if (FEED_HIDDEN) {
+      $("cas-feed").innerHTML = '<div class="text-gray-500 text-[11px] py-8 px-2 text-center border border-dashed border-[#243149] rounded-lg leading-snug">'
+        + 'Feed hidden. Your choice is respected for this session — nothing re-enables it on its own.</div>';
+      return;
+    }
+
+    $("cas-feed").innerHTML = rows.map(function (r) {
+      var you = u && u.key === r.key;
+      return '<div class="flex items-center gap-2.5 bg-[#141c29] border ' + (you ? "border-purple-600/60" : "border-[#22304a]") + ' rounded-lg px-2.5 py-2">'
+        + '<span class="w-7 h-7 rounded-full bg-[#22304a] text-gray-300 text-[11px] flex items-center justify-center flex-shrink-0"><i class="fa-solid ' + r.ico + '"></i></span>'
+        + '<div class="min-w-0 flex-1">'
+        +   '<div class="text-white text-[11px] font-bold truncate">' + esc(r.game) + '</div>'
+        +   '<div class="text-[9px] text-gray-500 truncate"><span class="font-mono">' + esc(r.handle) + '</span>'
+        +     (you ? ' <span class="text-purple-300 font-bold">you</span>' : '')
+        +     ' · ' + esc(r.provider) + ' · ' + ago(r.mins) + '</div>'
+        +   '<div class="text-[9px] text-gray-600 font-mono">stake ' + eur(r.stake) + '</div>'
+        + '</div>'
+        + (r.won
+            ? '<span class="text-emerald-400 font-mono font-black text-[12px] flex-shrink-0">+' + eur(r.ret) + '</span>'
+            : '<span class="text-gray-500 font-mono text-[10px] flex-shrink-0">no return</span>')
+        + '</div>';
+    }).join("");
+  }
+
+  /* ===================== view switching ===================== */
+  var VIEW = "sports";
+  var NAV_ON  = "bg-blue-700/60 text-white border-b-2 border-white";
+  var NAV_OFF = "hover:bg-blue-600/60 text-white/90";
+
+  function setView(v, el) {
+    VIEW = v;
+    var casino = v === "casino";
+    $("left-sports").classList.toggle("hidden", casino);
+    $("left-casino").classList.toggle("hidden", !casino);
+    $("center-sports").classList.toggle("hidden", casino);
+    $("center-casino").classList.toggle("hidden", !casino);
+    $("right-betslip").classList.toggle("hidden", casino);
+    $("right-casino").classList.toggle("hidden", !casino);
+    var tabs = document.querySelectorAll("header .nav-tab");
+    // Only the tab the player actually pressed is marked active; falling back to
+    // the first tab of that view when the switch came from somewhere else.
+    var active = el && el.classList.contains("nav-tab") ? el : null;
+    if (!active) {
+      for (var i = 0; i < tabs.length; i++) {
+        if (tabs[i].dataset.view === v) { active = tabs[i]; break; }
+      }
+    }
+    Array.prototype.forEach.call(tabs, function (a) {
+      var base = "nav-tab " + (a.classList.contains("nav-casino") ? "nav-casino" : "nav-sport")
+        + " px-3 h-full flex items-center " + (a.textContent.indexOf("LIVE") >= 0 ? "relative " : "");
+      a.className = base + (a === active ? NAV_ON : NAV_OFF);
+    });
+    window.scrollTo(0, 0);
+  }
+
+  /* ===================== main render ===================== */
   // ?player=SYN_U03 (or #SYN_U03) preselects a player, so a demo link is shareable.
   (function () {
     var m = /[?&]player=(SYN_U\d\d)/.exec(location.search) || /^#(SYN_U\d\d)$/.exec(location.hash);
@@ -1182,17 +1856,23 @@ No passwords, no real identities. Every <span class="font-mono text-gray-400">Pl
 
     // reset personalised bits
     $("rec-tag").classList.add("hidden");
+    $("cas-rec-tag").classList.add("hidden");
     $("stake-src").classList.add("hidden");
     $("stake-badge").classList.add("hidden");
     $("odds-card").innerHTML = "";
 
+    // both banners, sport and casino, come from the same engine decision
+    mountHero($("engine-hero"), u);
+    mountHero($("casino-hero"), u);
+
+    // casino page always renders; personalisation only when signed in
+    renderCasinoTabs(u);
+    renderCasinoRows(u);
+    buildFeed(u);
+
     if (!u) {
-      $("engine-hero").innerHTML =
-        '<div class="bg-[#121a27] border border-dashed border-[#2b3a57] rounded-lg p-4 flex flex-col sm:flex-row sm:items-center gap-3" style="border-color:#2b3a57">'
-        + '<div class="flex-1"><div class="text-white font-bold text-sm">Sign in to see the personalisation</div>'
-        + '<div class="text-gray-400 text-[11px] mt-0.5">The engine derives sport, competition, slip shape and stake from the player\'s own history &mdash; nothing is invented.</div></div>'
-        + '<button class="px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded text-[12px] uppercase tracking-wide transition" id="hero-login">Sign in</button></div>';
-      $("hero-login").addEventListener("click", openLogin);
+      $("cas-rec-list").innerHTML =
+        '<li class="text-[11px] text-gray-500 leading-snug px-2 py-1">Sign in and this list becomes the games in the player\'s own launch history.</li>';
       $("slip-callout-text").textContent = "Bet suggestions based off your choices";
       buildDrawer(null);
       return;
@@ -1201,29 +1881,11 @@ No passwords, no real identities. Every <span class="font-mono text-gray-400">Pl
     var p = u.profile;
     $("hdr-avatar").textContent  = u.key.slice(4);
     $("hdr-name").textContent    = u.persona;
-    $("hdr-persona").textContent = u.key + " \u00b7 " + u.platform;
+    $("hdr-persona").textContent = u.key + " · " + u.platform;
     $("hdr-balance").textContent = eur(balance(u));
     buildAccount(u);
 
-    // hero
-    $("engine-hero").innerHTML = heroFor(u);
-    if ($("hero-dismiss")) {
-      $("hero-dismiss").addEventListener("click", function () {
-        $("engine-hero").innerHTML =
-          '<div class="bg-[#121a27] border border-[#243149] rounded-lg p-3 text-[11px] text-gray-400 flex items-center gap-2">'
-          + '<i class="fa-solid fa-circle-check text-gray-500"></i>'
-          + 'Dismissed. The engine now stays quiet for this player for 72 hours (cooldown).</div>';
-      });
-    }
-    if ($("hero-accept")) {
-      $("hero-accept").addEventListener("click", function () {
-        document.querySelector("aside.w-80").scrollIntoView({ behavior: "smooth", block: "nearest" });
-        $("stake-input").classList.add("ring-2", "ring-emerald-500");
-        setTimeout(function () { $("stake-input").classList.remove("ring-2", "ring-emerald-500"); }, 1400);
-      });
-    }
-
-    // left sidebar: this player's own competitions
+    // left rail (sports): this player's own competitions
     var comps = Object.keys(u.competitions || {});
     if (comps.length) {
       $("rec-tag").classList.remove("hidden");
@@ -1241,10 +1903,28 @@ No passwords, no real identities. Every <span class="font-mono text-gray-400">Pl
         return '<li><a class="flex items-center justify-between py-1.5 px-2 rounded transition text-[12px] '
           + (i === 0 ? 'bg-[#182130] text-purple-300 font-medium' : 'hover:bg-[#182130] text-gray-200')
           + '" href="#"><span class="flex items-center min-w-0">'
-          + '<span class="w-4 h-4 mr-2.5 flex items-center justify-center text-xs">\ud83c\udfb0</span>'
+          + '<span class="w-4 h-4 mr-2.5 flex items-center justify-center text-xs">🎰</span>'
           + '<span class="truncate">' + esc(g) + '</span></span>'
           + '<span class="text-gray-600 text-[10px] font-mono ml-2">' + u.games[g] + '</span></a></li>';
       }).join("");
+    }
+
+    // left rail (casino): this player's own games
+    var games = Object.keys(u.games || {});
+    if (games.length) {
+      $("cas-rec-tag").classList.remove("hidden");
+      $("cas-rec-list").innerHTML = games.map(function (g, i) {
+        var mine = p.top_game === g;
+        return '<li><a class="flex items-center justify-between py-1.5 px-2 rounded transition text-[12px] '
+          + (mine ? 'bg-[#1c1733] text-purple-300 font-medium border-l-2 border-purple-500' : 'hover:bg-[#182130] text-gray-200')
+          + '" href="#"><span class="flex items-center min-w-0">'
+          + '<span class="w-4 h-4 mr-2.5 flex items-center justify-center text-[10px] text-gray-400"><i class="fa-solid ' + metaFor(g).ico + '"></i></span>'
+          + '<span class="truncate">' + esc(g) + '</span></span>'
+          + '<span class="text-gray-600 text-[10px] font-mono ml-2">' + u.games[g] + '</span></a></li>';
+      }).join("");
+    } else {
+      $("cas-rec-list").innerHTML =
+        '<li class="text-[11px] text-gray-500 leading-snug px-2 py-1">No casino launches in this player\'s history, so nothing is suggested here.</li>';
     }
 
     // highlight this player's sport in the sports list
@@ -1259,56 +1939,14 @@ No passwords, no real identities. Every <span class="font-mono text-gray-400">Pl
       if (count) count.className = isTop ? "text-blue-400 text-[11px] font-mono" : "text-gray-500 text-[11px] font-mono";
     });
 
-    // betslip
-    var c = u.card, pay = (c && c.payload) || {};
-    if (c && c.action === "CONTINUE_CARD") {
-      $("slip-type").textContent  = pay.slip_type || "Simple";
-      $("slip-title").textContent = tr(pay.sport || "") + (pay.competition ? " / " + pay.competition : "");
-      var n = pay.n_selections || 1;
-      $("slip-sub").textContent   = n + (n === 1 ? " selection" : " selections") + " \u00b7 " + (pay.slip_type || "slip");
-      $("slip-legs").innerHTML = Array.apply(null, Array(n)).map(function (_, i) {
-        return '<div class="flex items-center text-gray-200">'
-          + '<span class="w-1.5 h-1.5 rounded-full bg-blue-500 mr-1.5"></span>'
-          + esc(tr(pay.competition || pay.sport || "Selection") + " \u2014 selection " + (i + 1)) + '</div>';
-      }).join("");
-      $("slip-odds").textContent = (Math.pow(1.62, n)).toFixed(2);
-      if (pay.stake_eur) {
-        $("stake-input").value  = eur(pay.stake_eur);
-        $("bet-cta").textContent = "BET " + eur(pay.stake_eur);
-        $("stake-src").classList.remove("hidden");
-        $("stake-badge").classList.remove("hidden");
-      }
-      $("slip-callout-text").textContent = "Pre-filled from this player's own history. Nothing is placed until you confirm.";
-    } else if (c && c.action === "RESUME_GAME") {
-      $("slip-type").textContent  = "Casino";
-      $("slip-title").textContent = pay.game || "";
-      $("slip-sub").textContent   = (pay.provider || "") + " \u00b7 casino";
-      $("slip-legs").innerHTML = '<div class="flex items-center text-gray-200">'
-        + '<span class="w-1.5 h-1.5 rounded-full bg-purple-500 mr-1.5"></span>' + esc(pay.game || "") + '</div>';
-      $("slip-odds").textContent = "\u2014";
-      if (pay.stake_eur) {
-        $("stake-input").value   = eur(pay.stake_eur);
-        $("bet-cta").textContent = "PLAY " + eur(pay.stake_eur);
-        $("stake-src").classList.remove("hidden");
-        $("stake-badge").classList.remove("hidden");
-      }
-      $("slip-callout-text").textContent = "Opens the game. Nothing is staked until you choose.";
-    } else {
-      $("slip-type").textContent  = "Simple";
-      $("slip-title").textContent = "Empty betslip";
-      $("slip-sub").textContent   = "no pre-fill \u2014 confidence " + p.confidence.toFixed(3);
-      $("slip-legs").innerHTML = '<div class="text-gray-500 text-[10px]">The engine will not pre-fill a stake it has no evidence for.</div>';
-      $("slip-odds").textContent = "\u2014";
-      $("stake-input").value   = "1,00 \u20ac";
-      $("bet-cta").textContent = "BET 1,00 \u20ac";
-      $("slip-callout-text").textContent = "No settled habit yet. Navigation help only.";
-    }
+    // betslip stays empty until the player presses Continue
+    paintSlip(u, false);
 
     $("odds-card").innerHTML = oddsFor(u);
     buildDrawer(u);
   }
 
-  /* ────────────────────────── wiring ────────────────────────── */
+  /* ===================== wiring ===================== */
   buildLogin();
   $("btn-login").addEventListener("click", openLogin);
   $("btn-register").addEventListener("click", openLogin);
@@ -1330,11 +1968,30 @@ No passwords, no real identities. Every <span class="font-mono text-gray-400">Pl
   });
   $("drawer-close").addEventListener("click", closeDrawer);
   $("drawer-scrim").addEventListener("click", closeDrawer);
+
+  Array.prototype.forEach.call(document.querySelectorAll(".nav-casino"), function (a) {
+    a.addEventListener("click", function (e) { e.preventDefault(); setView("casino", a); });
+  });
+  Array.prototype.forEach.call(document.querySelectorAll(".nav-sport"), function (a) {
+    a.addEventListener("click", function (e) { e.preventDefault(); setView("sports", a); });
+  });
+  $("casino-back").addEventListener("click", function () { setView("sports"); });
+  $("feed-toggle").addEventListener("click", function () {
+    var key = localStorage.getItem(LS);
+    FEED_HIDDEN = !FEED_HIDDEN;
+    buildFeed(key && USERS[key] ? USERS[key] : null);
+  });
+  $("casino-search").addEventListener("input", function () {
+    var key = localStorage.getItem(LS);
+    CAS_Q = this.value;
+    renderCasinoRows(key && USERS[key] ? USERS[key] : null);
+  });
+
   document.addEventListener("keydown", function (e) {
     if (e.key === "Escape") { closeDrawer(); closeLogin(); $("account-menu").classList.add("hidden"); }
   });
 
   render();
+  setView("sports");
 })();
 </script>
-
